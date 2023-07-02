@@ -1,0 +1,27 @@
+.text_learning_time {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.text_learning_time .text_learning_header {
+  position: relative;
+}
+.text_learning_time .text_learning_header span {
+  font-family: "Orbitron", sans-serif;
+  font-size: 245px;
+  font-weight: 900;
+  color: rgba(105, 110, 121, 0.2352941176);
+}
+.text_learning_time .text_learning_header h1 {
+  font-family: "M PLUS 1 Code", sans-serif;
+  color: #fff;
+  font-size: 45px;
+  position: absolute;
+  left: 10%;
+  top: 70%;
+}
+.text_learning_time p {
+  color: #696e79;
+  font-size: 24px;
+  padding-left: 15px;
+}

@@ -8,8 +8,8 @@ const TableOfContent = () => {
 			<div className="content_router">
 				<Link>Managing Your Learning Journey</Link>
 				<Link>Progress Overview</Link>
-				<Link>Managing Your Learning Time</Link>
 				<Link>Data VisualiSation</Link>
+				<Link>Managing Your Learning Time</Link>
 				<Link>Choose Your Way</Link>
 			</div>
 			<div className="follow_me">
