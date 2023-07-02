@@ -6,7 +6,7 @@ const TextVisualization = () => {
 				<span>03</span>
 				<h1>Data VisualiSation</h1>
 			</div>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, odio? Commodi optio dolorum vel nisi eum saepe, odit, maxime corrupti laboriosam ipsum beatae illo facere vero cum, blanditiis ullam quibusdam sunt expedita? Sint, quod architecto optio aliquid error eius sapiente quas ex sunt velit quae eligendi repellendus sit!</p>
+			<p>Data visualization empowers users by providing a comprehensive overview of their skills, highlighting their motivation, and enabling them to take control of their learning process.</p>
 		</div>
 	)
 }

@@ -1,0 +1,27 @@
+.textProgress_part {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.textProgress_part .text_progress_header {
+  position: relative;
+}
+.textProgress_part .text_progress_header span {
+  font-family: "Orbitron", sans-serif;
+  font-size: 245px;
+  font-weight: 900;
+  color: rgba(105, 110, 121, 0.2352941176);
+}
+.textProgress_part .text_progress_header h1 {
+  font-family: "M PLUS 1 Code", sans-serif;
+  color: #fff;
+  font-size: 45px;
+  position: absolute;
+  left: 10%;
+  top: 70%;
+}
+.textProgress_part p {
+  color: #696e79;
+  font-size: 24px;
+  padding-left: 15px;
+}
