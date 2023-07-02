@@ -1,5 +1,5 @@
 import "./journey.css";
-import TextJourney from './../JourneyComp/TextJourney/TextJourey';
+import TextJourney from '../TextJourney/TextJourey';
 import tree from "../../../assets/videos/tree.mp4";
 const Journey = () => {
 	return (
@@ -8,7 +8,7 @@ const Journey = () => {
 				<TextJourney />
 			</div>
 			<div className="VideoJourney_wrapper">
-			<video src={tree} autoPlay loop muted width={550} />
+			<video src={tree} autoPlay loop muted />
 			</div>
 		</div>
 	)

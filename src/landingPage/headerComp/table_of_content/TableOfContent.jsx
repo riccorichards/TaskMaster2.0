@@ -7,9 +7,10 @@ const TableOfContent = () => {
 			<h1>Table Of Content</h1>
 			<div className="content_router">
 				<Link>Managing Your Learning Journey</Link>
+				<Link>Progress Overview</Link>
 				<Link>Managing Your Learning Time</Link>
 				<Link>Data VisualiSation</Link>
-				<Link>Learning Guide</Link>
+				<Link>Choose Your Way</Link>
 			</div>
 			<div className="follow_me">
 				<a href="https://www.linkedin.com/in/richard-trofimovi-a07a64249/" target="_blank" rel="noreferrer"><AiFillLinkedin /></a>
