@@ -1,0 +1,41 @@
+.table_of_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px 15px;
+  height: 100%;
+}
+.table_of_content h1 {
+  font-family: "M PLUS 1 Code", sans-serif;
+  color: #132d46;
+  text-shadow: 0 0 0.5px #01c380;
+}
+.table_of_content .content_router {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.table_of_content .content_router a {
+  font-size: 18px;
+  font-family: "M PLUS 1 Code", sans-serif;
+  text-decoration: none;
+  color: #696e79;
+  transition: all 0.25s ease-in;
+}
+.table_of_content .content_router a:hover {
+  text-decoration: underline;
+  letter-spacing: 1px;
+}
+.table_of_content .follow_me {
+  display: flex;
+  gap: 15px;
+  align-self: flex-end;
+}
+.table_of_content .follow_me a {
+  font-size: 32px;
+  color: #132d46;
+  transition: all 0.25s ease;
+}
+.table_of_content .follow_me a:hover {
+  color: #01c380;
+}

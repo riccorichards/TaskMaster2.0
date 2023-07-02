@@ -1,0 +1,47 @@
+@use "../../../sass/var.scss";
+.logo_wrapper {
+  width: 140px;
+	height: 140px;
+	border: 1px solid;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: var.$aqua;
+	box-shadow: 0 0 55px #01c37f39;
+
+	.logo {
+		position: absolute;
+		right: -35%;
+		bottom: 15%;
+		display: flex;
+		align-items: center;
+		padding: 1.5px;
+		background-color: var.$black;
+		z-index: 1;
+		span {
+			font-size: 24px;
+	    font-family: var.$font;
+		}
+		svg {
+		font-size: 24px;
+		}
+	}
+	.logo_decoration {
+		width: 120px;
+		height: 120px;
+		position: absolute;
+		border: 3.5px solid;
+		font-family: var.$for_logo;
+		font-size: 10px;
+		display: flex;
+		gap: 5px;
+
+		.not {
+			color: var.$grey;
+		}
+		.again {
+			color: var.$grey;
+		}
+	}
+}

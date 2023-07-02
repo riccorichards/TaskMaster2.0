@@ -1,0 +1,44 @@
+.logo_wrapper {
+  width: 140px;
+  height: 140px;
+  border: 1px solid;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #01c380;
+  box-shadow: 0 0 55px rgba(1, 195, 127, 0.2235294118);
+}
+.logo_wrapper .logo {
+  position: absolute;
+  right: -35%;
+  bottom: 15%;
+  display: flex;
+  align-items: center;
+  padding: 1.5px;
+  background-color: #191e29;
+  z-index: 1;
+}
+.logo_wrapper .logo span {
+  font-size: 24px;
+  font-family: "M PLUS 1 Code", sans-serif;
+}
+.logo_wrapper .logo svg {
+  font-size: 24px;
+}
+.logo_wrapper .logo_decoration {
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  border: 3.5px solid;
+  font-family: "Freehand", cursive;
+  font-size: 10px;
+  display: flex;
+  gap: 5px;
+}
+.logo_wrapper .logo_decoration .not {
+  color: #696e79;
+}
+.logo_wrapper .logo_decoration .again {
+  color: #696e79;
+}

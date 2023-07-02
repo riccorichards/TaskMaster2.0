@@ -1,0 +1,44 @@
+@use "../../../sass/var.scss";
+
+.real_data {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+
+	.real_time {
+		font-family: var.$time;
+		font-size: 48px;
+		color: var.$white;
+		text-shadow: 0 0 2.5px var.$aqua;
+	}
+  
+	.real_data_wrapper {
+    display: flex;
+		gap: 15px;
+		align-items: center;
+
+		.real_data {
+			font-family: var.$font;
+			color: var.$grey;
+			text-shadow: 0 0 1.5px var.$aqua_shadow;
+			font-size: 18px;
+		}
+		.real_data_decoration {
+			width: 25px;
+			height: 25px;
+			background-color: var.$aqua;
+			transform: rotate(45deg);
+			box-shadow: 0 0 15px var.$aqua_shadow;
+			animation: rotate 45s linear infinite;
+		}
+	}
+}
+
+@keyframes rotate {
+	0% {
+		transform: rotate(0);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}

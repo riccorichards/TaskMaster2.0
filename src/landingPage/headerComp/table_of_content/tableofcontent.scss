@@ -1,0 +1,51 @@
+@use "../../../sass/var.scss";
+
+.table_of_content {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 10px 15px;
+	height: 100%;
+
+	h1 {
+		font-family: var.$font;
+		color: var.$dark_blue;
+		text-shadow: 0 0 .5px var.$aqua;
+	}
+
+	.content_router {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+
+		a {
+			font-size: 18px;
+			font-family: var.$font;
+			text-decoration: none;
+      color: var.$grey;
+			transition: all .25s ease-in;
+
+			&:hover {
+				text-decoration: underline;
+				letter-spacing: 1px;
+			}
+		}
+	}
+
+	.follow_me {
+		display: flex;
+		gap: 15px;
+		align-self: flex-end;
+    
+		a{
+			font-size: 32px;
+			color: var.$dark_blue;
+			transition: all .25s ease;
+
+			&:hover {
+        color: var.$aqua;
+
+			}
+		}
+	}
+}

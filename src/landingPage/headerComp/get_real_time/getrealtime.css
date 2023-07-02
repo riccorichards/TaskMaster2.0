@@ -1,0 +1,39 @@
+.real_data {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.real_data .real_time {
+  font-family: "Orbitron", sans-serif;
+  font-size: 48px;
+  color: #fff;
+  text-shadow: 0 0 2.5px #01c380;
+}
+.real_data .real_data_wrapper {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+.real_data .real_data_wrapper .real_data {
+  font-family: "M PLUS 1 Code", sans-serif;
+  color: #696e79;
+  text-shadow: 0 0 1.5px rgba(1, 195, 127, 0.2078431373);
+  font-size: 18px;
+}
+.real_data .real_data_wrapper .real_data_decoration {
+  width: 25px;
+  height: 25px;
+  background-color: #01c380;
+  transform: rotate(45deg);
+  box-shadow: 0 0 15px rgba(1, 195, 127, 0.2078431373);
+  animation: rotate 45s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
