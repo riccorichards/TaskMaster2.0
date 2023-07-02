@@ -1,0 +1,30 @@
+@use "../../../sass/var.scss";
+
+.choose_our_way {
+	width: 90%;
+	height: 100vh;
+	display: flex;
+	margin: 0 auto;
+	align-items: center;
+	
+  .text_ourWay_wrapper {
+		flex: 1;
+		display: flex;
+		align-items: center;
+	}
+
+	.VideoOurWay_wrapper {
+	flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  video {
+    max-width: 100%;
+    max-height: 100%;
+		border-radius: 55px 0 0 55px;
+		border: var.$aqua_shadow 15px solid;
+		box-shadow: 0 0 55px var.$aqua_shadow;
+  }
+}
+}

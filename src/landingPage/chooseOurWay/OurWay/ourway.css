@@ -1,0 +1,25 @@
+.choose_our_way {
+  width: 90%;
+  height: 100vh;
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+}
+.choose_our_way .text_ourWay_wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.choose_our_way .VideoOurWay_wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.choose_our_way .VideoOurWay_wrapper video {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 55px 0 0 55px;
+  border: rgba(1, 195, 127, 0.2078431373) 15px solid;
+  box-shadow: 0 0 55px rgba(1, 195, 127, 0.2078431373);
+}
