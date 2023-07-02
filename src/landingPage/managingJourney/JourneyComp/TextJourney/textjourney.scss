@@ -1,0 +1,30 @@
+@use "../../../../sass/var.scss";
+
+.text_jurney_part {
+display: flex;
+flex-direction: column;
+gap: 25px;
+.text_jurney_header {
+position: relative;
+	span {
+		font-family: var.$time;
+		font-size: 245px;
+		font-weight: 900;
+		color: var.$grey_shadow;
+	}
+  h1{
+  font-family: var.$font;
+	color: var.$white;
+	font-size: 45px;
+	position: absolute;
+	left: 10%;
+	top: 70%;
+	}
+
+}
+p {
+	color: var.$grey;
+	font-size: 24px;
+	padding-left: 15px;
+}
+}
