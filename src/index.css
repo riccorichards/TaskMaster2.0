@@ -19,15 +19,15 @@
  }
 
  ::-webkit-scrollbar-track {
-  background: #191e29; /* Color of the track */
+  background: #191e29; 
 }
 
-/* Handle */
+
 ::-webkit-scrollbar-thumb {
-  background: #01c380; /* Color of the handle */
-  border-radius: 5px; /* Rounded corners of the handle */
+  background: #01c380; 
+  border-radius: 5px; 
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #019f6e; /* Color of the handle on hover */
+  background: #019f6e; 
 }
