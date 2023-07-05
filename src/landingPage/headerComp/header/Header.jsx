@@ -4,10 +4,13 @@ import GetRealTime from './../get_real_time/GetRealTime';
 import { GiStairsGoal } from "react-icons/gi";
 import TableOfContent from './../table_of_content/TableOfContent';
 import data_visualisation_bg from "../../../assets/data_visualisation_bg.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { BsArrowRight } from "react-icons/bs";
 const Header = () => {
-
+	const navigate = useNavigate()
+	const goToAuth = () => {
+		navigate("/auth");
+	}
 	return (
 		<header>
 			<div className="carrent_data">
@@ -19,7 +22,7 @@ const Header = () => {
 						<GetRealTime />
 					</div>
 					<button
-						className="joinwithus">Sign Up <GiStairsGoal /></button>
+						className="joinwithus" onClick={() => goToAuth()}>Sign Up <GiStairsGoal /></button>
 				</div>
 				<div className="tableOfContent_wrapper">
 					<TableOfContent />
@@ -33,7 +36,7 @@ const Header = () => {
 				</div>
 			</div>
 
-			<Link className="startUp">
+			<Link className="startUp" to="/auth">
 				<span>Start</span>
 				<BsArrowRight /></Link>
 		</header>

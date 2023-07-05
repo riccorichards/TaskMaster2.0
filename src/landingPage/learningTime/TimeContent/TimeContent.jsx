@@ -3,7 +3,7 @@ import tree from "../../../assets/videos/tree.mp4";
 import TextLearninTime from './../TextLearningTime/TextLearningTime';
 const TimeContent = () => {
 	return (
-		<div className="timeContent">
+		<div className="timeContent" id="learningTime">
 			<div className="Video_time_wrapper">
 				<video src={tree} autoPlay loop muted />
 			</div>

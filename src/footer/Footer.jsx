@@ -2,8 +2,19 @@ import "./footer.css";
 import footer_bg from "../assets/footer_bg.png";
 import { AiFillLinkedin, AiFillGithub, AiFillTwitterSquare, AiFillFacebook, AiFillInstagram } from "react-icons/ai";
 import { SiCodewars } from "react-icons/si";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 const Footer = () => {
+	const scrollToComponents = (id) => {
+		const element = document.getElementById(id)
+		if (element) {
+			element.scrollIntoView({ behavior: "smooth" })
+		}
+	}
+
+	const navigate = useNavigate()
+	const goToAuth = () => {
+		navigate("/auth");
+	}
 	return (
 		<div className="footer_wrapper">
 			<img src={footer_bg} alt="footer background" />
@@ -39,18 +50,18 @@ const Footer = () => {
 						<div className="footer_navigation">
 							<h2>navigate</h2>
 							<div className="footer_navigation_links">
-								<Link>Journey</Link>
-								<Link>Progress</Link>
-								<Link>Data Visualization</Link>
-								<Link>Time</Link>
-								<Link>Our Way</Link>
+								<Link to="#" onClick={() => scrollToComponents("journey")}>Journey</Link>
+								<Link to="#" onClick={() => scrollToComponents("progress")}>Progress</Link>
+								<Link to="#" onClick={() => scrollToComponents("visualization")}>Data Visualization</Link>
+								<Link to="#" onClick={() => scrollToComponents("learningTime")}>Time</Link>
+								<Link to="#" onClick={() => scrollToComponents("yourWay")}>your Way</Link>
 							</div>
 						</div>
 					</div>
 				</div>
 				<div className="footer_BTNs">
 					<button className="downloadCV">Download CV</button>
-					<button className="footer_sign_up">Sign Up</button>
+					<button className="footer_sign_up" onClick={() => goToAuth()}>Sign Up</button>
 				</div>
 				<div className="footer_line" />
 				<span className="copyright">© Copyright 2023. Made by RiccoRichards</span>

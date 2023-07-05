@@ -1,18 +1,18 @@
-.textOurWay {
+.textYourWay {
   display: flex;
   flex-direction: column;
   gap: 25px;
 }
-.textOurWay .text_textOurWay_header {
+.textYourWay .text_textYourWay_header {
   position: relative;
 }
-.textOurWay .text_textOurWay_header span {
+.textYourWay .text_textYourWay_header span {
   font-family: "Orbitron", sans-serif;
   font-size: 245px;
   font-weight: 900;
   color: rgba(105, 110, 121, 0.2352941176);
 }
-.textOurWay .text_textOurWay_header h1 {
+.textYourWay .text_textYourWay_header h1 {
   font-family: "M PLUS 1 Code", sans-serif;
   color: #fff;
   font-size: 45px;
@@ -20,7 +20,7 @@
   left: 10%;
   top: 70%;
 }
-.textOurWay p {
+.textYourWay p {
   color: #696e79;
   font-size: 24px;
   padding-left: 15px;

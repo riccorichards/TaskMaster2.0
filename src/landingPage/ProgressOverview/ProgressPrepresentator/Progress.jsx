@@ -3,7 +3,7 @@ import "./progress.css";
 import TextProgress from './../TextProgressComp/TextProgress';
 const Progress = () => {
 	return (
-		<div className="progress_representator">
+		<div className="progress_representator" id="progress">
 			<div className="VideoProgress_wrapper">
 				<video src={tree} autoPlay loop muted />
 			</div>

@@ -1,0 +1,140 @@
+.sign_in_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-family: "M PLUS 1 Code", sans-serif;
+}
+.sign_in_wrapper .sign_in {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.sign_in_wrapper .sign_in h1 {
+  font-size: 40px;
+  color: #fff;
+}
+.sign_in_wrapper .sign_in .login_with_social {
+  align-self: center;
+  display: flex;
+  gap: 20px;
+}
+.sign_in_wrapper .sign_in .login_with_social img {
+  width: 18px;
+}
+.sign_in_wrapper .sign_in .login_with_social .google {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 16px;
+  font-family: "M PLUS 1 Code", sans-serif;
+  color: #132d46;
+  transition: all 0.25s ease-in;
+}
+.sign_in_wrapper .sign_in .login_with_social .google:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+.sign_in_wrapper .sign_in .login_with_social .facebook {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 16px;
+  font-family: "M PLUS 1 Code", sans-serif;
+  color: #132d46;
+  transition: all 0.25s ease-in;
+}
+.sign_in_wrapper .sign_in .login_with_social .facebook:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+.sign_in_wrapper .sign_in span {
+  align-self: center;
+  font-size: 24px;
+  color: #fff;
+}
+.sign_in_wrapper .sign_in #signIn_form {
+  display: flex;
+  flex-direction: column;
+  width: 65%;
+  gap: 40px;
+  margin: 0 auto;
+}
+.sign_in_wrapper .sign_in #signIn_form input {
+  padding: 10px 25px;
+  font-family: "M PLUS 1 Code", sans-serif;
+  letter-spacing: 1.5px;
+  font-size: 16px;
+  width: 100%;
+}
+.sign_in_wrapper .sign_in #signIn_form input::-moz-placeholder {
+  color: #132d46;
+}
+.sign_in_wrapper .sign_in #signIn_form input::placeholder {
+  color: #132d46;
+}
+.sign_in_wrapper .sign_in #signIn_form input:focus {
+  outline: none;
+}
+.sign_in_wrapper .sign_in #signIn_form .signIn_email_wrapper {
+  position: relative;
+}
+.sign_in_wrapper .sign_in #signIn_form .signIn_email_wrapper svg {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 5%;
+  font-size: 24px;
+  color: #132d46;
+}
+.sign_in_wrapper .sign_in #signIn_form .signIn_email_wrapper .signIn_err_email {
+  position: absolute;
+  color: red;
+  font-size: 12px;
+  top: 100%;
+  left: 0;
+}
+.sign_in_wrapper .sign_in #signIn_form .signIn_password_wrapper {
+  position: relative;
+}
+.sign_in_wrapper .sign_in #signIn_form .signIn_password_wrapper svg {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 5%;
+  font-size: 24px;
+  color: #132d46;
+}
+.sign_in_wrapper .sign_in #signIn_form .signIn_password_wrapper .forgot_password {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  text-decoration: none;
+  color: #696e79;
+}
+.sign_in_wrapper .sign_in #signIn_form .signIn_password_wrapper .forgot_password:hover {
+  text-decoration: underline;
+}
+.sign_in_wrapper .sign_in #signIn_form .signIn_password_wrapper .signIn_err_password {
+  position: absolute;
+  color: red;
+  font-size: 12px;
+  top: 140%;
+  left: 0;
+}
+.sign_in_wrapper .sign_in #signIn_form button {
+  padding: 10px 15px;
+  font-family: "M PLUS 1 Code", sans-serif;
+  letter-spacing: 1.5px;
+  font-size: 16px;
+  background-color: #01c380;
+  border: #01c380 1px solid;
+  color: #fff;
+  width: -moz-fit-content;
+  width: fit-content;
+  transition: all 0.25s ease-in;
+}
+.sign_in_wrapper .sign_in #signIn_form button:hover {
+  cursor: pointer;
+  background-color: rgba(19, 45, 70, 0.2196078431);
+}

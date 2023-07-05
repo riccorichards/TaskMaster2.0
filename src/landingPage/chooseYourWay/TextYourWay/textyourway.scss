@@ -1,11 +1,11 @@
 @use "../../../sass/var.scss";
 
-.textOurWay {
+.textYourWay {
 	display: flex;
 	flex-direction: column;
 	gap: 25px;
 	
-	.text_textOurWay_header {
+	.text_textYourWay_header {
 	position: relative;
 		span {
 			font-family: var.$time;

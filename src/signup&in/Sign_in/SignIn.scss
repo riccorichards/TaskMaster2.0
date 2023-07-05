@@ -1,0 +1,158 @@
+@use "../../sass/var.scss";
+
+.sign_in_wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+  font-family: var.$font;
+	
+	.sign_in {
+		display: flex;
+		flex-direction: column;
+		gap: 40px;
+
+
+		h1{
+			font-size: 40px;
+			color: var.$white;
+		}
+
+		.login_with_social {
+			align-self: center;
+			display: flex;
+			gap: 20px;
+	 
+			img {
+			 width: 18px;
+			}
+	 
+			.google {
+			 display: flex;
+			 align-items: center;
+			 gap: 5px;
+			 padding: 8px 16px;
+			 font-family: var.$font;
+			 color: var.$dark_blue;
+			 transition: all .25s ease-in;
+	 
+			 &:hover {
+			 cursor: pointer;
+			 opacity: 0.5;
+			 }
+			}
+			.facebook {
+			 display: flex;
+			 align-items: center;
+			 gap: 5px;
+			 padding: 8px 16px;
+			 font-family: var.$font;
+			 color: var.$dark_blue;
+			 transition: all .25s ease-in;
+	 
+			 &:hover {
+			 cursor: pointer;
+			 opacity: 0.5;
+			 }
+			}
+		 }
+
+		 span {
+			align-self: center;
+			font-size: 24px;
+			color: var.$white;
+		}
+
+		#signIn_form {
+			display: flex;
+			flex-direction: column;
+			width: 65%;
+			gap: 40px;
+			margin: 0 auto;
+	
+			input {	
+				padding: 10px 25px;
+				font-family: var.$font;
+				letter-spacing: 1.5px;
+				font-size: 16px;
+				width: 100%;
+
+				&::placeholder {
+					color: var.$dark_blue;
+				}
+
+				&:focus{
+					outline: none;
+				}
+			}
+
+			.signIn_email_wrapper {
+				position: relative;
+
+				svg {
+					position: absolute;
+					transform: translate(-50%, -50%);
+					top: 50%;
+					left: 5%;
+					font-size: 24px;
+					color: var.$dark_blue;
+				}
+				.signIn_err_email {
+					position: absolute;
+					color: red;
+					font-size: 12px;
+					top: 100%;
+					left: 0;
+				}
+			}
+			.signIn_password_wrapper {
+				position: relative;
+
+				svg {
+					position: absolute;
+					transform: translate(-50%, -50%);
+					top: 50%;
+					left: 5%;
+					font-size: 24px;
+					color: var.$dark_blue;
+				}
+
+				.forgot_password {
+					position: absolute;
+					top: 100%;
+					right: 0;
+					text-decoration: none;
+					color: var.$grey;
+
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+				.signIn_err_password {
+					position: absolute;
+					color: red;
+					font-size: 12px;
+					top: 140%;
+					left: 0;
+				}
+			}
+	
+			button {
+				padding: 10px 15px;
+				font-family: var.$font;
+				letter-spacing: 1.5px;
+				font-size: 16px;
+				background-color: var.$aqua;
+				border: var.$aqua 1px solid;
+				color: var.$white;
+				width: fit-content;
+				transition: all .25s ease-in;
+	
+				&:hover {
+					cursor: pointer;
+					background-color: var.$dark_blue_shadow;
+				}
+			}
+		}
+	} 
+}

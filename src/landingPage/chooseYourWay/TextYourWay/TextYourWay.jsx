@@ -1,9 +1,9 @@
-import "./textourway.css";
+import "./textyourway.css";
 
-const TextOurWay = () => {
+const TextYourWay = () => {
 	return (
-		<div className="textOurWay">
-			<div className="text_textOurWay_header">
+		<div className="textYourWay">
+			<div className="text_textYourWay_header">
 				<span>05</span>
 				<h1>Choose Your Way</h1>
 			</div>
@@ -12,4 +12,4 @@ const TextOurWay = () => {
 	)
 }
 
-export default TextOurWay;
+export default TextYourWay;

@@ -1,0 +1,35 @@
+.sign_up_form_wrapper {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  margin-bottom: 160px;
+}
+.sign_up_form_wrapper .media_area_sign {
+  flex: 2;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sign_up_form_wrapper .media_area_sign img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  filter: blur(5px);
+}
+.sign_up_form_wrapper .media_area_sign .Logo_sign {
+  z-index: 1;
+  position: absolute;
+  top: 2.5%;
+  left: 2.5%;
+}
+.sign_up_form_wrapper .media_area_sign h1 {
+  z-index: 1;
+  font-size: 45px;
+  font-family: "M PLUS 1 Code", sans-serif;
+  color: #fff;
+  text-shadow: 0 0 2.5px #132d46;
+}
+.sign_up_form_wrapper .sign_form_wrapper {
+  flex: 1.3;
+}

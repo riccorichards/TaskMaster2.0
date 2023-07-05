@@ -3,7 +3,7 @@ import TextJourney from '../TextJourney/TextJourey';
 import tree from "../../../assets/videos/tree.mp4";
 const Journey = () => {
 	return (
-		<div className="journey">
+		<div className="journey" id="journey">
 			<div className="text_journey_wrapper">
 				<TextJourney />
 			</div>

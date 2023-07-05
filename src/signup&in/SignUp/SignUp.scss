@@ -1,0 +1,155 @@
+@use "../../sass/var.scss";
+
+.sign_up_form {
+  flex: 1.3;
+  box-shadow: 0 0 55px var.$dark_blue_shadow;	
+	padding: 10px;
+	font-family: var.$font;
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+
+	h1{
+		font-size: 40px;
+		color: var.$white;
+	}
+
+	.login_with_social {
+   align-self: center;
+	 display: flex;
+	 gap: 20px;
+
+	 img {
+		width: 18px;
+	 }
+
+	 .google {
+		display: flex;
+		align-items: center;
+		gap: 5px;
+		padding: 8px 16px;
+    font-family: var.$font;
+		color: var.$dark_blue;
+		transition: all .25s ease-in;
+
+		&:hover {
+    cursor: pointer;
+		opacity: 0.5;
+		}
+	 }
+	 .facebook {
+		display: flex;
+		align-items: center;
+		gap: 5px;
+		padding: 8px 16px;
+    font-family: var.$font;
+		color: var.$dark_blue;
+		transition: all .25s ease-in;
+
+		&:hover {
+    cursor: pointer;
+		opacity: 0.5;
+		}
+	 }
+	}
+  
+	span {
+		align-self: center;
+		font-size: 24px;
+		color: var.$white;
+	}
+  
+	#form_wrapper {
+		display: flex;
+		flex-direction: column;
+		width: 65%;
+		gap: 40px;
+		margin: 0 auto;
+
+		input {	
+			padding: 10px 15px;
+			font-family: var.$font;
+			letter-spacing: 1.5px;
+			font-size: 16px;
+			width: 100%;
+
+			&:focus{
+				outline: none;
+			}
+
+			&::placeholder{
+				color: var.$dark_blue;
+			}
+		}
+
+		.signUp_username_wrapper {
+			position: relative;
+			width: 100%;
+			.error_signUp_username {
+				font-size: 12px;
+				color: red;
+				position: absolute;
+				top: 100%;
+				left: 0;
+			}
+		}
+		.signUp_email_wrapper {
+			position: relative;
+			width: 100%;
+			.error_signUp_email {
+				font-size: 12px;
+				color: red;
+				position: absolute;
+				top: 100%;
+				left: 0;
+			}
+		}
+		.signUp_password_wrapper {
+			position: relative;
+			width: 100%;
+			.error_signUp_password {
+				font-size: 12px;
+				color: red;
+				position: absolute;
+				top: 100%;
+				left: 0;
+			}
+		}
+		.signUp_confirm_wrapper {
+			position: relative;
+			width: 100%;
+			.error_confirm {
+				font-size: 12px;
+				color: red;
+				position: absolute;
+				top: 100%;
+				left: 0;
+			}
+		}
+		.form_BTN {
+			padding: 10px 15px;
+			font-family: var.$font;
+			letter-spacing: 1.5px;
+			font-size: 16px;
+			background-color: var.$aqua;
+			border: var.$aqua 1px solid;
+			color: var.$white;
+			width: fit-content;
+			transition: all .25s ease-in;
+
+			&:hover {
+				cursor: pointer;
+        background-color: var.$dark_blue_shadow;
+			}
+		}
+	}
+	.cheking_account {
+		margin: 0 auto;
+    color: var.$grey;
+
+
+		a{
+			color: var.$white;
+		}
+	}
+	}

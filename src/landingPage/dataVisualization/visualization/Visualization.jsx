@@ -3,7 +3,7 @@ import data_visual from "../../../assets/videos/tree.mp4";
 import TextVisualization from './../TextVisualization/TextVisualization';
 const Visualization = () => {
 	return (
-		<div className="data_visualization">
+		<div className="data_visualization" id="visualization">
 			<div className="text_visualization">
 				<TextVisualization />
 			</div>

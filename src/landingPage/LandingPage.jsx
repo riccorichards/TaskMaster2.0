@@ -4,7 +4,7 @@ import Journey from './managingJourney/Journey/Journey';
 import Visualization from './dataVisualization/visualization/Visualization';
 import Progress from './ProgressOverview/ProgressPrepresentator/Progress';
 import TimeContent from './learningTime/TimeContent/TimeContent';
-import OurWay from './chooseOurWay/OurWay/OurWay';
+import YourWay from './chooseYourWay/YourWay/YourWay';
 
 const LandingWrapper = styled.div`
 display: flex;
@@ -15,11 +15,13 @@ const LandigPage = () => {
 	return (
 		<LandingWrapper>
 			<Header />
-			<Journey />
-			<Progress />
-			<Visualization />
-			<TimeContent />
-			<OurWay />
+			<main>
+				<Journey />
+				<Progress />
+				<Visualization />
+				<TimeContent />
+				<YourWay />
+			</main>
 		</LandingWrapper>
 	)
 }
