@@ -1,10 +1,17 @@
-import Navbar from './NavBar/Navbar';
+import "./dashboard.css";
+import Navbar from './dashboardComp/navbar/Navbar';
+import Overview from './dashboardComp/overview/Overview';
 
 const Dashboard = () => {
 
 	return (
 		<main className="dashboard_main">
-			<Navbar />
+			<div className="navBar_wrapper">
+				<Navbar />
+			</div>
+			<div className="components_wrapper">
+				<Overview />
+			</div>
 		</main>
 	)
 }

@@ -1,0 +1,89 @@
+.navbar {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  height: 95vh;
+  padding: 20px;
+  background-color: rgba(19, 45, 70, 0.2196078431);
+  border-radius: 25px;
+  box-shadow: 0 0 55px rgba(105, 110, 121, 0.2352941176);
+}
+.navbar .navbar_header {
+  flex: 1.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.navbar .navbar_header img {
+  width: 75px;
+  height: 75px;
+  border-radius: 10px;
+}
+.navbar .navbar_navigate {
+  flex: 3;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+}
+.navbar .navbar_navigate a {
+  font-size: 24px;
+  font-family: "M PLUS 1 Code", sans-serif;
+  text-decoration: none;
+  color: #696e79;
+  border: 1px solid transparent;
+  padding: 10px 20px;
+  transition: all 0.25s ease-in;
+}
+.navbar .navbar_navigate a:hover {
+  border: 1px solid #fff;
+  letter-spacing: 2px;
+}
+.navbar .navbar_navigate .overview_svg {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.navbar .navbar_navigate .task_svg {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.navbar .navbar_navigate .timer_svg {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.navbar .navbar_navigate .map_svg {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.navbar .navbar_navigate .history_svg {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.navbar .navbar_footer {
+  flex: 0.5;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.navbar .navbar_footer svg {
+  font-size: 24px;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.25s ease-in;
+}
+.navbar .navbar_footer svg:first-child {
+  color: #01c380;
+  font-size: 28px;
+}
+.navbar .navbar_footer svg:first-child:hover {
+  color: #132d46;
+}
+.navbar .navbar_footer svg:nth-child(2):hover {
+  color: red;
+}

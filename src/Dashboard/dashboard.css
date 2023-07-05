@@ -1,0 +1,14 @@
+.dashboard_main {
+  height: 100vh;
+  display: flex;
+  gap: 25px;
+}
+.dashboard_main .navBar_wrapper {
+  flex: 1;
+  margin: auto 0;
+}
+.dashboard_main .components_wrapper {
+  flex: 2.5;
+  margin: auto 0;
+  border: 1px solid #fff;
+}

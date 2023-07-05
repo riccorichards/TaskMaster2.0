@@ -1,5 +1,6 @@
 import moment from "moment";
 import { useState, useEffect } from "react";
+import { styled } from "styled-components";
 
 const Greeting = () => {
 	const [greeting, setgreeting] = useState("")
@@ -22,12 +23,32 @@ const Greeting = () => {
 			clearInterval(interval)
 		}
 	}, [greeting])
-	const existUser = JSON.parse(localStorage.getItem("verified"))
-	const username = existUser.firstname;
+	const existUser = JSON.parse(localStorage.getItem("user"))
+	const username = existUser.username;
+	const GreetingStyle = styled.div`
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	align-items: center;
+
+	h1 {
+		color: #191e29;
+    text-shadow: 0 0 1.5px white;
+		font-family: 'M PLUS 1 Code', sans-serif;
+	}
+
+	span {
+		color: #01c380;
+		font-family: 'M PLUS 1 Code', sans-serif;
+		font-size: 24px;
+	}
+	`;
+
 	return (
-		<>
-			<h1><span style={{ color: "#243524" }}>{greeting}</span> {username}</h1>
-		</>
+		<GreetingStyle>
+			<h1>{username}</h1>
+			<span>{greeting}</span>
+		</GreetingStyle>
 	)
 }
 
