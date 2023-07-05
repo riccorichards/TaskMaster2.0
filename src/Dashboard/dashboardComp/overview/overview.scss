@@ -1,6 +1,10 @@
 @use "../../../sass/var.scss";
 
 .overview {
-	height: 80vh;
-	border: 1px solid #fff;
+	height: 90vh;
+	padding: 20px;
+	box-shadow: 0 0 55px var.$dark_blue_shadow;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
 }

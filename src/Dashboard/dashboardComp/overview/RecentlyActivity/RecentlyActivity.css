@@ -1,0 +1,25 @@
+.RecentlyActivity {
+  height: 100%;
+  font-family: "M PLUS 1 Code", sans-serif;
+  overflow-y: scroll;
+  padding: 5px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(1, 195, 127, 0.2078431373);
+}
+.RecentlyActivity h3 {
+  font-size: 24px;
+  color: #132d46;
+  text-shadow: 0 0 1.5px #01c380;
+}
+.RecentlyActivity table {
+  margin-top: 5px;
+  width: 100%;
+}
+.RecentlyActivity table th {
+  color: #fff;
+  text-decoration: underline;
+}
+.RecentlyActivity table td {
+  text-align: center;
+  color: #696e79;
+}

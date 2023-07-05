@@ -2,6 +2,24 @@ import moment from "moment";
 import { useState, useEffect } from "react";
 import { styled } from "styled-components";
 
+const GreetingStyle = styled.div`
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	align-items: center;
+
+	h1 {
+		color: #191e29;
+    text-shadow: 0 0 1.5px white;
+		font-family: 'M PLUS 1 Code', sans-serif;
+	}
+
+	span {
+		color: #01c380;
+		font-family: 'M PLUS 1 Code', sans-serif;
+		font-size: 24px;
+	}
+	`;
 const Greeting = () => {
 	const [greeting, setgreeting] = useState("")
 
@@ -25,24 +43,8 @@ const Greeting = () => {
 	}, [greeting])
 	const existUser = JSON.parse(localStorage.getItem("user"))
 	const username = existUser.username;
-	const GreetingStyle = styled.div`
-	display: flex;
-	flex-direction: column;
-	gap: 5px;
-	align-items: center;
 
-	h1 {
-		color: #191e29;
-    text-shadow: 0 0 1.5px white;
-		font-family: 'M PLUS 1 Code', sans-serif;
-	}
 
-	span {
-		color: #01c380;
-		font-family: 'M PLUS 1 Code', sans-serif;
-		font-size: 24px;
-	}
-	`;
 
 	return (
 		<GreetingStyle>

@@ -1,7 +1,7 @@
 import "./navbar.css";
 import profile_img from "../../../assets/profile.jpg";
 import Greeting from './Greeting';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { ImSwitch } from "react-icons/im";
 import { IoIosSettings } from "react-icons/io";
 import { AiFillPieChart } from "react-icons/ai";
@@ -10,6 +10,11 @@ import { MdTimer } from "react-icons/md";
 import { FaSitemap } from "react-icons/fa";
 import { ImHistory } from "react-icons/im";
 const Navbar = () => {
+	const navigate = useNavigate()
+	const userLogOut = () => {
+		localStorage.removeItem("existUser")
+		navigate("/")
+	}
 	return (
 		<div className="navbar">
 			<div className="navbar_header">
@@ -40,7 +45,7 @@ const Navbar = () => {
 			</div>
 			<div className="navbar_footer">
 				<IoIosSettings />
-				<ImSwitch />
+				<ImSwitch onClick={() => userLogOut()}/>
 			</div>
 		</div>
 	)

@@ -1,0 +1,26 @@
+@use "../../../../../sass/var.scss";
+
+.OverviewDataQuality {
+	display: flex;
+  align-items: flex-end;
+  border-radius: 15px;
+	box-shadow: 0 0 15px var.$aqua_shadow;
+
+	.quality_data {
+    display: flex;
+		flex-direction: column;
+		align-items: center;
+    padding: 5px;
+
+		h2 {
+			font-family: var.$font;
+			color: var.$dark_blue;
+			text-shadow: 0 0 1.5px var.$aqua;
+		}
+		span {
+			font-family: var.$time;
+			color: var.$white;
+			text-shadow: 0 0 1.5px var.$dark_blue;
+		}
+	}
+}

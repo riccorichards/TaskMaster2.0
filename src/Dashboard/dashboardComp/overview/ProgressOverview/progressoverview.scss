@@ -1,0 +1,18 @@
+@use "../../../../sass/var.scss";
+
+.ProgressOverview {
+	display: flex;
+	gap: 10px;
+
+	.during_progress {
+		flex: 2;
+		border-radius: 15px;
+		box-shadow: 0 0 15px var.$aqua_shadow;
+	}
+
+	.progress_skills {
+		flex: 1;
+		border-radius: 15px;
+		box-shadow: 0 0 15px var.$aqua_shadow;
+	}
+}

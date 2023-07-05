@@ -1,2 +1,7 @@
 @use "../../../../sass/var.scss";
 
+.OverviewData {
+	display: grid; 
+	grid-template-columns: repeat(3, 1fr);
+	gap: 10px;
+}

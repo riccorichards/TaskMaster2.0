@@ -1,0 +1,14 @@
+.ProgressOverview {
+  display: flex;
+  gap: 10px;
+}
+.ProgressOverview .during_progress {
+  flex: 2;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(1, 195, 127, 0.2078431373);
+}
+.ProgressOverview .progress_skills {
+  flex: 1;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(1, 195, 127, 0.2078431373);
+}

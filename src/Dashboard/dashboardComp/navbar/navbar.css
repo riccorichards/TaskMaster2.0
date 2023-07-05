@@ -39,6 +39,7 @@
 .navbar .navbar_navigate a:hover {
   border: 1px solid #fff;
   letter-spacing: 2px;
+  color: #01c380;
 }
 .navbar .navbar_navigate .overview_svg {
   display: flex;

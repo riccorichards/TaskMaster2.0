@@ -1,0 +1,31 @@
+@use "../../../../sass/var.scss";
+
+.RecentlyActivity {
+	height: 100%;
+	font-family: var.$font;
+	overflow-y: scroll;
+	padding: 5px;
+	border-radius: 15px;
+	box-shadow: 0 0 15px var.$aqua_shadow;
+
+	h3{
+		font-size: 24px;
+		color: var.$dark_blue;
+		text-shadow: 0 0 1.5px var.$aqua;
+	}
+  
+	table {
+		margin-top: 5px;
+		width: 100%;
+
+		th {
+			color: var.$white;
+			text-decoration: underline;
+		}
+
+		td {
+			text-align: center;
+			color: var.$grey;
+		}
+	}
+}
