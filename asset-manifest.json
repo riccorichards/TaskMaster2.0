@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/TaskMaster2.0/static/css/main.ab190552.css",
-    "main.js": "/TaskMaster2.0/static/js/main.22e78682.js",
+    "main.js": "/TaskMaster2.0/static/js/main.85cdb53d.js",
     "static/media/tree.mp4": "/TaskMaster2.0/static/media/tree.d6bd7b7210da42d251db.mp4",
     "static/media/profile.jpg": "/TaskMaster2.0/static/media/profile.1a7abc19b3724174afcc.jpg",
     "static/media/bg_for_sign.png": "/TaskMaster2.0/static/media/bg_for_sign.5b709282559c1f833203.png",
@@ -9,10 +9,10 @@
     "static/media/footer_bg.png": "/TaskMaster2.0/static/media/footer_bg.ba098f2f1fb6e82ed1fa.png",
     "index.html": "/TaskMaster2.0/index.html",
     "main.ab190552.css.map": "/TaskMaster2.0/static/css/main.ab190552.css.map",
-    "main.22e78682.js.map": "/TaskMaster2.0/static/js/main.22e78682.js.map"
+    "main.85cdb53d.js.map": "/TaskMaster2.0/static/js/main.85cdb53d.js.map"
   },
   "entrypoints": [
     "static/css/main.ab190552.css",
-    "static/js/main.22e78682.js"
+    "static/js/main.85cdb53d.js"
   ]
 }
