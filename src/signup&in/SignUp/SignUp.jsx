@@ -16,6 +16,8 @@ const SignUp = () => {
 	const onSubmit = data => {
 		const userItem = JSON.stringify(data)
 		localStorage.setItem("user", userItem)
+		const existUser = JSON.stringify(data)
+		localStorage.setItem("existUser", existUser)
 		setUser(userItem)
 		reset()
 	}

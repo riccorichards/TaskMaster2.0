@@ -7,20 +7,10 @@ import ScrollToTop from './ScrollToTop';
 import Dashboard from "./Dashboard/Dashboard";
 
 function App() {
-  const [goal, setGoal] = useState("")
-  const [children, setChildren] = useState([])
-  const graphData = {
-    "name": goal,
-    "children": [
-      {
-        "name": children,
-        "children": []
-      }
-    ]
-  }
+  
   const [user, setUser] = useState(null)
-  const validUser = JSON.parse(localStorage.getItem("user"))
-  const values = { user, setUser, validUser, graphData, setGoal, setChildren }
+  const validUser = JSON.parse(localStorage.getItem("existUser"))
+  const values = { user, setUser, validUser}
 
   return (
     <HashRouter>
