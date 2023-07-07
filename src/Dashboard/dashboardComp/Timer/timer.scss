@@ -1,0 +1,229 @@
+@use "../../../sass/var.scss";
+
+
+.timer {
+	height: 100vh;
+	padding: 20px;
+	box-shadow: 0 0 55px var.$dark_blue_shadow;
+	display: flex;
+	gap: 30px;
+  justify-content: space-evenly;
+	align-items: center;
+  font-family: var.$font;
+  color: var.$white;
+
+  .choose_time_method {
+		width: 250px;
+		height: 400px;
+    padding: 15px;
+		border-radius: 15px;
+		box-shadow: 0 0 25px var.$aqua_shadow;
+    display: flex;
+		flex-direction: column;
+		gap: 85px;
+		align-items: center;
+    
+		.time_methodes {
+      display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: repeat(2, 1fr);
+			gap: 30px;
+
+			.pomodora_method {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			color: var.$aqua;
+			text-shadow: 0 0 1.5px var.$dark_blue;
+			width: fit-content;
+			width: 80px;
+			height: 80px;
+			justify-content: center;
+			box-shadow: 2px 2px 10px var.$aqua_shadow, -2px -2px 10px var.$dark_blue;
+			border-radius: 5px;
+			transition: all .25s ease-in;
+			svg {
+				font-size: 24px;
+			}
+
+			&:hover {
+				cursor: pointer;
+				color: var.$dark_blue;
+				background-color: var.$aqua;
+			}
+			}
+			.timer_method {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			color: var.$aqua;
+			text-shadow: 0 0 1.5px var.$dark_blue;
+			width: fit-content;
+			width: 80px;
+			height: 80px;
+			justify-content: center;
+			box-shadow: 2px 2px 10px var.$aqua_shadow, -2px -2px 10px var.$dark_blue;
+			border-radius: 5px;
+			transition: all .25s ease-in;
+			svg {
+				font-size: 24px;
+			}
+
+			&:hover {
+				cursor: pointer;
+				color: var.$dark_blue;
+				background-color: var.$aqua;
+			}
+			}
+			.restFiveMin {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			color: var.$aqua;
+			text-shadow: 0 0 1.5px var.$dark_blue;
+			width: fit-content;
+			width: 80px;
+			height: 80px;
+			justify-content: center;
+			box-shadow: 2px 2px 10px var.$aqua_shadow, -2px -2px 10px var.$dark_blue;
+			border-radius: 5px;
+			transition: all .25s ease-in;
+			span {
+				font-family: var.$time;
+				font-size: 24px;
+			}
+
+			&:hover {
+				cursor: pointer;
+				color: var.$dark_blue;
+				background-color: var.$aqua;
+			}
+			}
+			.restFifteenMin {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			color: var.$aqua;
+			text-shadow: 0 0 1.5px var.$dark_blue;
+			width: fit-content;
+			width: 80px;
+			height: 80px;
+			justify-content: center;
+			box-shadow: 2px 2px 10px var.$aqua_shadow, -2px -2px 10px var.$dark_blue;
+			border-radius: 5px;
+			transition: all .25s ease-in;
+			span {
+				font-family: var.$time;
+				font-size: 24px;
+			}
+
+			&:hover {
+				cursor: pointer;
+				color: var.$dark_blue;
+				background-color: var.$aqua;
+			}
+			}
+
+		}
+	}
+
+  .chosen_time_wrapper {
+		width: 250px;
+		height: 400px;
+    padding: 15px;
+		border-radius: 15px;
+		box-shadow: 0 0 25px var.$aqua_shadow;
+    display: flex;
+		flex-direction: column;
+		gap: 25px;
+    
+		.pomodora {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: space-around;
+			height: 100%;
+			position: relative;
+
+			span {
+				position: absolute;
+				font-family: var.$time;
+				font-size: 24px;
+			}
+
+			.pomodora_controler {
+				display: flex;
+				gap: 15px;
+				svg {
+					font-size: 24px;
+					color: var.$aqua;
+
+					&:hover {
+						cursor: pointer;
+					}
+				}
+			}
+		}
+
+		.rest_five {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: space-around;
+			height: 100%;
+			position: relative;
+
+			span {
+				position: absolute;
+				font-family: var.$time;
+				font-size: 24px;
+			}
+
+			.rest_five_controler {
+				display: flex;
+				gap: 15px;
+				svg {
+					font-size: 24px;
+					color: var.$aqua;
+
+					&:hover {
+						cursor: pointer;
+					}
+				}
+			}
+		}
+
+		.stopWatch_wrapper {
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 35px;
+
+			.stopwatch {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: space-around;
+
+			span {
+				font-family: var.$time;
+				font-size: 45px;
+			}
+
+			.stopWatch_controler {
+				display: flex;
+				gap: 15px;
+				svg {
+					font-size: 24px;
+					color: var.$aqua;
+
+					&:hover {
+						cursor: pointer;
+					}
+				}
+			}
+			}
+		}
+	}
+}

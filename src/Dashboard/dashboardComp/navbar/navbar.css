@@ -1,4 +1,5 @@
 .navbar {
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -7,6 +8,7 @@
   background-color: rgba(19, 45, 70, 0.2196078431);
   border-radius: 25px;
   box-shadow: 0 0 55px rgba(105, 110, 121, 0.2352941176);
+  position: fixed;
 }
 .navbar .navbar_header {
   flex: 1.5;
@@ -33,12 +35,12 @@
   text-decoration: none;
   color: #696e79;
   border: 1px solid transparent;
+  border-radius: 15px;
   padding: 10px 20px;
   transition: all 0.25s ease-in;
 }
 .navbar .navbar_navigate a:hover {
   border: 1px solid #fff;
-  letter-spacing: 2px;
   color: #01c380;
 }
 .navbar .navbar_navigate .overview_svg {
@@ -60,6 +62,9 @@
   display: flex;
   align-items: center;
   gap: 5px;
+}
+.navbar .navbar_navigate .map_svg svg {
+  transform: rotate(180deg);
 }
 .navbar .navbar_navigate .history_svg {
   display: flex;

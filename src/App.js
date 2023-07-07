@@ -1,6 +1,5 @@
 import { HashRouter, Routes, Route } from "react-router-dom";
 import LandigPage from './landingPage/LandingPage';
-import Footer from './footer/Footer';
 import AuthorizationUser from "./signup&in/AuthorizationUser/AuthorizationUser";
 import { useState } from "react";
 import UserContext from './userContext';
@@ -8,9 +7,20 @@ import ScrollToTop from './ScrollToTop';
 import Dashboard from "./Dashboard/Dashboard";
 
 function App() {
+  const [goal, setGoal] = useState("")
+  const [children, setChildren] = useState([])
+  const graphData = {
+    "name": goal,
+    "children": [
+      {
+        "name": children,
+        "children": []
+      }
+    ]
+  }
   const [user, setUser] = useState(null)
   const validUser = JSON.parse(localStorage.getItem("user"))
-  const values = { user, setUser, validUser }
+  const values = { user, setUser, validUser, graphData, setGoal, setChildren }
 
   return (
     <HashRouter>
@@ -21,10 +31,11 @@ function App() {
             <Route index path="/" element={<LandigPage />} />
             <Route path="/auth/*" element={<AuthorizationUser />} />
             {validUser || user ?
-              <Route path="/dashboard" element={<Dashboard />} /> : null
+              <Route path="/dashboard" element={<Dashboard />} />
+              :
+              null
             }
           </Routes>
-          <Footer />
         </div>
       </UserContext.Provider>
     </HashRouter>

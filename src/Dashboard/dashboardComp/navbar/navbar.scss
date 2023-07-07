@@ -1,6 +1,7 @@
 @use "../../../sass/var.scss";
 
 .navbar {
+	margin-top: 20px;
 	display: flex;
 	flex-direction: column;
 	gap: 15px;
@@ -9,6 +10,8 @@
 	background-color: var.$dark_blue_shadow;
 	border-radius: 25px;
 	box-shadow: 0 0 55px var.$grey_shadow;
+	position: fixed;
+
 
 	.navbar_header {
 	flex: 1.5;
@@ -36,12 +39,12 @@
 		text-decoration: none;
     color: var.$grey;
 		border: 1px solid transparent;
+		border-radius: 15px;
 		padding: 10px 20px;
 		transition: all .25s ease-in;
 
 		&:hover {
 		border: 1px solid var.$white;
-		letter-spacing: 2px;
 		color: var.$aqua;
 		}
 	}
@@ -65,6 +68,9 @@
 		display: flex;
 		align-items: center;
 		gap: 5px;
+		svg {
+			transform: rotate(180deg);
+		}
 	}
 	.history_svg {
 		display: flex;

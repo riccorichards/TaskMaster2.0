@@ -4,7 +4,7 @@ import ProgressOverview from './ProgressOverview/ProgressOverview';
 import RecentlyActivity from './RecentlyActivity/RecentlyActivity';
 const Overview = () => {
 	return (
-		<div className="overview">
+		<div className="overview" id="overview">
 			<OverviewData />
 			<ProgressOverview />
 			<RecentlyActivity />

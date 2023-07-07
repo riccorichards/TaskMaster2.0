@@ -42,7 +42,10 @@ const Greeting = () => {
 		}
 	}, [greeting])
 	const existUser = JSON.parse(localStorage.getItem("user"))
-	const username = existUser.username;
+	const getUsername = existUser.username;
+	const firstUpper = getUsername.charAt(0).toUpperCase();
+	const theRest = getUsername.slice(1)
+	const username = firstUpper + theRest
 
 
 

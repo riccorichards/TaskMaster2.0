@@ -1,5 +1,5 @@
 import "./footer.css";
-import footer_bg from "../assets/footer_bg.png";
+import footer_bg from "../../assets/footer_bg.png";
 import { AiFillLinkedin, AiFillGithub, AiFillTwitterSquare, AiFillFacebook, AiFillInstagram } from "react-icons/ai";
 import { SiCodewars } from "react-icons/si";
 import { Link, useNavigate } from "react-router-dom";

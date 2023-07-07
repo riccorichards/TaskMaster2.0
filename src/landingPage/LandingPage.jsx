@@ -5,6 +5,7 @@ import Visualization from './dataVisualization/visualization/Visualization';
 import Progress from './ProgressOverview/ProgressPrepresentator/Progress';
 import TimeContent from './learningTime/TimeContent/TimeContent';
 import YourWay from './chooseYourWay/YourWay/YourWay';
+import Footer from './footer/Footer';
 
 const LandingWrapper = styled.div`
 display: flex;
@@ -22,6 +23,7 @@ const LandigPage = () => {
 				<TimeContent />
 				<YourWay />
 			</main>
+			<Footer />
 		</LandingWrapper>
 	)
 }

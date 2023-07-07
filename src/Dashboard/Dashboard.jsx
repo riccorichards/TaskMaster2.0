@@ -1,6 +1,8 @@
 import "./dashboard.css";
 import Navbar from './dashboardComp/navbar/Navbar';
 import Overview from './dashboardComp/overview/Overview';
+import TaskGenerator from './dashboardComp/taskGenerator/TaskGenerator';
+import Timer from './dashboardComp/Timer/Timer';
 
 const Dashboard = () => {
 
@@ -11,6 +13,8 @@ const Dashboard = () => {
 			</div>
 			<div className="components_wrapper">
 				<Overview />
+				<TaskGenerator />
+				<Timer />
 			</div>
 		</main>
 	)

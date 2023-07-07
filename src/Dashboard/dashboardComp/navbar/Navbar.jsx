@@ -15,6 +15,12 @@ const Navbar = () => {
 		localStorage.removeItem("existUser")
 		navigate("/")
 	}
+	const scrollToComponents = (id) => {
+		const element = document.getElementById(id)
+		if (element) {
+			element.scrollIntoView({ behavior: "smooth" })
+		}
+	}
 	return (
 		<div className="navbar">
 			<div className="navbar_header">
@@ -22,23 +28,23 @@ const Navbar = () => {
 				<Greeting />
 			</div>
 			<div className="navbar_navigate">
-				<NavLink className="overview_svg">
+				<NavLink className="overview_svg" to="#" onClick={() => scrollToComponents("overview")}>
 					<AiFillPieChart />
 					Overview
 				</NavLink>
-				<NavLink className="task_svg">
+				<NavLink className="task_svg" to="#" onClick={() => scrollToComponents("task")}>
 					<FaTasks />
 					Task Generator
 				</NavLink>
-				<NavLink className="timer_svg">
+				<NavLink className="timer_svg" to="#" onClick={() => scrollToComponents("timer")}>
 					<MdTimer />
 					Timer
 				</NavLink>
-				<NavLink className="map_svg">
+				<NavLink className="map_svg" to="#" onClick={() => scrollToComponents("map")}>
 					<FaSitemap />
 					Road Map
 				</NavLink>
-				<NavLink className="history_svg">
+				<NavLink className="history_svg" to="#" onClick={() => scrollToComponents("history")}>
 					<ImHistory />
 					History
 				</NavLink>

@@ -1,0 +1,46 @@
+.ForNewUser {
+  display: flex;
+  height: 100%;
+  box-shadow: 0 0 35px rgba(1, 195, 127, 0.2078431373);
+  border-radius: 15px;
+  padding: 25px;
+  font-family: "M PLUS 1 Code", sans-serif;
+}
+.ForNewUser #form_for_new_user {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+.ForNewUser #form_for_new_user span {
+  font-size: 18px;
+  color: #fff;
+}
+.ForNewUser #form_for_new_user input {
+  width: 100%;
+  outline: none;
+  font-family: "M PLUS 1 Code", sans-serif;
+  padding: 5px 10px;
+  letter-spacing: 1.5px;
+}
+.ForNewUser #form_for_new_user input ::-moz-placeholder {
+  color: #132d46;
+}
+.ForNewUser #form_for_new_user input ::placeholder {
+  color: #132d46;
+}
+.ForNewUser #form_for_new_user button {
+  width: -moz-fit-content;
+  width: fit-content;
+  font-family: "M PLUS 1 Code", sans-serif;
+  padding: 5px 10px;
+  background-color: #696e79;
+  border: none;
+  color: #fff;
+  transition: all ease-in 0.25s;
+}
+.ForNewUser #form_for_new_user button:hover {
+  background-color: #01c380;
+  cursor: pointer;
+}
