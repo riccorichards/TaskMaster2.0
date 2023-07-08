@@ -1,0 +1,94 @@
+@use "../../../../../sass/var.scss";
+
+.daily_tasks {
+ display: flex;
+ flex-direction: column;
+ gap: 15px;
+
+
+
+ h2{
+	color: var.$white;
+ }
+ 
+ input {
+	 padding: 8px 15px;
+	 letter-spacing: 1.5px;
+	 font-family: var.$font;
+	 font-size: 14px;
+
+	 &:focus{
+		outline: none;
+	 }
+
+	 &::placeholder{
+		color: var.$dark_blue;
+	 }
+ }
+ button {
+	width: fit-content;
+	padding: 8px 15px;
+	letter-spacing: 1.5px;
+	font-family: var.$font;
+	font-size: 14px;
+	background-color: var.$dark_blue;
+	border: var.$dark_blue 1px solid;
+	color: var.$white;
+	transition: all .25s ease-in;
+
+	&:hover {
+		background-color: var.$white;
+		color: var.$dark_blue;
+		cursor: pointer;
+	}
+ }
+ .task_area {
+	overflow-y: scroll;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	height: 180px;
+	.each_Task {
+		display: flex;
+		width: 100%;
+		justify-content: space-between;
+		border-bottom: var.$grey 1px solid; 
+		color: var.$white; 
+		font-size: 16px;
+
+		.daily_svgBTNs {
+			display: flex;
+			align-items: center;
+			gap: 15px;
+		}
+		svg {
+			font-size: 18px;
+			transition: all .25s ease;
+	    
+			&:hover {
+				cursor: pointer;
+			}
+
+			&:nth-child(1):hover{
+				color: var.$aqua;
+			}
+			&:nth-child(2):hover{
+				color: red;
+			}
+		}
+	
+		 
+	}
+}
+
+	.active {
+		text-decoration: line-through;
+		opacity: 0.5;
+	}
+	.daily_decoration_line {
+		width: 80%;
+		margin: 0 auto;
+		height: 1px;
+		background-color: var.$white;
+	}
+}

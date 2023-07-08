@@ -5,4 +5,11 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  font-family: "M PLUS 1 Code", sans-serif;
+}
+.taskGenerator_wrapper .daily_tasks_wrapper {
+  flex: 2.5;
+}
+.taskGenerator_wrapper .weekly_tasks_wrapper {
+  flex: 1.75;
 }

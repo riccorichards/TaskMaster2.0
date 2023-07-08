@@ -1,0 +1,83 @@
+.weeklyTask {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.weeklyTask h2 {
+  color: #fff;
+}
+.weeklyTask input {
+  padding: 8px 15px;
+  letter-spacing: 1.5px;
+  font-family: "M PLUS 1 Code", sans-serif;
+  font-size: 14px;
+}
+.weeklyTask input:focus {
+  outline: none;
+}
+.weeklyTask input::-moz-placeholder {
+  color: #132d46;
+}
+.weeklyTask input::placeholder {
+  color: #132d46;
+}
+.weeklyTask button {
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 8px 15px;
+  letter-spacing: 1.5px;
+  font-family: "M PLUS 1 Code", sans-serif;
+  font-size: 14px;
+  background-color: #132d46;
+  border: #132d46 1px solid;
+  color: #fff;
+  transition: all 0.25s ease-in;
+}
+.weeklyTask button:hover {
+  background-color: #fff;
+  color: #132d46;
+  cursor: pointer;
+}
+.weeklyTask .task_area {
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  height: 150px;
+}
+.weeklyTask .task_area .each_Task {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  border-bottom: #696e79 1px solid;
+  color: #fff;
+  font-size: 16px;
+}
+.weeklyTask .task_area .each_Task .Weekly_svgBTNs {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.weeklyTask .task_area .each_Task svg {
+  font-size: 18px;
+  transition: all 0.25s ease;
+}
+.weeklyTask .task_area .each_Task svg:hover {
+  cursor: pointer;
+}
+.weeklyTask .task_area .each_Task svg:nth-child(1):hover {
+  color: #01c380;
+}
+.weeklyTask .task_area .each_Task svg:nth-child(2):hover {
+  color: red;
+}
+.weeklyTask .active {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+.weeklyTask .weekly_decoration_line {
+  width: 80%;
+  margin: 0 auto;
+  height: 1px;
+  background-color: #fff;
+}

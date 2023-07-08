@@ -1,0 +1,83 @@
+.daily_tasks {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.daily_tasks h2 {
+  color: #fff;
+}
+.daily_tasks input {
+  padding: 8px 15px;
+  letter-spacing: 1.5px;
+  font-family: "M PLUS 1 Code", sans-serif;
+  font-size: 14px;
+}
+.daily_tasks input:focus {
+  outline: none;
+}
+.daily_tasks input::-moz-placeholder {
+  color: #132d46;
+}
+.daily_tasks input::placeholder {
+  color: #132d46;
+}
+.daily_tasks button {
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 8px 15px;
+  letter-spacing: 1.5px;
+  font-family: "M PLUS 1 Code", sans-serif;
+  font-size: 14px;
+  background-color: #132d46;
+  border: #132d46 1px solid;
+  color: #fff;
+  transition: all 0.25s ease-in;
+}
+.daily_tasks button:hover {
+  background-color: #fff;
+  color: #132d46;
+  cursor: pointer;
+}
+.daily_tasks .task_area {
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  height: 180px;
+}
+.daily_tasks .task_area .each_Task {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  border-bottom: #696e79 1px solid;
+  color: #fff;
+  font-size: 16px;
+}
+.daily_tasks .task_area .each_Task .daily_svgBTNs {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.daily_tasks .task_area .each_Task svg {
+  font-size: 18px;
+  transition: all 0.25s ease;
+}
+.daily_tasks .task_area .each_Task svg:hover {
+  cursor: pointer;
+}
+.daily_tasks .task_area .each_Task svg:nth-child(1):hover {
+  color: #01c380;
+}
+.daily_tasks .task_area .each_Task svg:nth-child(2):hover {
+  color: red;
+}
+.daily_tasks .active {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+.daily_tasks .daily_decoration_line {
+  width: 80%;
+  margin: 0 auto;
+  height: 1px;
+  background-color: #fff;
+}
