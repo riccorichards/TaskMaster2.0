@@ -1,0 +1,10 @@
+@use "../../../sass/var.scss";
+
+.road_map {
+	height: 100vh;
+	padding: 20px;
+	box-shadow: 0 0 55px var.$dark_blue_shadow;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}

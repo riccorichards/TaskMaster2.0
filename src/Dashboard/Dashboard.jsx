@@ -3,6 +3,7 @@ import Navbar from './dashboardComp/navbar/Navbar';
 import Overview from './dashboardComp/overview/Overview';
 import TaskGenerator from './dashboardComp/taskGenerator/TaskGenerator';
 import Timer from './dashboardComp/Timer/Timer';
+import RoadMap from './dashboardComp/RoadMap/RoadMap';
 
 const Dashboard = () => {
 	const user = JSON.parse(localStorage.getItem("user"))
@@ -18,6 +19,7 @@ const Dashboard = () => {
 					<Overview />
 					<TaskGenerator />
 					<Timer />
+					<RoadMap />
 				</div>
 			</main>
 		)
