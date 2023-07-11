@@ -179,30 +179,71 @@
   cursor: pointer;
 }
 .timer .chosen_time_wrapper .stopWatch_wrapper {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 35px;
-}
-.timer .chosen_time_wrapper .stopWatch_wrapper .stopwatch {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  height: 100%;
+  position: relative;
 }
-.timer .chosen_time_wrapper .stopWatch_wrapper .stopwatch span {
+.timer .chosen_time_wrapper .stopWatch_wrapper span {
+  position: absolute;
   font-family: "Orbitron", sans-serif;
-  font-size: 45px;
+  font-size: 24px;
 }
-.timer .chosen_time_wrapper .stopWatch_wrapper .stopwatch .stopWatch_controler {
+.timer .chosen_time_wrapper .stopWatch_wrapper .showWorkSpaceInput {
+  background-color: transparent;
+  color: #fff;
+  font-family: "M PLUS 1 Code", sans-serif;
+  border: none;
+  position: absolute;
+  top: 15%;
+  transition: all 0.15s ease-in;
+}
+.timer .chosen_time_wrapper .stopWatch_wrapper .showWorkSpaceInput:hover {
+  cursor: pointer;
+  color: #01c380;
+}
+.timer .chosen_time_wrapper .stopWatch_wrapper .workSpaceInput {
+  position: absolute;
+  top: -15%;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+.timer .chosen_time_wrapper .stopWatch_wrapper .workSpaceInput button {
+  padding: 5px 10px;
+  font-family: "M PLUS 1 Code", sans-serif;
+  border: none;
+  transition: all 0.25s ease-in;
+}
+.timer .chosen_time_wrapper .stopWatch_wrapper .workSpaceInput button:hover {
+  cursor: pointer;
+  background-color: #132d46;
+  color: #01c380;
+}
+.timer .chosen_time_wrapper .stopWatch_wrapper .workSpaceInput input {
+  padding: 5px 10px;
+  font-family: "M PLUS 1 Code", sans-serif;
+  letter-spacing: 1px;
+}
+.timer .chosen_time_wrapper .stopWatch_wrapper .workSpaceInput input::-moz-placeholder {
+  color: #132d46;
+}
+.timer .chosen_time_wrapper .stopWatch_wrapper .workSpaceInput input::placeholder {
+  color: #132d46;
+}
+.timer .chosen_time_wrapper .stopWatch_wrapper .workSpaceInput input:focus {
+  outline: none;
+}
+.timer .chosen_time_wrapper .stopWatch_wrapper .stopWatch_controler {
   display: flex;
   gap: 15px;
 }
-.timer .chosen_time_wrapper .stopWatch_wrapper .stopwatch .stopWatch_controler svg {
+.timer .chosen_time_wrapper .stopWatch_wrapper .stopWatch_controler svg {
   font-size: 24px;
   color: #01c380;
 }
-.timer .chosen_time_wrapper .stopWatch_wrapper .stopwatch .stopWatch_controler svg:hover {
+.timer .chosen_time_wrapper .stopWatch_wrapper .stopWatch_controler svg:hover {
   cursor: pointer;
 }

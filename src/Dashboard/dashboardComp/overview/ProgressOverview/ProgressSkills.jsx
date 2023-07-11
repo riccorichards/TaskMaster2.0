@@ -1,7 +1,16 @@
 import SkillsEchart from "echarts-for-react";
+import { useEffect, useState } from "react";
 
 const ProgressSkills = () => {
+	const [workSpace, setWorkSpace] = useState([])
 
+	useEffect(() => {
+		const workTitle = JSON.parse(localStorage.getItem("everydayTaskData"))
+		if (workTitle && workTitle.length > 0) {
+			setWorkSpace(workTitle)
+		}
+	}, [])
+	console.log(workSpace)
 	const option = {
 		title: {
 			text: 'Skills Pie',
@@ -19,7 +28,7 @@ const ProgressSkills = () => {
 			min: 80,
 			max: 600,
 			inRange: {
-				colorLightness: [0, 1]
+				colorLightness: [1, 0]
 			}
 		},
 		series: [
@@ -40,30 +49,27 @@ const ProgressSkills = () => {
 					{ value: 235, name: 'Video Ads' },
 					{ value: 400, name: 'Search Engine' },
 				].sort(function (a, b) {
-					return a.value - b.value;
+					return b.value - a.value;
 				}),
 				roseType: 'radius',
 				label: {
-					color: 'rgba(255, 255, 255, 0.3)'
+					color: '#fff'
 				},
 				labelLine: {
 					lineStyle: {
-						color: 'rgba(255, 255, 255, 0.3)'
+						color: '#01c380'
 					},
-					smooth: 0.2,
+					smooth: 0.5,
 					length: 10,
 					length2: 20
 				},
 				itemStyle: {
-					color: '#c23531',
+					color: '#01c380',
 					shadowBlur: 200,
-					shadowColor: 'rgba(0, 0, 0, 0.5)'
+					shadowColor: 'rgba(0, 0, 0, 0.9)'
 				},
 				animationType: 'scale',
 				animationEasing: 'elasticOut',
-				animationDelay: function (idx) {
-					return Math.random() * 200;
-				}
 			}
 		]
 	};

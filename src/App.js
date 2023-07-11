@@ -2,21 +2,26 @@ import { HashRouter, Routes, Route } from "react-router-dom";
 import LandigPage from './landingPage/LandingPage';
 import AuthorizationUser from "./signup&in/AuthorizationUser/AuthorizationUser";
 import { useState } from "react";
-import UserContext from './userContext';
+import UserContext from './contexts/userContext';
 import ScrollToTop from './ScrollToTop';
 import Dashboard from "./Dashboard/Dashboard";
 import FrontEndData from "./DataSection/FrontEnd";
-import DataContext from './dataContext';
+import GraphContext from './contexts/graphContext';
+import BackEnd from './DataSection/BackEnd';
 
 function App() {
-
   const [user, setUser] = useState(null)
   const validUser = JSON.parse(localStorage.getItem("existUser"))
   const values = { user, setUser, validUser }
+  const graphValues = { FrontEndData, BackEnd }
+
+  const size = new Blob(Object.values(localStorage)).size;
+	console.log(size);
+
   return (
     <HashRouter>
       <UserContext.Provider value={values}>
-        <DataContext.Provider value={FrontEndData}>
+        <GraphContext.Provider value={graphValues}>
           <div>
             <ScrollToTop />
             <Routes>
@@ -29,7 +34,7 @@ function App() {
               }
             </Routes>
           </div>
-        </DataContext.Provider>
+        </GraphContext.Provider>
       </UserContext.Provider>
     </HashRouter>
   );

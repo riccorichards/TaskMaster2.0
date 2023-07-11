@@ -1,14 +1,45 @@
 import PomodoraPieEchart from "echarts-for-react";
-import { useEffect, useState } from "react";
-import { BsFillPauseCircleFill } from "react-icons/bs";
+import { useCallback, useEffect, useState } from "react";
+import { BsFillPauseCircleFill, BsFillSave2Fill } from "react-icons/bs";
 import { AiFillPlayCircle } from "react-icons/ai";
 import { GoStop } from "react-icons/go";
 import moment from "moment/moment";
+import DetectWorkSpace from "./DetectWorkSpace";
 const StopWatch = () => {
 	const maxWorkingTime = ((8 * 60 * 60 * 1000) - (4 * 60 * 60 * 1000));
 	const [timeValue, setTimeValue] = useState(maxWorkingTime)
 	const [runStopWatch, setRunStopWatch] = useState(false)
 	const stopWatchMin = moment(timeValue).format("hh:mm:ss")
+	const [validTime, setValidTime] = useState(false)
+	const [saveStopWatchTime, setSaveStopWatchTime] = useState(0);
+	const [showWorkSpaceInput, setShowWorkSpaceInput] = useState(false)
+	const [disable, setDisable] = useState(false)
+	const [detectedWorkSpace, setDetectedWorkSpace] = useState("")
+	const [definedStatusOfTask, setDefinedStatusOfTask] = useState(null)
+	const [recentlyArr, setRecentlyArr] = useState([])
+
+
+
+	const getTaskStatusFromStorage = useCallback(() => {
+		const getTaskStatusFromStorage = JSON.parse(localStorage.getItem("everydayTaskData"))
+		const latestDailyTasksArr = getTaskStatusFromStorage[getTaskStatusFromStorage.length - 1]
+		for (let i = 0; i < latestDailyTasksArr.length; i++) {
+			if (latestDailyTasksArr[i].title === detectedWorkSpace) {
+				const status = latestDailyTasksArr[i].complete
+				setDefinedStatusOfTask(status)
+			} else {
+				console.log("no")
+			}
+		}
+	}, [detectedWorkSpace])
+
+	useEffect(() => {
+		const getDataForRecently = JSON.parse(localStorage.getItem("dataForRecently"))
+		if (getDataForRecently && getDataForRecently.length > 0) {
+			setRecentlyArr(getDataForRecently)
+		}
+		getTaskStatusFromStorage()
+	}, [getTaskStatusFromStorage])
 
 	const launchStopWatch = () => {
 		setRunStopWatch(prev => !prev)
@@ -20,9 +51,13 @@ const StopWatch = () => {
 	useEffect(() => {
 		let timeOut;
 		if (runStopWatch) {
+			setShowWorkSpaceInput(false)
 			timeOut = setTimeout(() => {
 				setTimeValue(prev => prev - 1000)
 			}, 1000)
+			setDisable(true)
+		} else {
+			setDisable(false)
 		}
 
 		if (timeValue === 0) {
@@ -34,6 +69,38 @@ const StopWatch = () => {
 			clearTimeout(timeOut)
 		}
 	}, [timeValue, runStopWatch, maxWorkingTime])
+
+	const timeSaver = () => {
+		setRunStopWatch(false)
+		const saveOrNot = window.confirm("Are you sure to save this time")
+		if (saveOrNot) {
+			setValidTime(saveOrNot)
+			const usingTime = maxWorkingTime - timeValue
+			setSaveStopWatchTime(prev => prev += usingTime)
+			if (detectedWorkSpace !== "") {
+				setRecentlyArr(prev => {
+					const id = prev.length > 0 ? prev[0].id + 1 : 1
+					const latestActivity = {
+						id: id,
+						workSpace: detectedWorkSpace,
+						duration: usingTime,
+						status: definedStatusOfTask,
+						update: moment().format("MMMM Do, hh:mm"),
+					}
+					return [latestActivity, ...prev]
+				})
+			}
+		}
+	}
+	useEffect(() => {
+		if (validTime) {
+			localStorage.setItem("saveStopWatchTime", JSON.stringify(saveStopWatchTime))
+			localStorage.setItem("dataForRecently", JSON.stringify(recentlyArr))
+		}
+		setTimeValue(maxWorkingTime)
+	}, [saveStopWatchTime, validTime, maxWorkingTime, detectedWorkSpace, recentlyArr, definedStatusOfTask])
+
+
 	const option = {
 		tooltip: {
 			trigger: 'item'
@@ -70,14 +137,19 @@ const StopWatch = () => {
 			}
 		]
 	};
+
+
 	return (
-		<div className="pomodora">
+		<div className="stopWatch_wrapper">
 			<h2>StopWatch</h2>
 			<PomodoraPieEchart option={option} style={{ width: "100%" }} />
 			<span>{stopWatchMin}</span>
-			<div className="pomodora_controler">
+			<button disabled={disable} className="showWorkSpaceInput" onClick={() => setShowWorkSpaceInput(prev => !prev)}>Time For</button>
+			{showWorkSpaceInput ? <DetectWorkSpace setDetectedWorkSpace={setDetectedWorkSpace} /> : null}
+			<div className="stopWatch_controler">
 				{!runStopWatch ? (<AiFillPlayCircle onClick={() => launchStopWatch()} />) : (<BsFillPauseCircleFill onClick={() => launchStopWatch()} />)}
 				<GoStop onClick={() => resetTimer()} />
+				<BsFillSave2Fill onClick={() => timeSaver()} />
 			</div>
 		</div>
 	)

@@ -4,17 +4,23 @@ import { MdCloudDone } from "react-icons/md";
 import "./weeklyTask.css";
 const WeeklyTask = () => {
 	const [weeklyTasks, setWeeklyTasks] = useState([])
+	const [everyWeekTask, setEveryWeekTask] = useState([])
 	const [weeklyTaskInput, setWeeklyTaskInput] = useState("")
 
 	const handlerWeeklyTask = e => {
-		setWeeklyTaskInput(e.target.value)
+		setWeeklyTaskInput(e.target.value.split(","))
 	}
 
 	const saveWeeklyTaskToLocal = useCallback(() => {
 		localStorage.setItem("weeklyTask", JSON.stringify(weeklyTasks))
-		
-	}, [weeklyTasks]) 
-	
+	}, [weeklyTasks])
+
+	useEffect(() => {
+		const getSavedEveryWeekTask = JSON.parse(localStorage.getItem("everyWeekTaskData"))
+		if (getSavedEveryWeekTask && getSavedEveryWeekTask.length > 0) {
+			setEveryWeekTask(getSavedEveryWeekTask)
+		}
+	}, [])
 
 	useEffect(() => {
 		const savedWeeklyTaskFromLocal = JSON.parse(localStorage.getItem("weeklyTask"))
@@ -29,13 +35,18 @@ const WeeklyTask = () => {
 	}, [weeklyTasks, saveWeeklyTaskToLocal])
 
 	const addWeeklyTask = () => {
-		const newTask = {
-			id: Date.now(),
-			text: weeklyTaskInput,
-			complete: false
+		if (weeklyTaskInput !== "") {
+			const newTask = {
+				id: Date.now(),
+				title: weeklyTaskInput[0],
+				text: weeklyTaskInput[1],
+				complete: false
+			}
+			setWeeklyTasks(prev => [newTask, ...prev])
+			setWeeklyTaskInput("")
+		} else {
+			alert("The task field cannot be empty")
 		}
-		setWeeklyTasks(prev => [newTask, ...prev])
-		setWeeklyTaskInput("")
 	}
 
 	const removeWeeklyTask = (removeId) => {
@@ -50,6 +61,15 @@ const WeeklyTask = () => {
 			})
 		})
 	}
+
+	const storeForDashboard = () => {
+		setEveryWeekTask(prev => [...prev, weeklyTasks])
+		setWeeklyTasks([])
+	}
+
+	useEffect(() => {
+		localStorage.setItem("everyWeekTaskData", JSON.stringify(everyWeekTask))
+	}, [everyWeekTask])
 	return (
 		<div className="weeklyTask">
 			<h2>Weekly Tasks</h2>
@@ -62,7 +82,10 @@ const WeeklyTask = () => {
 			<div className="task_area">
 				{weeklyTasks.map(task => (
 					<div className={`each_Task ${task.complete ? "active" : ""}`} key={task.id} >
-						<p>{task.text}</p>
+						<div>
+							<h4>{task.title}</h4>
+							<p>{task.text}</p>
+						</div>
 						<div className="Weekly_svgBTNs">
 							<MdCloudDone onClick={() => doneTask(task)} />
 							<LuDelete onClick={() => removeWeeklyTask(task.id)} />
@@ -70,6 +93,7 @@ const WeeklyTask = () => {
 					</div>
 				))}
 			</div>
+			<button style={{ alignSelf: "flex-end" }} onClick={() => storeForDashboard()}>Complete</button>
 			<div className="weekly_decoration_line" />
 		</div>
 	)

@@ -1,12 +1,24 @@
 import TimerEchart from "echarts-for-react";
 import "./OverviewDataTime.css";
+import { useEffect, useState } from "react";
 const OverviewDataTime = () => {
+	const [usingTime, setUsingTime] = useState(0)
+	const staticValue = 8 * 60 * 60 * 1000
+	useEffect(() => {
+		const getPomodora = JSON.parse(localStorage.getItem("savePomodoraTime"));
+		const getStopWatch = JSON.parse(localStorage.getItem("saveStopWatchTime"));
+		if (getPomodora && getStopWatch) {
+			setUsingTime(getPomodora + getStopWatch)
+		}
+	}, [])
+
+
 	const option = {
 		tooltip: {
 			trigger: 'item'
 		},
 		legend: {
-			top: '5%',
+			top: '0%',
 			left: 'center'
 		},
 		series: [
@@ -30,9 +42,10 @@ const OverviewDataTime = () => {
 					show: false
 				},
 				data: [
-					{ value: 50 },
-					{ value: 50 },
-				]
+					{ value: usingTime, "name": "using time" },
+					{ value: staticValue - usingTime, "name": "distance" },
+				],
+				color: ['#01c380', '#696e793c']
 			}
 		]
 	};
@@ -40,7 +53,7 @@ const OverviewDataTime = () => {
 		<div className="OverviewDataTime">
 			<div className="time_data">
 				<h2>Time</h2>
-				<span>50%</span>
+				<span>{parseInt((usingTime / staticValue) * 100)} %</span>
 			</div>
 			<TimerEchart option={option} style={{ height: "150px", width: "100%" }} />
 		</div>

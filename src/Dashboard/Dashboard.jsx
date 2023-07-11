@@ -6,6 +6,7 @@ import Timer from './dashboardComp/Timer/Timer';
 import RoadMap from './dashboardComp/RoadMap/RoadMap';
 
 const Dashboard = () => {
+
 	const user = JSON.parse(localStorage.getItem("user"))
 	if (!user) {
 		return null

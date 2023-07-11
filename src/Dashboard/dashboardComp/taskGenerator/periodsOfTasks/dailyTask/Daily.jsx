@@ -4,20 +4,33 @@ import { MdCloudDone } from "react-icons/md";
 import "./dailyTask.css";
 
 const Daily = () => {
-	const [dailyTasks, setDailyTasks] = useState([])
 	const [dailyTaskInput, setDailyTaskInput] = useState("")
+	const [dailyTasks, setDailyTasks] = useState([])
+	const [everydayTask, setEverydayTask] = useState([])
+
 
 	const handlerDailyTask = e => {
-		setDailyTaskInput(e.target.value)
+		setDailyTaskInput(e.target.value.split(","))
 	}
 
 	const saveTasksToLocal = useCallback(() => {
-		localStorage.setItem("dailyTask", JSON.stringify(dailyTasks))
+		if (dailyTasks.length > 0) {
+			localStorage.setItem("dailyTasks", JSON.stringify(dailyTasks))
+		} else {
+			localStorage.removeItem("dailyTasks")
+		}
 	}, [dailyTasks])
 
 	useEffect(() => {
-		const saveTasksFromLocal = JSON.parse(localStorage.getItem("dailyTask"))
-		if (saveTasksFromLocal && saveTasksFromLocal.length > 0) {
+		const getSavedEveryDayTask = JSON.parse(localStorage.getItem("everydayTaskData"))
+		if (getSavedEveryDayTask && getSavedEveryDayTask.length > 0) {
+			setEverydayTask(getSavedEveryDayTask)
+		}
+	}, [])
+
+	useEffect(() => {
+		const saveTasksFromLocal = JSON.parse(localStorage.getItem("dailyTasks"))
+		if (saveTasksFromLocal) {
 			setDailyTasks(saveTasksFromLocal)
 		}
 	}, [])
@@ -26,11 +39,22 @@ const Daily = () => {
 		saveTasksToLocal()
 	}, [dailyTasks, saveTasksToLocal])
 
+
+	const storeForDashboard = () => {
+		setEverydayTask(prev => [...prev, dailyTasks])
+		setDailyTasks([])
+	}
+
+	useEffect(() => {
+		localStorage.setItem("everydayTaskData", JSON.stringify(everydayTask))
+	}, [everydayTask])
+
 	const addDailyTask = () => {
-		if (dailyTaskInput !== "" && dailyTaskInput.trim()) {
+		if (dailyTaskInput !== "") {
 			const newTask = {
 				id: Date.now(),
-				text: dailyTaskInput,
+				title: dailyTaskInput[0],
+				text: dailyTaskInput[1],
 				complete: false
 			}
 			setDailyTasks(prev => [newTask, ...prev])
@@ -48,12 +72,11 @@ const Daily = () => {
 		setDailyTasks(prev => prev.map(task => task.id === matchID.id ? { ...task, complete: !task.complete } : task)
 		)
 	}
-
 	return (
 		<div className="daily_tasks">
 			<h2>Daily Tasks</h2>
 			<input type="text"
-				placeholder="Add Daily Tasks"
+				placeholder="Work Space, Add Task"
 				value={dailyTaskInput}
 				onChange={handlerDailyTask}
 			/>
@@ -61,7 +84,10 @@ const Daily = () => {
 			<div className="task_area">
 				{dailyTasks.map(task => (
 					<div className={`each_Task ${task.complete ? "active" : ""}`} key={task.id} >
-						<p>{task.text}</p>
+						<div className="each_tasks_header">
+							<h4>{task.title}</h4>
+							<p>{task.text}</p>
+						</div>
 						<div className="daily_svgBTNs">
 							<MdCloudDone onClick={() => doneTask(task)} />
 							<LuDelete onClick={() => removeDailyTask(task.id)} />
@@ -69,6 +95,7 @@ const Daily = () => {
 					</div>
 				))}
 			</div>
+			<button style={{ alignSelf: "flex-end" }} onClick={() => storeForDashboard()}>Complete</button>
 			<div className="daily_decoration_line" />
 		</div>
 	)

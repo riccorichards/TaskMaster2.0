@@ -4,7 +4,7 @@ import google from "../../assets/google.png";
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useContext, useRef, useEffect } from "react";
-import UserContext from './../../userContext';
+import UserContext from '../../contexts/userContext';
 const SignUp = () => {
 	const navigate = useNavigate()
 	const getUser = useContext(UserContext)

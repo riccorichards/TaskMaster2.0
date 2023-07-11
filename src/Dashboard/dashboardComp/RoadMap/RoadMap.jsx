@@ -1,9 +1,11 @@
 import { useContext } from "react";
 import "./roadmap.css";
 import RoadMapEchart from "echarts-for-react";
-import DataContext from "../../../dataContext";
+import GraphContext from "../../../contexts/graphContext";
 const RoadMap = () => {
-	const frondEndData = useContext(DataContext)
+	const getGraph = useContext(GraphContext)
+	//const frontEnd = getGraph.frondEndData;
+	const backtEnd = getGraph.BackEnd;
 
 	const option = {
 		tooltip: {
@@ -13,7 +15,7 @@ const RoadMap = () => {
 		series: [
 			{
 				type: 'tree',
-				data: [frondEndData],
+				data: [backtEnd],
 				left: '2%',
 				right: '2%',
 				top: '20.5%',
@@ -44,7 +46,7 @@ const RoadMap = () => {
 	}
 	return (
 		<div className="road_map" id="map">
-		<RoadMapEchart option={option} style={{width: "100%", height: "100%"}}/>
+			<RoadMapEchart option={option} style={{ width: "100%", height: "100%" }} />
 		</div>
 	)
 }

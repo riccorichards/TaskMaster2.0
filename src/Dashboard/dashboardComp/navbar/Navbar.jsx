@@ -8,7 +8,6 @@ import { AiFillPieChart } from "react-icons/ai";
 import { FaTasks } from "react-icons/fa";
 import { MdTimer } from "react-icons/md";
 import { FaSitemap } from "react-icons/fa";
-import { ImHistory } from "react-icons/im";
 const Navbar = () => {
 	const navigate = useNavigate()
 	const userLogOut = () => {
@@ -44,14 +43,10 @@ const Navbar = () => {
 					<FaSitemap />
 					Road Map
 				</NavLink>
-				<NavLink className="history_svg" to="#" onClick={() => scrollToComponents("history")}>
-					<ImHistory />
-					History
-				</NavLink>
 			</div>
 			<div className="navbar_footer">
 				<IoIosSettings />
-				<ImSwitch onClick={() => userLogOut()}/>
+				<ImSwitch onClick={() => userLogOut()} />
 			</div>
 		</div>
 	)

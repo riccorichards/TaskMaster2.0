@@ -1,15 +1,18 @@
 import PomodoraPieEchart from "echarts-for-react";
 import { useEffect, useState } from "react";
-import { BsFillPauseCircleFill } from "react-icons/bs";
+import { BsFillPauseCircleFill, BsFillSave2Fill } from "react-icons/bs";
 import { AiFillPlayCircle } from "react-icons/ai";
+
 import { GoStop } from "react-icons/go";
 import moment from "moment/moment";
 const Pomodora = () => {
 
 	const pomodoraInMilliSeconds = 25 * 60 * 1000;
 	const [timeValue, setTimeValue] = useState(pomodoraInMilliSeconds)
+	const [validTime, setValidTime] = useState(false)
 	const [runPomodora, setRunPomodora] = useState(false)
 	const pomodoraMin = moment(timeValue).format("mm:ss")
+	const [savePomodoraTime, setSavePomodoraTime] = useState(0);
 
 	const launchPomodora = () => {
 		setRunPomodora(prev => !prev)
@@ -35,6 +38,23 @@ const Pomodora = () => {
 			clearTimeout(timeOut)
 		}
 	}, [timeValue, runPomodora, pomodoraInMilliSeconds])
+	
+	const timeSaver = () => {
+		setRunPomodora(false)
+		const saveOrNot = window.confirm("Are you sure to save this time")
+		if (saveOrNot) {
+			setValidTime(saveOrNot)
+			const usingTime = pomodoraInMilliSeconds - timeValue
+      setSavePomodoraTime(prev => prev += usingTime)
+		}
+	}
+
+	useEffect(() => {
+		if (validTime) {
+			localStorage.setItem("savePomodoraTime", JSON.stringify(savePomodoraTime))
+		}
+		setTimeValue(pomodoraInMilliSeconds)
+	}, [savePomodoraTime, validTime, pomodoraInMilliSeconds])
 	const option = {
 		tooltip: {
 			trigger: 'item'
@@ -79,6 +99,7 @@ const Pomodora = () => {
 			<div className="pomodora_controler">
 				{!runPomodora ? (<AiFillPlayCircle onClick={() => launchPomodora()} />) : (<BsFillPauseCircleFill onClick={() => launchPomodora()} />)}
 				<GoStop onClick={() => resetTimer()} />
+				<BsFillSave2Fill onClick={() => timeSaver()} />
 			</div>
 		</div>
 	)

@@ -194,21 +194,65 @@
 		}
 
 		.stopWatch_wrapper {
-			height: 100%;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			gap: 35px;
-
-			.stopwatch {
 			display: flex;
 			flex-direction: column;
 			align-items: center;
 			justify-content: space-around;
+			height: 100%;
+			position: relative;
 
 			span {
+				position: absolute;
 				font-family: var.$time;
-				font-size: 45px;
+				font-size: 24px;
+			}
+
+			.showWorkSpaceInput {
+				background-color: transparent;
+				color: var.$white;
+				font-family: var.$font;
+				border: none;
+				position: absolute;
+				top: 15%;
+				transition: all .15s ease-in;
+
+				&:hover {
+					cursor: pointer;
+					color: var.$aqua;
+				}
+			}
+
+			.workSpaceInput {
+				position: absolute;
+				top: -15%;
+				display: flex;
+				gap: 5px;
+				align-items: center;
+
+				button {
+					padding: 5px 10px;
+					font-family: var.$font;
+					border: none;
+					transition: all .25s ease-in;
+					&:hover {
+						cursor: pointer;
+						background-color: var.$dark_blue;
+						color: var.$aqua;
+					}
+				}
+
+				input {
+					padding: 5px 10px;
+					font-family: var.$font;
+					letter-spacing: 1px;
+
+					&::placeholder{
+						color: var.$dark_blue;  
+					}
+					&:focus{
+						outline: none;
+					}
+				}
 			}
 
 			.stopWatch_controler {
@@ -222,7 +266,6 @@
 						cursor: pointer;
 					}
 				}
-			}
 			}
 		}
 	}

@@ -1,6 +1,7 @@
 import QualityEchart from "echarts-for-react";
 import "./OverviewDataQuality.css";
 const OverviewDataQuality = () => {
+	
 	const option = {
 		tooltip: {
 			trigger: 'item'
