@@ -13,7 +13,6 @@ const RecentlyActivity = () => {
 	}, [setRecentlyData])
 	const offset = -4 * 60 * 60 * 1000;
 	const GMT = recentlyData.map(obj => moment(obj.duration + offset).format("HH:mm:ss"))
-	console.log(GMT)
 	return (
 		<div className="RecentlyActivity">
 			<h3>Recently Activity</h3>

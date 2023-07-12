@@ -96,8 +96,8 @@ const StopWatch = () => {
 		if (validTime) {
 			localStorage.setItem("saveStopWatchTime", JSON.stringify(saveStopWatchTime))
 			localStorage.setItem("dataForRecently", JSON.stringify(recentlyArr))
+			setTimeValue(maxWorkingTime)
 		}
-		setTimeValue(maxWorkingTime)
 	}, [saveStopWatchTime, validTime, maxWorkingTime, detectedWorkSpace, recentlyArr, definedStatusOfTask])
 
 

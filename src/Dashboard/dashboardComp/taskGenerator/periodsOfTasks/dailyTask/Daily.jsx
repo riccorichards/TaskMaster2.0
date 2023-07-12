@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { LuDelete } from "react-icons/lu";
 import { MdCloudDone } from "react-icons/md";
 import "./dailyTask.css";
@@ -13,13 +13,10 @@ const Daily = () => {
 		setDailyTaskInput(e.target.value.split(","))
 	}
 
-	const saveTasksToLocal = useCallback(() => {
-		if (dailyTasks.length > 0) {
-			localStorage.setItem("dailyTasks", JSON.stringify(dailyTasks))
-		} else {
-			localStorage.removeItem("dailyTasks")
-		}
-	}, [dailyTasks])
+	if (dailyTasks.length > 0) {
+		localStorage.setItem("dailyTasks", JSON.stringify(dailyTasks))
+	}
+
 
 	useEffect(() => {
 		const getSavedEveryDayTask = JSON.parse(localStorage.getItem("everydayTaskData"))
@@ -35,19 +32,15 @@ const Daily = () => {
 		}
 	}, [])
 
-	useEffect(() => {
-		saveTasksToLocal()
-	}, [dailyTasks, saveTasksToLocal])
-
-
 	const storeForDashboard = () => {
 		setEverydayTask(prev => [...prev, dailyTasks])
 		setDailyTasks([])
+		localStorage.removeItem("dailyTasks")
 	}
 
-	useEffect(() => {
+	if (everydayTask.length > 0) {
 		localStorage.setItem("everydayTaskData", JSON.stringify(everydayTask))
-	}, [everydayTask])
+	}
 
 	const addDailyTask = () => {
 		if (dailyTaskInput !== "") {
