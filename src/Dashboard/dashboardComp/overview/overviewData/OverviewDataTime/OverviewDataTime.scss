@@ -5,6 +5,8 @@
   align-items: flex-end;
   border-radius: 15px;
 	box-shadow: 0 0 15px var.$aqua_shadow;
+	position: relative;
+	
 	.time_data {
     display: flex;
 		flex-direction: column;
@@ -20,6 +22,31 @@
 			font-family: var.$time;
 			color: var.$white;
 			text-shadow: 0 0 1.5px var.$dark_blue;
+		}
+	}
+
+	svg {
+		font-size: 16px;
+		color: var.$white;
+		position: absolute;
+		right: 2%;
+		bottom: 5%;
+		cursor: pointer;
+	}
+
+	.timeDetails {
+		position: absolute;
+		color: var.$dark_blue;
+		font-size: 12px;
+		top: 100%;
+		background-color: var.$white;
+    z-index: 1;
+		padding: 2px;
+		font-family: var.$font;
+		border-radius: 3.5px;
+
+		li {
+			list-style-position: inside;
 		}
 	}
 }

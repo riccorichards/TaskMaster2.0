@@ -371,7 +371,171 @@ const BackEnd = {
 				{ "name": "Profilinf Perfor" },
 			]
 		},
-		
+		{
+			"name": "Scaling Databases",
+			"children": [
+				{ "name": "Database Indexes" },
+				{ "name": "Data Replication" },
+				{ "name": "Sharding Strategies" },
+				{ "name": "CAP Theorem" },
+			]
+		},
+		{
+			"name": "APIs",
+			"children": [
+				{ "name": "HATEOAS" },
+				{ "name": "Open API Specs" },
+				{
+					"name": "Authentication",
+					"children": [
+						{ "name": "Cookies based" },
+						{ "name": "OAuth" },
+						{ "name": "basic Auth" },
+						{ "name": "Token Auth" },
+						{ "name": "JWT" },
+						{ "name": "OpenID" },
+						{ "name": "SAML" },
+					]
+				},
+			]
+		},
+		{
+			"name": "Caching",
+			"children": [
+				{ "name": "Client Side" },
+				{
+					"name": "Server Side",
+					"children": [
+						{ "name": "Redis" },
+						{ "name": "Memcached" },
+					]
+				},
+				{ "name": "CDN" },
+			]
+		},
+		{
+			"name": "Web Security Knowledge",
+			"children": [
+				{
+					"name": "Hashing Algorithms",
+					"children": [
+						{ "name": "MD5 and why not to use it" },
+						{ "name": "SHA Famly" },
+						{ "name": "scrypt" },
+						{ "name": "bcrypt" },
+					]
+				},
+				{
+					"name": "API security Best Practices",
+					"children": [
+						{ "name": "HTTPS" },
+						{ "name": "CORS" },
+						{ "name": "CSP" },
+						{ "name": "OWASP Risks" },
+						{ "name": "SSL/TLS" },
+						{ "name": "Server Security" },
+					]
+				},
+			]
+		},
+		{
+			"name": "Testing",
+			"children": [
+				{ "name": "Integration Testing" },
+				{ "name": "Unit Testing" },
+				{ "name": "functional Testing" },
+			]
+		},
+		{ "name": "CI/CD" },
+		{
+			"name": "SoftWare Design & architecture",
+			"children": [
+				{
+					"name": "design and Development Principles",
+					"children": [
+						{ "name": "GOF design Patterns" },
+						{ "name": "Domain Driven Design" },
+						{ "name": "Test Driven Development" },
+						{ "name": "CQRS" },
+						{ "name": "Event Sourcing" },
+					]
+				},
+				{
+					"name": "Architectural Patterns",
+					"children": [
+						{ "name": "Monolithic Apps" },
+						{ "name": "Microservices" },
+						{ "name": "SOA" },
+						{ "name": "Serverless" },
+						{ "name": "Server Mesh" },
+						{ "name": "Twelve Factor Appps" },
+					]
+				},
+				{
+					"name": "Search Engines",
+					"children": [
+						{ "name": "Elasticsearch" },
+						{ "name": "Solr" },
+					]
+				},
+				{
+					"name": "Message Brokers",
+					"children": [
+						{ "name": "RabbitMQ" },
+						{ "name": "kafka" },
+					]
+				},
+				{
+					"name": "Containerization vs Virtualization",
+					"children": [
+						{ "name": "Kubernetes" },
+						{ "name": "Docker" },
+						{ "name": "LXC" },
+					]
+				},
+				{
+					"name": "GraphQL",
+					"children": [
+						{ "name": "Apollo" },
+						{ "name": "Relay Modern" },
+					]
+				},
+				{ "name": "WebSockets" },
+				{ "name": "ServerSent Events" },
+				{
+					"name": "WEb Servers",
+					"children": [
+						{ "name": "Nginx" },
+						{ "name": "Apache" },
+						{ "name": "Caddy" },
+						{ "name": "MS IIS" },
+					]
+				},
+				{
+					"name": "Building for Scale",
+					"children": [
+						{
+							"name": "Difference between there",
+							"children": [
+								{ "name": "Instrumentation" },
+								{ "name": "Monitoring" },
+								{ "name": "Telementry" },
+							]
+						},
+						{
+							"name": "Migitation Strategies",
+							"children": [
+								{ "name": "Graceful Degradation" },
+								{ "name": "Throttling" },
+								{ "name": "Backpressure" },
+								{ "name": "Loadshifting" },
+								{ "name": "Circuit Breaker" },
+							]
+						},
+					]
+				},
+			]
+		},
 	],
 }
 

@@ -2,6 +2,8 @@ import { useCallback, useEffect, useState } from "react";
 import { LuDelete } from "react-icons/lu";
 import { MdCloudDone } from "react-icons/md";
 import "./weeklyTask.css";
+
+const lookAtWeeklyTask = new Event("storage");
 const WeeklyTask = () => {
 	const [weeklyTasks, setWeeklyTasks] = useState([])
 	const [everyWeekTask, setEveryWeekTask] = useState([])
@@ -13,6 +15,7 @@ const WeeklyTask = () => {
 
 	const saveWeeklyTaskToLocal = useCallback(() => {
 		localStorage.setItem("weeklyTask", JSON.stringify(weeklyTasks))
+		window.dispatchEvent(lookAtWeeklyTask);
 	}, [weeklyTasks])
 
 	useEffect(() => {

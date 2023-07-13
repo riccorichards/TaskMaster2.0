@@ -43,7 +43,7 @@ const StopWatch = () => {
 		return () => {
 			window.removeEventListener("storage", handlerStorageChanges)
 		}
-	}, [])
+	})
 
 
 	useEffect(() => {

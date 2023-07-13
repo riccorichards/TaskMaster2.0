@@ -1,9 +1,13 @@
 import TaskEchart from "echarts-for-react";
 import "./OverviewDataTask.css";
 import { useEffect, useState } from "react";
+import { BsQuestionLg } from "react-icons/bs";
+
+
 const OverviewDataTask = () => {
 	const [showDailyTaskData, setShowDailyTaskData] = useState([])
 	const [showWeeklyTaskData, setShowWeeklyTaskData] = useState([])
+	const [showMeTaskDetails, setShowMeTaskDetails] = useState(false)
 
 	useEffect(() => {
 		const dailyTask = JSON.parse(localStorage.getItem("everydayTaskData"))
@@ -13,6 +17,21 @@ const OverviewDataTask = () => {
 	}, [])
 
 	useEffect(() => {
+		const handlerTaskStorage = () => {
+			const dailyTask = JSON.parse(localStorage.getItem("everydayTaskData"))
+			if (dailyTask && dailyTask.length > 0) {
+				setShowDailyTaskData(dailyTask)
+			}
+		}
+
+		window.addEventListener("storage", handlerTaskStorage)
+
+		return () => {
+			window.removeEventListener("storage", handlerTaskStorage)
+		}
+	})
+
+	useEffect(() => {
 		const weeklyTask = JSON.parse(localStorage.getItem("everyWeekTaskData"))
 		if (weeklyTask && weeklyTask.length > 0) {
 			setShowWeeklyTaskData(weeklyTask)
@@ -20,6 +39,19 @@ const OverviewDataTask = () => {
 	}, [])
 
 
+	useEffect(() => {
+		const handlerEveryWeeklyTasksStorege = () => {
+			const weeklyTask = JSON.parse(localStorage.getItem("everyWeekTaskData"))
+			if (weeklyTask && weeklyTask.length > 0) {
+				setShowWeeklyTaskData(weeklyTask)
+			}
+		}
+		window.addEventListener("storage", handlerEveryWeeklyTasksStorege)
+
+		return () => {
+			window.removeEventListener("storage", handlerEveryWeeklyTasksStorege)
+		}
+	})
 	const allDailyTask = showDailyTaskData.flat().length
 	const allWeeklyTask = showWeeklyTaskData.flat().length
 	const wholeTasks = allDailyTask + allWeeklyTask;
@@ -56,7 +88,7 @@ const OverviewDataTask = () => {
 				},
 				data: [
 					{ value: wholeCompleteTask, "name": "Complete Tasks" },
-					{ value: (wholeTasks - wholeCompleteTask) || 100, "name": "All Tasks" },
+					{ value: (wholeTasks - wholeCompleteTask), "name": "Failed Tasks" },
 				],
 				color: ['#01c380', '#696e793c']
 			}
@@ -69,6 +101,11 @@ const OverviewDataTask = () => {
 				<span>{parseInt(wholeCompleteTask / wholeTasks * 100) || 0} %</span>
 			</div>
 			<TaskEchart option={option} style={{ height: "150px", width: "100%" }} />
+			<BsQuestionLg onClick={() => setShowMeTaskDetails(prev => !prev)} />
+			{showMeTaskDetails ? <div className="taskDetails">
+       <p>Here, we've implemented a calculation to determine progress by dividing the number of completed tasks by the total tasks, then multiplying it by 100 to obtain a percentage value. This allows you to easily track and visualize your achievements within the project.</p>
+			</div>
+				: null}
 		</div>
 	)
 }

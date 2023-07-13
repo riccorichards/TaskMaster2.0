@@ -2,8 +2,10 @@ import { useEffect, useState, useCallback } from "react";
 import { LuDelete } from "react-icons/lu";
 import { MdCloudDone } from "react-icons/md";
 import "./dailyTask.css";
+import moment from "moment/moment";
 
 const storageEventForDailyTasks = new Event("storage");
+const lookingAtEveryDayTasksChanges = new Event("storage")
 const Daily = () => {
 	const [dailyTaskInput, setDailyTaskInput] = useState("")
 	const [dailyTasks, setDailyTasks] = useState([])
@@ -37,14 +39,23 @@ const Daily = () => {
 	}, [])
 
 	const storeForDashboard = () => {
-		setEverydayTask(prev => [...prev, dailyTasks])
+		const discussEachDayTasks = {
+			id: Date.now(),
+			tasksInDay: dailyTasks,
+			update: moment().format("MMM Do")
+		}
+		setEverydayTask(prev => [...prev, discussEachDayTasks])
 		setDailyTasks([])
-		localStorage.removeItem("dailyTasks")
 	}
 
-	if (everydayTask.length > 0) {
+	const saveEveryDayTasks = useCallback(() => {
 		localStorage.setItem("everydayTaskData", JSON.stringify(everydayTask))
-	}
+		window.dispatchEvent(lookingAtEveryDayTasksChanges)
+	}, [everydayTask])
+
+	useEffect(() => {
+		saveEveryDayTasks();
+	}, [saveEveryDayTasks])
 
 	const addDailyTask = () => {
 		if (dailyTaskInput !== "") {
