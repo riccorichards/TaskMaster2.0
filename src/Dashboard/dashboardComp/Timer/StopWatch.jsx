@@ -1,10 +1,13 @@
 import PomodoraPieEchart from "echarts-for-react";
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { BsFillPauseCircleFill, BsFillSave2Fill } from "react-icons/bs";
 import { AiFillPlayCircle } from "react-icons/ai";
 import { GoStop } from "react-icons/go";
 import moment from "moment/moment";
 import DetectWorkSpace from "./DetectWorkSpace";
+
+const readyForRecentlyInfo = new Event("storage")
+
 const StopWatch = () => {
 	const maxWorkingTime = ((8 * 60 * 60 * 1000) - (4 * 60 * 60 * 1000));
 	const [timeValue, setTimeValue] = useState(maxWorkingTime)
@@ -17,29 +20,50 @@ const StopWatch = () => {
 	const [detectedWorkSpace, setDetectedWorkSpace] = useState("")
 	const [definedStatusOfTask, setDefinedStatusOfTask] = useState(null)
 	const [recentlyArr, setRecentlyArr] = useState([])
+	const [getStatusFromDailyTasks, setGetStatusFromDailyTasks] = useState([])
 
 
+	useEffect(() => {
+		const getTaskStatus = JSON.parse(localStorage.getItem("dailyTasks"))
+		if (getTaskStatus && getTaskStatus.length > 0) {
+			setGetStatusFromDailyTasks(getTaskStatus)
+		}
+	}, [])
 
-	const getTaskStatusFromStorage = useCallback(() => {
-		const getTaskStatusFromStorage = JSON.parse(localStorage.getItem("everydayTaskData"))
-		const latestDailyTasksArr = getTaskStatusFromStorage[getTaskStatusFromStorage.length - 1]
-		for (let i = 0; i < latestDailyTasksArr.length; i++) {
-			if (latestDailyTasksArr[i].title === detectedWorkSpace) {
-				const status = latestDailyTasksArr[i].complete
+	useEffect(() => {
+		const handlerStorageChanges = () => {
+			const updageDailyTasks = JSON.parse(localStorage.getItem("dailyTasks"))
+			if (updageDailyTasks) {
+				setGetStatusFromDailyTasks(updageDailyTasks)
+			}
+		}
+
+		window.addEventListener("storage", handlerStorageChanges)
+
+		return () => {
+			window.removeEventListener("storage", handlerStorageChanges)
+		}
+	}, [])
+
+
+	useEffect(() => {
+		for (let i = 0; i < getStatusFromDailyTasks.length; i++) {
+			if (getStatusFromDailyTasks[i].title === detectedWorkSpace) {
+				const status = getStatusFromDailyTasks[i].complete
+				console.log(status)
 				setDefinedStatusOfTask(status)
 			} else {
 				console.log("no")
 			}
 		}
-	}, [detectedWorkSpace])
+	}, [definedStatusOfTask, detectedWorkSpace, getStatusFromDailyTasks])
 
 	useEffect(() => {
 		const getDataForRecently = JSON.parse(localStorage.getItem("dataForRecently"))
 		if (getDataForRecently && getDataForRecently.length > 0) {
 			setRecentlyArr(getDataForRecently)
 		}
-		getTaskStatusFromStorage()
-	}, [getTaskStatusFromStorage])
+	}, [])
 
 	const launchStopWatch = () => {
 		setRunStopWatch(prev => !prev)
@@ -97,6 +121,7 @@ const StopWatch = () => {
 			localStorage.setItem("saveStopWatchTime", JSON.stringify(saveStopWatchTime))
 			localStorage.setItem("dataForRecently", JSON.stringify(recentlyArr))
 			setTimeValue(maxWorkingTime)
+			window.dispatchEvent(readyForRecentlyInfo)
 		}
 	}, [saveStopWatchTime, validTime, maxWorkingTime, detectedWorkSpace, recentlyArr, definedStatusOfTask])
 

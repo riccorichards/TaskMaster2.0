@@ -12,8 +12,23 @@ const ProgressSkills = () => {
 		}
 	}, [])
 
+	useEffect(() => {
+		const handlerWorkSpace = () => {
+			const updateWorkTitle = JSON.parse(localStorage.getItem("dataForRecently"))
+			if (updateWorkTitle && updateWorkTitle.length > 0) {
+				setWorkSpace(updateWorkTitle)
+			}
+		}
+
+		window.addEventListener("storage", handlerWorkSpace)
+
+		return () => {
+			window.removeEventListener("storage", handlerWorkSpace)
+		}
+	}, [])
+
 	const countByWorkSpace = _.countBy(workSpace, 'workSpace');
-	const topLearnedTopics = _.map(countByWorkSpace, (count, name) => ({ value: count, name: name})).slice(0, 8);
+	const topLearnedTopics = _.map(countByWorkSpace, (count, name) => ({ value: count, name: name })).slice(0, 8);
 	const option = {
 		title: {
 			text: 'Top Learned Topics',

@@ -4,12 +4,12 @@ import OverviewDataTask from './OverviewDataTask/OverviewDataTask';
 import OverviewDataQuality from './OverviewDataQuality/OverviewDataQuality';
 
 const OverviewData = () => {
-	//const []
+
 	return (
 		<div className="OverviewData">
 			<OverviewDataTime />
-			<OverviewDataQuality />
 			<OverviewDataTask />
+			<OverviewDataQuality />
 		</div>
 	)
 }

@@ -16,24 +16,22 @@ const WeeklyTask = () => {
 	}, [weeklyTasks])
 
 	useEffect(() => {
-		const getSavedEveryWeekTask = JSON.parse(localStorage.getItem("everyWeekTaskData"))
-		if (getSavedEveryWeekTask && getSavedEveryWeekTask.length > 0) {
-			setEveryWeekTask(getSavedEveryWeekTask)
-		}
-	}, [])
-
-	useEffect(() => {
 		const savedWeeklyTaskFromLocal = JSON.parse(localStorage.getItem("weeklyTask"))
 		if (savedWeeklyTaskFromLocal && savedWeeklyTaskFromLocal.length > 0) {
 			setWeeklyTasks(savedWeeklyTaskFromLocal)
 		}
 	}, [])
 
-
 	useEffect(() => {
 		saveWeeklyTaskToLocal()
 	}, [weeklyTasks, saveWeeklyTaskToLocal])
 
+	useEffect(() => {
+		const getSavedEveryWeekTask = JSON.parse(localStorage.getItem("everyWeekTaskData"))
+		if (getSavedEveryWeekTask && getSavedEveryWeekTask.length > 0) {
+			setEveryWeekTask(getSavedEveryWeekTask)
+		}
+	}, [])
 	const addWeeklyTask = () => {
 		if (weeklyTaskInput !== "") {
 			const newTask = {
@@ -67,9 +65,10 @@ const WeeklyTask = () => {
 		setWeeklyTasks([])
 	}
 
-	useEffect(() => {
+	if (everyWeekTask.length > 0) {
 		localStorage.setItem("everyWeekTaskData", JSON.stringify(everyWeekTask))
-	}, [everyWeekTask])
+	}
+
 	return (
 		<div className="weeklyTask">
 			<h2>Weekly Tasks</h2>

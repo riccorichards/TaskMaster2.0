@@ -9,8 +9,22 @@ const RecentlyActivity = () => {
 		if (getDataForRecentlyFromStorage && getDataForRecentlyFromStorage.length > 0) {
 			setRecentlyData(getDataForRecentlyFromStorage)
 		}
-
 	}, [setRecentlyData])
+
+	useEffect(() => {
+		const handlerDataForRecently = () => {
+			const updateDataForRecently = JSON.parse(localStorage.getItem("dataForRecently"))
+			if (updateDataForRecently && updateDataForRecently.length > 0) {
+				setRecentlyData(updateDataForRecently)
+			}
+		}
+
+		window.addEventListener("storage", handlerDataForRecently)
+
+		return () => {
+			window.removeEventListener("storage", handlerDataForRecently)
+		}
+	}, [])
 	const offset = -4 * 60 * 60 * 1000;
 	const GMT = recentlyData.map(obj => moment(obj.duration + offset).format("HH:mm:ss"))
 	return (
