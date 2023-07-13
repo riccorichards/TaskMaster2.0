@@ -2,8 +2,13 @@ import ProgressEchart from "echarts-for-react";
 import "./progressoverview.css";
 import ProgressSkills from './ProgressSkills';
 import { useEffect, useState } from "react";
+import { BsQuestionLg } from "react-icons/bs";
+
 const ProgressOverview = () => {
 	const [everyDayTasksForLineChart, setEveryDayTasksForLineChart] = useState([])
+	const [showMeLineChartDetails, setShowMeLineChartDetails] = useState(false)
+	const [showMeSkillsPieDetails, setShowMeSkillsPieDetails] = useState(false)
+
 	useEffect(() => {
 		const getSavedEveryDayTask = JSON.parse(localStorage.getItem("everydayTaskData"))
 		if (getSavedEveryDayTask && getSavedEveryDayTask.length > 0) {
@@ -26,15 +31,15 @@ const ProgressOverview = () => {
 		}
 	})
 
-	console.log(everyDayTasksForLineChart)
 	const everyDayDate = everyDayTasksForLineChart.map(date => date.update)
 	const everyDayValue = everyDayTasksForLineChart.map(array => {
 		const dailytasks = array.tasksInDay
 		const length = dailytasks.length
 		const complete = dailytasks.filter(task => task.complete === true).length
-		return (complete / length) * 100
+		return parseInt((complete / length) * 100)
 	})
-	console.log(everyDayValue)
+  
+
 	const option = {
 		xAxis: {
 			type: 'category',
@@ -79,9 +84,19 @@ const ProgressOverview = () => {
 		<div className="ProgressOverview">
 			<div className="during_progress">
 				<ProgressEchart option={option} style={{ height: "350px", width: "100%" }} />
+				<BsQuestionLg onClick={() => setShowMeLineChartDetails(prev => !prev)} />
+				{showMeLineChartDetails ? <div className="lineChartDetails">
+					<p>Here, we calculate the daily task quality by taking the completed tasks for the day and dividing it by the total tasks assigned. We then multiply this result by 100 to obtain a percentage, giving you insights into the quality of your daily progress.</p>
+				</div>
+					: null}
 			</div>
 			<div className="progress_skills">
 				<ProgressSkills />
+				<BsQuestionLg onClick={() => setShowMeSkillsPieDetails(prev => !prev)} />
+				{showMeSkillsPieDetails ? <div className="skillsPieDetails">
+					<p>Discover the Top Seven Learning Topics Derived from Recent Activity</p>
+				</div>
+					: null}
 			</div>
 		</div>
 	)

@@ -2,6 +2,7 @@ import SkillsEchart from "echarts-for-react";
 import { useEffect, useState } from "react";
 import _ from "lodash";
 
+
 const ProgressSkills = () => {
 	const [workSpace, setWorkSpace] = useState([])
 
@@ -28,7 +29,7 @@ const ProgressSkills = () => {
 	}, [])
 
 	const countByWorkSpace = _.countBy(workSpace, 'workSpace');
-	const topLearnedTopics = _.map(countByWorkSpace, (count, name) => ({ value: count, name: name })).slice(0, 8);
+	const topLearnedTopics = _.map(countByWorkSpace, (count, name) => ({ value: count, name: name })).slice(0, 7);
 	const option = {
 		title: {
 			text: 'Top Learned Topics',

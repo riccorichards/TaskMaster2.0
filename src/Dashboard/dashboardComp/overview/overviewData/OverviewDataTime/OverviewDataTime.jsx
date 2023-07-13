@@ -28,7 +28,6 @@ const OverviewDataTime = () => {
 		}
 	})
 
-	console.log(usingTime)
 	const hoursInMilliseconds = usingTime.map(obj => obj.duration).reduce((acc, curr) => acc + curr, 0)
 	const hours = hoursInMilliseconds / (60 * 1000)
 	const option = {

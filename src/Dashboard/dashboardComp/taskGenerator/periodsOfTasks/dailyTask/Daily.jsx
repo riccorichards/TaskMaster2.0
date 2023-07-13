@@ -55,7 +55,7 @@ const Daily = () => {
 
 	useEffect(() => {
 		saveEveryDayTasks();
-	}, [saveEveryDayTasks])
+	}, [everydayTask, saveEveryDayTasks])
 
 	const addDailyTask = () => {
 		if (dailyTaskInput !== "") {
