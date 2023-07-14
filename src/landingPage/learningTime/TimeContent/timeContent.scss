@@ -28,3 +28,14 @@
   }
 }
 }
+
+@media screen and (max-width: 1050px) {
+	.timeContent {
+		display: flex;
+		flex-direction: column;
+
+		.Video_time_wrapper {
+			order: 1;
+		}
+	}
+}

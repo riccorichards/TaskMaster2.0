@@ -38,7 +38,6 @@ const ProgressOverview = () => {
 		const complete = dailytasks.filter(task => task.complete === true).length
 		return parseInt((complete / length) * 100)
 	})
-  
 
 	const option = {
 		xAxis: {

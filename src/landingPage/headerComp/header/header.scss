@@ -3,7 +3,6 @@
 header {
 	display: flex;
 	height: 100vh;
-	position: relative;
 
 	.carrent_data {
 		flex: 1;
@@ -64,7 +63,7 @@ header {
 			width: 100%;
 			height: 100%;
 		}
-
+    
 		.web_descriprion {
 			position: absolute;
 			z-index: 1;
@@ -109,5 +108,45 @@ header {
 			background-color: var.$aqua;
 			color: var.$dark_blue;
 		}
+	}
+}
+
+@media screen and (max-width: 960px) {
+	header {
+		display: flex;
+		flex-direction: column;
+
+		.carrent_data {
+			display: flex;
+			justify-content: space-between;
+
+			.header_logo_wrapper {
+				order: 1;
+			}
+
+			.signUpSection {
+				display: flex;
+				flex-direction: column;
+				gap: 15px;
+				justify-content: center;
+				align-items: center;
+
+				.current_time {
+					.real_time {
+						font-size: 30px;
+					}
+				}
+
+				.joinwithus {
+					position: relative;
+				}
+			}
+		}
+	} 
+}
+
+@media screen and (max-width: 570px) {
+	h1{
+		font-size: 45px;
 	}
 }

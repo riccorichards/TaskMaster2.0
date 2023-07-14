@@ -52,13 +52,21 @@ const OverviewDataTask = () => {
 			window.removeEventListener("storage", handlerEveryWeeklyTasksStorege)
 		}
 	})
-	const allDailyTask = showDailyTaskData.flat().length
-	const allWeeklyTask = showWeeklyTaskData.flat().length
-	const wholeTasks = allDailyTask + allWeeklyTask;
-	const completeDailyTasks = showDailyTaskData.flat().filter(task => task.complete === true).length
-	const completeWeeklyTasks = showWeeklyTaskData.flat().filter(task => task.complete === true).length
-	const wholeCompleteTask = completeDailyTasks + completeWeeklyTasks
-
+	const totalDailyTask = showDailyTaskData.length > 0
+		? showDailyTaskData.reduce((acc, obj) => {
+			return acc + obj.tasksInDay.length;
+		}, 0)
+		: null;
+	
+	const totalCompleteDailyTasks = showDailyTaskData.length > 0 ? showDailyTaskData.reduce((acc, obj) => {
+		const complete = obj.tasksInDay.filter(task => task.complete === true).length
+		return acc + complete
+	}, 0) : null
+  
+	const totalWeeklyTask = showWeeklyTaskData.flat().length
+	const totalWeeklyCompleteTask = showWeeklyTaskData.flat().filter(task => task.complete === true).length
+	const totalTask = totalWeeklyTask + totalDailyTask
+	const totalCompleteTask = totalWeeklyCompleteTask + totalCompleteDailyTasks
 	const option = {
 		tooltip: {
 			trigger: 'item'
@@ -87,8 +95,8 @@ const OverviewDataTask = () => {
 					show: true
 				},
 				data: [
-					{ value: wholeCompleteTask, "name": "Complete Tasks" },
-					{ value: (wholeTasks - wholeCompleteTask), "name": "Failed Tasks" },
+					{ value: totalCompleteTask, "name": "Complete Tasks" },
+					{ value: (totalTask - totalCompleteTask), "name": "Failed Tasks" },
 				],
 				color: ['#01c380', '#696e793c']
 			}
@@ -98,12 +106,12 @@ const OverviewDataTask = () => {
 		<div className="OverviewDataTask">
 			<div className="task_data">
 				<h2>Task</h2>
-				<span>{parseInt(wholeCompleteTask / wholeTasks * 100) || 0} %</span>
+				<span>{parseInt(totalCompleteTask / totalTask * 100) || 0} %</span>
 			</div>
 			<TaskEchart option={option} style={{ height: "150px", width: "100%" }} />
 			<BsQuestionLg onClick={() => setShowMeTaskDetails(prev => !prev)} />
 			{showMeTaskDetails ? <div className="taskDetails">
-       <p>Here, we've implemented a calculation to determine progress by dividing the number of completed tasks by the total tasks, then multiplying it by 100 to obtain a percentage value. This allows you to easily track and visualize your achievements within the project.</p>
+				<p>Here, we've implemented a calculation to determine progress by dividing the number of completed tasks by the total tasks, then multiplying it by 100 to obtain a percentage value. This allows you to easily track and visualize your achievements within the project.</p>
 			</div>
 				: null}
 		</div>

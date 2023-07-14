@@ -23,3 +23,13 @@
   border: rgba(1, 195, 127, 0.2078431373) 15px solid;
   box-shadow: 0 0 55px rgba(1, 195, 127, 0.2078431373);
 }
+
+@media screen and (max-width: 1050px) {
+  .progress_representator {
+    display: flex;
+    flex-direction: column;
+  }
+  .progress_representator .VideoProgress_wrapper {
+    order: 1;
+  }
+}

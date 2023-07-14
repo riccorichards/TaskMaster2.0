@@ -54,7 +54,6 @@ const Footer = () => {
 								<Link to="#" onClick={() => scrollToComponents("progress")}>Progress</Link>
 								<Link to="#" onClick={() => scrollToComponents("visualization")}>Data Visualization</Link>
 								<Link to="#" onClick={() => scrollToComponents("learningTime")}>Time</Link>
-								<Link to="#" onClick={() => scrollToComponents("yourWay")}>your Way</Link>
 							</div>
 						</div>
 					</div>

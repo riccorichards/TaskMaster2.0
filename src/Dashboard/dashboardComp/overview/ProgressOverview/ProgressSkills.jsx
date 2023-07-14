@@ -44,8 +44,8 @@ const ProgressSkills = () => {
 		},
 		visualMap: {
 			show: false,
-			min: .8,
-			max: 4.5,
+			min: 1.8,
+			max: 8.5,
 			inRange: {
 				colorLightness: [1, 0]
 			}

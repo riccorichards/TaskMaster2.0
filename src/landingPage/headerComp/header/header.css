@@ -1,7 +1,6 @@
 header {
   display: flex;
   height: 100vh;
-  position: relative;
 }
 header .carrent_data {
   flex: 1;
@@ -94,4 +93,36 @@ header .startUp {
 header .startUp:hover {
   background-color: #01c380;
   color: #132d46;
+}
+
+@media screen and (max-width: 960px) {
+  header {
+    display: flex;
+    flex-direction: column;
+  }
+  header .carrent_data {
+    display: flex;
+    justify-content: space-between;
+  }
+  header .carrent_data .header_logo_wrapper {
+    order: 1;
+  }
+  header .carrent_data .signUpSection {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+  }
+  header .carrent_data .signUpSection .current_time .real_time {
+    font-size: 30px;
+  }
+  header .carrent_data .signUpSection .joinwithus {
+    position: relative;
+  }
+}
+@media screen and (max-width: 570px) {
+  h1 {
+    font-size: 45px;
+  }
 }

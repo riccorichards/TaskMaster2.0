@@ -48,6 +48,10 @@ const Daily = () => {
 		setDailyTasks([])
 	}
 
+	//if (everydayTask.length > 0) {
+	//	localStorage.setItem("everydayTaskData", JSON.stringify(everydayTask))
+	//	window.dispatchEvent(lookingAtEveryDayTasksChanges)
+	//}
 	const saveEveryDayTasks = useCallback(() => {
 		localStorage.setItem("everydayTaskData", JSON.stringify(everydayTask))
 		window.dispatchEvent(lookingAtEveryDayTasksChanges)

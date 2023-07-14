@@ -29,3 +29,10 @@
   }
 }
 }
+
+@media screen and (max-width: 1050px) {
+	.data_visualization {
+		display: flex;
+		flex-direction: column;
+	}
+}

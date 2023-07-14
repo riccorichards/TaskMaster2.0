@@ -1,0 +1,39 @@
+.responvive {
+  position: relative;
+}
+.responvive .responvive_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.responvive .responvive_header .toggle {
+  font-size: 42px;
+  color: #fff;
+}
+.responvive .responvive_header .toggle:hover {
+  cursor: pointer;
+}
+.responvive .responsive_main {
+  height: 87vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 75px;
+  font-family: "M PLUS 1 Code", sans-serif;
+  position: absolute;
+  width: 100%;
+  z-index: 999;
+  background-color: #191e29;
+}
+.responvive .responsive_main a {
+  color: #fff;
+  font-size: 24px;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 376px) {
+  .responvive .responsive_main a {
+    font-size: 21px;
+  }
+}

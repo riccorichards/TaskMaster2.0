@@ -1,0 +1,50 @@
+@use "../../../../sass/var.scss";
+
+.responvive {
+ position: relative;
+	.responvive_header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		.toggle {
+			font-size: 42px;
+			color: var.$white;
+
+			&:hover {
+				cursor: pointer;
+			}
+		}
+
+	}
+
+	.responsive_main {
+		height: 87vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 75px;
+		font-family: var.$font;
+		position: absolute;
+		width: 100%;
+		z-index: 999;
+		background-color: var.$black;
+
+		a {
+			color: var.$white;
+			font-size: 24px;
+			text-decoration: none;
+		}
+	}
+}
+
+@media screen and (max-width: 376px) {
+	.responvive{
+		.responsive_main {
+			a{
+				font-size: 21px;
+			}
+		}
+	}
+}

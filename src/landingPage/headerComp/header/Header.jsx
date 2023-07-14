@@ -6,40 +6,64 @@ import TableOfContent from './../table_of_content/TableOfContent';
 import data_visualisation_bg from "../../../assets/data_visualisation_bg.png";
 import { Link, useNavigate } from "react-router-dom";
 import { BsArrowRight } from "react-icons/bs";
+import { useState } from "react";
+import { useEffect } from "react";
+import ResponsiveHeader from "./responsive/ResponsiveHeader";
 const Header = () => {
 	const navigate = useNavigate()
 	const goToAuth = () => {
 		navigate("/auth");
 	}
-	return (
-		<header>
-			<div className="carrent_data">
-				<div className="header_logo_wrapper">
-					<Logo />
-				</div>
-				<div className="signUpSection">
-					<div className="current_time">
-						<GetRealTime />
-					</div>
-					<button
-						className="joinwithus" onClick={() => goToAuth()}>Sign Up <GiStairsGoal /></button>
-				</div>
-				<div className="tableOfContent_wrapper">
-					<TableOfContent />
-				</div>
-			</div>
-			<div className="bg_style">
-				<img src={data_visualisation_bg} alt="data visualisation background" />
-				<div className="web_descriprion">
-					<h1>TaskMaster2.0</h1>
-					<span>Empower your productivity and learning journey with our task management platform, helping you set, achieve, and visualize your goals.</span>
-				</div>
-			</div>
+	const [responsiveHeader, setResponsiveHeader] = useState(false)
 
-			<Link className="startUp" to="/auth">
-				<span>Start</span>
-				<BsArrowRight /></Link>
-		</header>
+	useEffect(() => {
+		const handlerResize = () => {
+			if (window.innerWidth <= 790) {
+				setResponsiveHeader(true)
+			} else {
+				setResponsiveHeader(false)
+			}
+		}
+
+		window.addEventListener("resize", handlerResize)
+
+		return () => {
+			window.removeEventListener("resize", handlerResize)
+		}
+	}, [responsiveHeader])
+	return (
+		<>
+
+			<header>
+				{!responsiveHeader ?
+					<div className="carrent_data">
+						<div className="header_logo_wrapper">
+							<Logo />
+						</div>
+						<div className="signUpSection">
+							<div className="current_time">
+								<GetRealTime />
+							</div>
+							<button
+								className="joinwithus" onClick={() => goToAuth()}>Sign Up <GiStairsGoal /></button>
+						</div>
+						<div className="tableOfContent_wrapper">
+							<TableOfContent />
+						</div>
+					</div> : <ResponsiveHeader />
+				}
+				<div className="bg_style">
+					<img src={data_visualisation_bg} alt="data visualisation background" />
+					<div className="web_descriprion">
+						<h1>TaskMaster2.0</h1>
+						<span>Empower your productivity and learning journey with our task management platform, helping you set, achieve, and visualize your goals.</span>
+					</div>
+					<Link className="startUp" to="/auth">
+						<span>Start</span>
+						<BsArrowRight /></Link>
+				</div>
+			</header>
+		</>
 	)
 }
 

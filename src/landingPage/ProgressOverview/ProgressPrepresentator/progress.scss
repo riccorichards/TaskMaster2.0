@@ -28,3 +28,14 @@
   }
 }
 }
+
+@media screen and (max-width: 1050px) {
+	.progress_representator {
+		display: flex;
+		flex-direction: column;
+
+		.VideoProgress_wrapper {
+			order: 1;
+		}
+	}
+}
