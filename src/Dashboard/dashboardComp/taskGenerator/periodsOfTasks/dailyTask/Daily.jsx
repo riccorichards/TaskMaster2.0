@@ -48,10 +48,6 @@ const Daily = () => {
 		setDailyTasks([])
 	}
 
-	//if (everydayTask.length > 0) {
-	//	localStorage.setItem("everydayTaskData", JSON.stringify(everydayTask))
-	//	window.dispatchEvent(lookingAtEveryDayTasksChanges)
-	//}
 	const saveEveryDayTasks = useCallback(() => {
 		localStorage.setItem("everydayTaskData", JSON.stringify(everydayTask))
 		window.dispatchEvent(lookingAtEveryDayTasksChanges)
@@ -90,11 +86,14 @@ const Daily = () => {
 	return (
 		<div className="daily_tasks">
 			<h2>Daily Tasks</h2>
+			<div className="dailyInput">
 			<input type="text"
 				placeholder="Work Space, Add Task"
 				value={dailyTaskInput}
 				onChange={handlerDailyTask}
 			/>
+      <span>It is recommented to separate title of task by ","</span>
+			</div>
 			<button onClick={() => addDailyTask()}>Add Tasks</button>
 			<div className="task_area">
 				{dailyTasks.map(task => (

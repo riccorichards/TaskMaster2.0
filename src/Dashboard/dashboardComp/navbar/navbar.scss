@@ -72,17 +72,13 @@
 			transform: rotate(180deg);
 		}
 	}
-	.history_svg {
-		display: flex;
-		align-items: center;
-		gap: 5px;
-	}
 	}
 	.navbar_footer {
 	flex: 0.5;
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
+	position: relative;
 	
 	svg {
 		font-size: 24px;
@@ -103,5 +99,79 @@
 			color: red;
 		}
 	}
+	.settingPages {
+		position: absolute;
+		bottom: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 10px;
+		width: 100%;
+		padding: 10px;
+		background-color: var.$white;
+		border-radius: 5px;
+
+    a {
+			text-decoration: none;
+			font-size: 16px;
+			font-family: var.$font;
+			color: var.$dark_blue;
+			letter-spacing: 1px;
+			transition: all .25s ease-in;
+
+			&:hover {
+				text-decoration: underline;
+				transform: scale(1.1);
+			}
+		}
 	}
+
+	.editProfile_wrapper {
+		position: absolute;
+		width: 100%;
+		background-color: var.$white;
+		bottom: 250%;
+		border-radius: 5px;
+		height: 250px;
+		font-family: var.$font;
+
+		.profileEditor {
+			padding: 5px;
+			display: flex;
+			flex-direction: column;
+			gap: 5px;
+
+			h3 {
+				color: var.$black;
+			}
+			input {
+				margin-top: 10px;
+				padding: 7px 5px;
+				font-family: var.$font;
+				letter-spacing: 1px;
+
+				&::placeholder{
+					color: var.$dark_blue;
+				}
+				&:focus {
+					outline: none;
+				}
+			}
+			button {
+				padding: 5px 5px;
+				font-family: var.$font;
+				letter-spacing: 1px;
+				width: fit-content;
+				background-color: var.$black;
+				border: none;
+				color: var.$white;
+        
+				&:hover {
+					cursor: pointer;
+				}
+			}
+		}
+	}
+}
 }

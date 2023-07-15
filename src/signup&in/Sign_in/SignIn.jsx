@@ -4,7 +4,7 @@ import google from "../../assets/google.png";
 import { MdEmail } from "react-icons/md";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { Link, useNavigate } from 'react-router-dom';
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const SignIn = () => {
 	const [inputValue, setInputValue] = useState({
@@ -17,23 +17,18 @@ const SignIn = () => {
 		setInputValue(prev => ({ ...prev, [name]: value }))
 	}
 	const user = JSON.parse(localStorage.getItem("user"))
+	console.log(user)
 	const navigate = useNavigate()
 	const check_email = user.email === inputValue.email
 	const check_password = user.password === inputValue.password
 
 	const checkUser = () => {
 		if (check_email && check_password) {
-			localStorage.setItem("existUser", JSON.stringify(inputValue))
 			navigate("/dashboard")
+		} else {
+			alert("Invalid Email or Password")
 		}
 	}
-
-	useEffect(() => {
-		const exist = JSON.parse(localStorage.getItem("existUser"))
-		if (exist) {
-			navigate("/dashboard")
-		}
-	}, [navigate])
 
 	return (
 		<div className="sign_in_wrapper">

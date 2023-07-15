@@ -66,16 +66,12 @@
 .navbar .navbar_navigate .map_svg svg {
   transform: rotate(180deg);
 }
-.navbar .navbar_navigate .history_svg {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
 .navbar .navbar_footer {
   flex: 0.5;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  position: relative;
 }
 .navbar .navbar_footer svg {
   font-size: 24px;
@@ -92,4 +88,75 @@
 }
 .navbar .navbar_footer svg:nth-child(2):hover {
   color: red;
+}
+.navbar .navbar_footer .settingPages {
+  position: absolute;
+  bottom: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+.navbar .navbar_footer .settingPages a {
+  text-decoration: none;
+  font-size: 16px;
+  font-family: "M PLUS 1 Code", sans-serif;
+  color: #132d46;
+  letter-spacing: 1px;
+  transition: all 0.25s ease-in;
+}
+.navbar .navbar_footer .settingPages a:hover {
+  text-decoration: underline;
+  transform: scale(1.1);
+}
+.navbar .navbar_footer .editProfile_wrapper {
+  position: absolute;
+  width: 100%;
+  background-color: #fff;
+  bottom: 250%;
+  border-radius: 5px;
+  height: 250px;
+  font-family: "M PLUS 1 Code", sans-serif;
+}
+.navbar .navbar_footer .editProfile_wrapper .profileEditor {
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.navbar .navbar_footer .editProfile_wrapper .profileEditor h3 {
+  color: #191e29;
+}
+.navbar .navbar_footer .editProfile_wrapper .profileEditor input {
+  margin-top: 10px;
+  padding: 7px 5px;
+  font-family: "M PLUS 1 Code", sans-serif;
+  letter-spacing: 1px;
+}
+.navbar .navbar_footer .editProfile_wrapper .profileEditor input::-moz-placeholder {
+  color: #132d46;
+}
+.navbar .navbar_footer .editProfile_wrapper .profileEditor input::placeholder {
+  color: #132d46;
+}
+.navbar .navbar_footer .editProfile_wrapper .profileEditor input:focus {
+  outline: none;
+}
+.navbar .navbar_footer .editProfile_wrapper .profileEditor button {
+  padding: 5px 5px;
+  font-family: "M PLUS 1 Code", sans-serif;
+  letter-spacing: 1px;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: #191e29;
+  border: none;
+  color: #fff;
+}
+.navbar .navbar_footer .editProfile_wrapper .profileEditor button:hover {
+  cursor: pointer;
 }

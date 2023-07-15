@@ -1,14 +1,19 @@
 import "./navbar.css";
-import profile_img from "../../../assets/profile.jpg";
+//import profile_img from "../../../assets/profile.jpg";
 import Greeting from './Greeting';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate, Link } from 'react-router-dom';
 import { ImSwitch } from "react-icons/im";
 import { IoIosSettings } from "react-icons/io";
 import { AiFillPieChart } from "react-icons/ai";
 import { FaTasks } from "react-icons/fa";
 import { MdTimer } from "react-icons/md";
 import { FaSitemap } from "react-icons/fa";
-const Navbar = () => {
+import { useEffect, useState } from "react";
+import EditProfile from "./EditProfile";
+const Navbar = ({ setIsInstuction }) => {
+	const [isSettings, setIsSettings] = useState(false)
+	const [isEditProfile, setIsEditProfile] = useState(false)
+	const [profileIMG, setProfileIMG] = useState(null)
 	const navigate = useNavigate()
 	const userLogOut = () => {
 		localStorage.removeItem("existUser")
@@ -20,6 +25,24 @@ const Navbar = () => {
 			element.scrollIntoView({ behavior: "smooth" })
 		}
 	}
+
+	useEffect(() => {
+		const handlerProfileIMG = () => {
+			const getProfileIMG = localStorage.getItem("profileIMG")
+			if (getProfileIMG) {
+				setProfileIMG(getProfileIMG)
+			}
+		}
+
+		window.addEventListener("storage", handlerProfileIMG)
+
+		return () => {
+			window.removeEventListener("storage", handlerProfileIMG)
+		}
+	})
+
+	const profile_img = profileIMG ? profileIMG : null;
+	console.log(profile_img)
 	return (
 		<div className="navbar">
 			<div className="navbar_header">
@@ -45,8 +68,20 @@ const Navbar = () => {
 				</NavLink>
 			</div>
 			<div className="navbar_footer">
-				<IoIosSettings />
+				<IoIosSettings onClick={() => setIsSettings(prev => !prev)} />
 				<ImSwitch onClick={() => userLogOut()} />
+				{isSettings ?
+					<div className="settingPages">
+						<Link to="#" onClick={() => setIsEditProfile(prev => !prev)}>Edit Profile</Link>
+						<Link to="#" onClick={() => setIsInstuction(prev => !prev)}>Instruction</Link>
+					</div>
+					: null}
+				{isEditProfile ?
+					<div className="editProfile_wrapper">
+						<EditProfile />
+					</div>
+					:
+					null}
 			</div>
 		</div>
 	)

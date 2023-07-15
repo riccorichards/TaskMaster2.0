@@ -22,7 +22,8 @@ const GreetingStyle = styled.div`
 	`;
 const Greeting = () => {
 	const [greeting, setgreeting] = useState("")
-
+	const [user, setUser] = useState(null)
+	const [username, setUsername] = useState(null)
 	useEffect(() => {
 		let interval = setInterval(() => {
 			const currentTime = moment().hour()
@@ -41,13 +42,35 @@ const Greeting = () => {
 			clearInterval(interval)
 		}
 	}, [greeting])
-	const existUser = JSON.parse(localStorage.getItem("user"))
-	const getUsername = existUser.username;
-	const firstUpper = getUsername.charAt(0).toUpperCase();
-	const theRest = getUsername.slice(1)
-	const username = firstUpper + theRest
 
+	useEffect(() => {
+		const existUser = JSON.parse(localStorage.getItem("user"));
+		if (existUser) {
+			setUser(existUser);
+		}
 
+		const handlerAsyncUsername = () => {
+			const existUser = JSON.parse(localStorage.getItem("user"));
+			if (existUser) {
+				setUser(existUser);
+			}
+		};
+
+		window.addEventListener("storage", handlerAsyncUsername);
+
+		return () => {
+			window.removeEventListener("storage", handlerAsyncUsername);
+		};
+	}, []);
+
+	useEffect(() => {
+		const getUsername = user?.username;
+		if (getUsername) {
+			const firstUpper = getUsername.charAt(0).toUpperCase();
+			const theRest = getUsername.slice(1);
+			setUsername(firstUpper + theRest)
+		}
+	}, [user]);
 
 	return (
 		<GreetingStyle>

@@ -16,18 +16,18 @@ const SignUp = () => {
 	const onSubmit = data => {
 		const userItem = JSON.stringify(data)
 		localStorage.setItem("user", userItem)
-		const existUser = JSON.stringify(data)
-		localStorage.setItem("existUser", existUser)
 		setUser(userItem)
 		reset()
 	}
 	const password = useRef();
 	password.current = watch("password", "")
+
 	useEffect(() => {
 		if (user) {
 			navigate("/dashboard")
 		}
 	}, [user, navigate])
+
 	return (
 		<div className="sign_up_form">
 			<h1>Create an account</h1>

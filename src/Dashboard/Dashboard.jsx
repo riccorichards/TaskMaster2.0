@@ -4,9 +4,11 @@ import Overview from './dashboardComp/overview/Overview';
 import TaskGenerator from './dashboardComp/taskGenerator/TaskGenerator';
 import Timer from './dashboardComp/Timer/Timer';
 import RoadMap from './dashboardComp/RoadMap/RoadMap';
+import { useState } from "react";
+import Instruction from "./dashboardComp/Instruction/Instruction";
 
 const Dashboard = () => {
-
+	const [isInstuction, setIsInstuction] = useState(false)
 	const user = JSON.parse(localStorage.getItem("user"))
 	if (!user) {
 		return null
@@ -14,13 +16,19 @@ const Dashboard = () => {
 		return (
 			<main className="dashboard_main">
 				<div className="navBar_wrapper">
-					<Navbar />
+					<Navbar setIsInstuction={setIsInstuction} />
 				</div>
 				<div className="components_wrapper">
-					<Overview />
-					<TaskGenerator />
-					<Timer />
-					<RoadMap />
+					{isInstuction ? <Instruction />
+						:
+						<>
+							<Overview />
+							<TaskGenerator />
+							<Timer />
+							<RoadMap />
+						</>
+
+					}
 				</div>
 			</main>
 		)

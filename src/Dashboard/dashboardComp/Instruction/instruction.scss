@@ -1,0 +1,58 @@
+@use "../../../sass/var.scss";
+
+.instruction_wrapper {
+	padding: 20px;
+	box-shadow: 0 0 55px var.$dark_blue_shadow;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	font-family: var.$font;  
+	.instruction {
+		width: 100%;
+		height: 100%;
+		background-color: var.$white;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 25px;
+		border-radius: 5px;
+		color: var.$black;
+
+		a{
+		color: var.$black;
+		}
+
+		.instruction_line {
+			width: 80%;
+			height: 2.5px;
+			background-color: var.$black;
+		}
+		.instruction_content {
+			padding: 20px;
+      display: flex;
+			flex-direction: column;
+			gap: 35px;
+
+			.content_taskGenetator {
+				display: flex;
+				flex-direction: column;
+				gap: 10px;
+			}
+			.content_Timer {
+				display: flex;
+				flex-direction: column;
+				gap: 10px;
+			}
+			.content_RoadMap {
+				display: flex;
+				flex-direction: column;
+				gap: 10px;
+			}
+			.content_overview {
+				display: flex;
+				flex-direction: column;
+				gap: 10px;
+			}
+		}
+	}
+}

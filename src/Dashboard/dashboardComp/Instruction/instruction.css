@@ -1,0 +1,53 @@
+.instruction_wrapper {
+  padding: 20px;
+  box-shadow: 0 0 55px rgba(19, 45, 70, 0.2196078431);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-family: "M PLUS 1 Code", sans-serif;
+}
+.instruction_wrapper .instruction {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  border-radius: 5px;
+  color: #191e29;
+}
+.instruction_wrapper .instruction a {
+  color: #191e29;
+}
+.instruction_wrapper .instruction .instruction_line {
+  width: 80%;
+  height: 2.5px;
+  background-color: #191e29;
+}
+.instruction_wrapper .instruction .instruction_content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+.instruction_wrapper .instruction .instruction_content .content_taskGenetator {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.instruction_wrapper .instruction .instruction_content .content_Timer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.instruction_wrapper .instruction .instruction_content .content_RoadMap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.instruction_wrapper .instruction .instruction_content .content_overview {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
