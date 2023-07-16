@@ -1,18 +1,22 @@
 {
   "files": {
-    "main.css": "/TaskMaster2.0/static/css/main.6e34091e.css",
-    "main.js": "/TaskMaster2.0/static/js/main.9cca9eb8.js",
+    "main.css": "/TaskMaster2.0/static/css/main.ac107bcd.css",
+    "main.js": "/TaskMaster2.0/static/js/main.5c30e7ee.js",
     "static/media/tree.mp4": "/TaskMaster2.0/static/media/tree.d6bd7b7210da42d251db.mp4",
-    "static/media/profile.jpg": "/TaskMaster2.0/static/media/profile.1a7abc19b3724174afcc.jpg",
     "static/media/bg_for_sign.png": "/TaskMaster2.0/static/media/bg_for_sign.5b709282559c1f833203.png",
     "static/media/data_visualisation_bg.png": "/TaskMaster2.0/static/media/data_visualisation_bg.0f2b62bbdb4fdf152bc9.png",
     "static/media/footer_bg.png": "/TaskMaster2.0/static/media/footer_bg.ba098f2f1fb6e82ed1fa.png",
+    "static/media/profile.jpg": "/TaskMaster2.0/static/media/profile.233c6214f9354cc0fa4e.jpg",
+    "static/media/profile3.jpg": "/TaskMaster2.0/static/media/profile3.decc9d8793e83d66ea2a.jpg",
+    "static/media/profile4.jpg": "/TaskMaster2.0/static/media/profile4.6e9bd0f895bd5c249ef6.jpg",
+    "static/media/profile6.jpg": "/TaskMaster2.0/static/media/profile6.83e55e80720d1fc11aaf.jpg",
+    "static/media/profile5.jpg": "/TaskMaster2.0/static/media/profile5.dbc6ad63eb6d2c9104de.jpg",
     "index.html": "/TaskMaster2.0/index.html",
-    "main.6e34091e.css.map": "/TaskMaster2.0/static/css/main.6e34091e.css.map",
-    "main.9cca9eb8.js.map": "/TaskMaster2.0/static/js/main.9cca9eb8.js.map"
+    "main.ac107bcd.css.map": "/TaskMaster2.0/static/css/main.ac107bcd.css.map",
+    "main.5c30e7ee.js.map": "/TaskMaster2.0/static/js/main.5c30e7ee.js.map"
   },
   "entrypoints": [
-    "static/css/main.6e34091e.css",
-    "static/js/main.9cca9eb8.js"
+    "static/css/main.ac107bcd.css",
+    "static/js/main.5c30e7ee.js"
   ]
 }
