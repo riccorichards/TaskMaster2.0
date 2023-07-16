@@ -83,7 +83,7 @@ const ProgressSkills = () => {
 	};
 
 	return (
-		<SkillsEchart option={option} style={{ height: "100%", }} />
+		<SkillsEchart option={option} style={{ height: "100%" }} />
 	)
 }
 

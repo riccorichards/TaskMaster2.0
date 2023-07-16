@@ -1,7 +1,7 @@
 @use "../../../sass/var.scss";
 
 .road_map {
-	height: 100vh;
+	height: calc(100vh - 100px);
 	padding: 20px;
 	box-shadow: 0 0 55px var.$dark_blue_shadow;
 	display: flex;

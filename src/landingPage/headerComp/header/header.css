@@ -43,6 +43,12 @@ header .carrent_data .signUpSection .joinwithus:hover {
   background-color: #01c380;
   color: #191e29;
 }
+@media screen and (max-width: 1150px) {
+  header .carrent_data .signUpSection .joinwithus {
+    padding: 6px 16px;
+    font-size: 14px;
+  }
+}
 header .carrent_data .tableOfContent_wrapper {
   border: 1px solid #132d46;
   border-radius: 0 100px 0 100px;
@@ -69,9 +75,24 @@ header .bg_style .web_descriprion h1 {
   color: #fff;
   text-shadow: 0.5px 2px 1.55px #01c380;
 }
+@media screen and (max-width: 425px) {
+  header .bg_style .web_descriprion h1 {
+    font-size: 35px;
+  }
+}
 header .bg_style .web_descriprion span {
   color: #696e79;
   text-shadow: 0.5px 0.5px 1.55px #01c380;
+}
+@media screen and (max-width: 710px) {
+  header .bg_style .web_descriprion span {
+    font-size: 24px;
+  }
+}
+@media screen and (max-width: 460px) {
+  header .bg_style .web_descriprion span {
+    font-size: 18px;
+  }
 }
 header .startUp {
   position: absolute;
@@ -93,6 +114,13 @@ header .startUp {
 header .startUp:hover {
   background-color: #01c380;
   color: #132d46;
+}
+@media screen and (max-width: 425px) {
+  header .startUp {
+    font-size: 24px;
+    width: 120px;
+    height: 45px;
+  }
 }
 
 @media screen and (max-width: 960px) {

@@ -1,6 +1,7 @@
 @use "../../../../sass/var.scss";
 
 .RecentlyActivity {
+	flex: 1;
 	height: 100%;
 	font-family: var.$font;
 	overflow-y: scroll;

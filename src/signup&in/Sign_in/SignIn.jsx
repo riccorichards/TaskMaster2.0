@@ -17,7 +17,6 @@ const SignIn = () => {
 		setInputValue(prev => ({ ...prev, [name]: value }))
 	}
 	const user = JSON.parse(localStorage.getItem("user"))
-	console.log(user)
 	const navigate = useNavigate()
 	const check_email = user.email === inputValue.email
 	const check_password = user.password === inputValue.password

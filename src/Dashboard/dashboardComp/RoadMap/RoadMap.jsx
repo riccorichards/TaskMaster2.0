@@ -18,7 +18,7 @@ const RoadMap = () => {
 				data: [backtEnd],
 				left: '2%',
 				right: '2%',
-				top: '20.5%',
+				top: '30.5%',
 				bottom: '10%',
 				symbol: 'emptyCircle',
 				orient: 'BT',

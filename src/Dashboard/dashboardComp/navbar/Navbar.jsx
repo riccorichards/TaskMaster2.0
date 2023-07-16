@@ -1,5 +1,4 @@
 import "./navbar.css";
-//import profile_img from "../../../assets/profile.jpg";
 import Greeting from './Greeting';
 import { NavLink, useNavigate, Link } from 'react-router-dom';
 import { ImSwitch } from "react-icons/im";
@@ -10,43 +9,50 @@ import { MdTimer } from "react-icons/md";
 import { FaSitemap } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import EditProfile from "./EditProfile";
+import { userProfileIMG } from "../../../DataSection/profileSwitcher";
 const Navbar = ({ setIsInstuction }) => {
 	const [isSettings, setIsSettings] = useState(false)
 	const [isEditProfile, setIsEditProfile] = useState(false)
-	const [profileIMG, setProfileIMG] = useState(null)
+	const [profileId, setProfileId] = useState(() => {
+		const getId = JSON.parse(localStorage.getItem("profileIMG"))
+		return getId || 1
+	})
 	const navigate = useNavigate()
 	const userLogOut = () => {
-		localStorage.removeItem("existUser")
 		navigate("/")
 	}
+
+	useEffect(() => {
+		const getId = JSON.parse(localStorage.getItem("profileIMG"))
+		if (getId) {
+			setProfileId(getId)
+		}
+	}, [])
 	const scrollToComponents = (id) => {
-		const element = document.getElementById(id)
+		const element = document.getElementById(id);
 		if (element) {
-			element.scrollIntoView({ behavior: "smooth" })
+			const paddingTop = 100; // adjust this value as needed
+			const elementTop = element.getBoundingClientRect().top;
+			const offsetTop = elementTop + window.pageYOffset - paddingTop;
+			window.scrollTo({ top: offsetTop, behavior: "smooth" });
+		}
+	};
+	const chosenProfile = (id) => {
+		for (let i = 0; i < userProfileIMG.length; i++) {
+			let profile = userProfileIMG[i];
+			if (profile.id === id) {
+				return profile.profile
+			}
 		}
 	}
 
 	useEffect(() => {
-		const handlerProfileIMG = () => {
-			const getProfileIMG = localStorage.getItem("profileIMG")
-			if (getProfileIMG) {
-				setProfileIMG(getProfileIMG)
-			}
-		}
-
-		window.addEventListener("storage", handlerProfileIMG)
-
-		return () => {
-			window.removeEventListener("storage", handlerProfileIMG)
-		}
-	})
-
-	const profile_img = profileIMG ? profileIMG : null;
-	console.log(profile_img)
+		localStorage.setItem("profileIMG", JSON.stringify(profileId))
+	}, [profileId])
 	return (
 		<div className="navbar">
 			<div className="navbar_header">
-				<img src={profile_img} alt="profile img" />
+				<img src={chosenProfile(profileId)} alt="profile img" />
 				<Greeting />
 			</div>
 			<div className="navbar_navigate">
@@ -78,7 +84,7 @@ const Navbar = ({ setIsInstuction }) => {
 					: null}
 				{isEditProfile ?
 					<div className="editProfile_wrapper">
-						<EditProfile />
+						<EditProfile userProfileIMG={userProfileIMG} setProfileId={setProfileId} />
 					</div>
 					:
 					null}

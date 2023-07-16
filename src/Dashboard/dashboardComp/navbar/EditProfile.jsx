@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 
 const handlerUsername = new Event("storage")
-const handlerProfileIMG = new Event("storage")
-const EditProfile = () => {
+const EditProfile = ({ setProfileId, userProfileIMG }) => {
 	const [newUserName, setNewUsername] = useState("");
-	const [file, setFile] = useState({})
+	const [chooseId, setChooseId] = useState(false)
 	const [user, setUser] = useState({})
 	useEffect(() => {
 		const user = JSON.parse(localStorage.getItem("user"))
@@ -24,30 +23,6 @@ const EditProfile = () => {
 		setNewUsername("")
 	}
 
-	const handlerFile = (e) => {
-		setFile(e.target.files[0])
-	}
-	const [data, setData] = useState([])
-	const handlerUpload = async () => {
-		if (file) {
-			const formData = new FormData();
-			formData.append("file", file);
-			try {
-				const response = await fetch("url", { method: "post", body: formData });
-				const data = await response.json();
-				setData(data)
-			} catch (err) {
-				console.log(err.message);
-			}
-		}
-	};
- console.log(data)
-	useEffect(() => {
-		if (file) {
-			localStorage.setItem("profileIMG", file.name)
-			window.dispatchEvent(handlerProfileIMG)
-		}
-	}, [file])
 
 	return (
 		<React.Fragment>
@@ -61,14 +36,15 @@ const EditProfile = () => {
 				<button onClick={() => changeProfileImg()}>Edit</button>
 			</div>
 			<div className="uploadFile">
-				<input
-					type="file"
-					name="file"
-					onChange={handlerFile}
-				/>
-				<button
-					onClick={() => handlerUpload()}
-				>Upload</button>
+				<button onClick={() => setChooseId(prev => !prev)}>Choose your Type</button>
+				{chooseId ?
+					<div className="profileIMGs_wrapper">
+						{userProfileIMG.map(profile => (
+							<div className="profileIMGs" key={profile.id}>
+								<img src={profile.profile} alt="profile" onClick={() => setProfileId(profile.id)}/> 
+						 </div>
+						))}
+					</div> : null}
 			</div>
 		</React.Fragment>
 	)

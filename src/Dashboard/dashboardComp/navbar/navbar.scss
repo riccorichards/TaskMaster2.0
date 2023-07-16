@@ -1,177 +1,235 @@
 @use "../../../sass/var.scss";
 
-.navbar {
-	margin-top: 20px;
-	display: flex;
-	flex-direction: column;
-	gap: 15px;
-	height: 95vh;
-	padding: 20px;
-	background-color: var.$dark_blue_shadow;
-	border-radius: 25px;
-	box-shadow: 0 0 55px var.$grey_shadow;
-	position: fixed;
 
-
-	.navbar_header {
-	flex: 1.5;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-
-	img {
-		width: 75px;
-		height: 75px;
-		border-radius: 10px;
-	}
-	}
-	.navbar_navigate {
-	flex: 3;
-	display: flex;
-	justify-content: space-evenly;
-	align-items: center;
-	flex-direction: column;
-
-	a{
-		font-size: 24px;
-		font-family: var.$font;
-		text-decoration: none;
-    color: var.$grey;
-		border: 1px solid transparent;
-		border-radius: 15px;
-		padding: 10px 20px;
-		transition: all .25s ease-in;
-
-		&:hover {
-		border: 1px solid var.$white;
-		color: var.$aqua;
-		}
-	}
-
-	.overview_svg {
+	.navbar {
+		top: 0;
+		width: 85%;
+		margin: 0 auto;
+		height: 100px;
 		display: flex;
-		align-items: center;
-		gap: 5px;
-	}
-	.task_svg {
-		display: flex;
-		align-items: center;
-		gap: 5px;
-	}
-	.timer_svg {
-		display: flex;
-		align-items: center;
-		gap: 5px;
-	}
-	.map_svg {
-		display: flex;
-		align-items: center;
-		gap: 5px;
-		svg {
-			transform: rotate(180deg);
-		}
-	}
-	}
-	.navbar_footer {
-	flex: 0.5;
-	display: flex;
-	justify-content: space-evenly;
-	align-items: center;
-	position: relative;
+		gap: 15px;
+		padding: 20px;
+		background-color: var.$black;
+		z-index: 999;
+		border-radius: 25px;
+		box-shadow: 0 0 55px var.$grey_shadow;
+		position: fixed;
 	
-	svg {
-		font-size: 24px;
-		color: var.$white;
-		cursor: pointer;
-		transition: all .25s ease-in;
-
-
-		&:first-child {
-			color: var.$aqua;
-			font-size: 28px;
-
-			&:hover {
-				color: var.$dark_blue;	
-			}
-		}
-		&:nth-child(2):hover {
-			color: red;
-		}
-	}
-	.settingPages {
-		position: absolute;
-		bottom: 100%;
+	
+		.navbar_header {
+		flex: 1.5;
 		display: flex;
-		flex-direction: column;
+		gap: 15px;
 		justify-content: center;
 		align-items: center;
-		gap: 10px;
-		width: 100%;
-		padding: 10px;
-		background-color: var.$white;
-		border-radius: 5px;
-
-    a {
-			text-decoration: none;
-			font-size: 16px;
+		order: 1;
+	
+		img {
+			width: 75px;
+			height: 75px;
+			border-radius: 50%;
+			box-shadow: 0 0 105px var.$grey;
+		}
+		}
+		.navbar_navigate {
+		flex: 3;
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+	
+		a{
+			font-size: 24px;
 			font-family: var.$font;
-			color: var.$dark_blue;
-			letter-spacing: 1px;
+			text-decoration: none;
+			color: var.$grey;
+			border: 1px solid transparent;
+			border-radius: 15px;
+			padding: 10px 20px;
 			transition: all .25s ease-in;
-
+	
 			&:hover {
-				text-decoration: underline;
-				transform: scale(1.1);
+			border: 1px solid var.$white;
+			color: var.$aqua;
+			}
+
+		}
+	
+		.overview_svg {
+			display: flex;
+			align-items: center;
+			gap: 5px;
+		}
+		.task_svg {
+			display: flex;
+			align-items: center;
+			gap: 5px;
+		}
+		.timer_svg {
+			display: flex;
+			align-items: center;
+			gap: 5px;
+		}
+		.map_svg {
+			display: flex;
+			align-items: center;
+			gap: 5px;
+			svg {
+				transform: rotate(180deg);
 			}
 		}
-	}
-
-	.editProfile_wrapper {
-		position: absolute;
-		width: 100%;
-		background-color: var.$white;
-		bottom: 250%;
-		border-radius: 5px;
-		height: 250px;
-		font-family: var.$font;
-
-		.profileEditor {
-			padding: 5px;
+		}
+		.navbar_footer {
+		order: -1;
+		flex: 0.5;
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+		position: relative;
+		
+		svg {
+			font-size: 24px;
+			color: var.$white;
+			cursor: pointer;
+			transition: all .25s ease-in;
+	
+	
+			&:first-child {
+			  order: 1;
+				color: var.$aqua;
+				font-size: 28px;
+	
+				&:hover {
+					color: var.$dark_blue;	
+				}
+			}
+			&:nth-child(2):hover {
+				color: red;
+			}
+		}
+		.settingPages {
+			position: absolute;
+			bottom: 100%;
 			display: flex;
 			flex-direction: column;
-			gap: 5px;
-
-			h3 {
-				color: var.$black;
-			}
-			input {
-				margin-top: 10px;
-				padding: 7px 5px;
+			justify-content: center;
+			align-items: center;
+			gap: 10px;
+			width: 100%;
+			padding: 10px;
+			background-color: var.$white;
+			border-radius: 5px;
+	
+			a {
+				text-decoration: none;
+				font-size: 16px;
 				font-family: var.$font;
+				color: var.$dark_blue;
 				letter-spacing: 1px;
-
-				&::placeholder{
-					color: var.$dark_blue;
-				}
-				&:focus {
-					outline: none;
+				transition: all .25s ease-in;
+	
+				&:hover {
+					text-decoration: underline;
+					transform: scale(1.1);
 				}
 			}
+		}
+	
+		.editProfile_wrapper {
+			position: absolute;
+			width: 100%;
+			background-color: var.$white;
+			bottom: 250%;
+			border-radius: 5px;
+			height: 250px;
+			font-family: var.$font;
+	
+			.profileEditor {
+				padding: 5px;
+				display: flex;
+				flex-direction: column;
+				gap: 5px;
+	
+				h3 {
+					color: var.$black;
+				}
+				input {
+					margin-top: 10px;
+					padding: 7px 5px;
+					font-family: var.$font;
+					letter-spacing: 1px;
+	
+					&::placeholder{
+						color: var.$dark_blue;
+					}
+					&:focus {
+						outline: none;
+					}
+				}
+				button {
+					padding: 5px 5px;
+					font-family: var.$font;
+					letter-spacing: 1px;
+					width: fit-content;
+					background-color: var.$black;
+					border: none;
+					color: var.$white;
+					
+					&:hover {
+						cursor: pointer;
+					}
+				}
+			}
+		}
+	
+		.uploadFile {
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: center; 
+			gap: 15px;
+	
 			button {
 				padding: 5px 5px;
 				font-family: var.$font;
 				letter-spacing: 1px;
 				width: fit-content;
-				background-color: var.$black;
+				background-color: transparent;
+				color: var.$black;
 				border: none;
-				color: var.$white;
-        
+				text-decoration: underline;
+				font-size: 16px;
 				&:hover {
 					cursor: pointer;
 				}
 			}
+			
+			.profileIMGs_wrapper {
+				width: 100%;
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: space-around;
+	
+				.profileIMGs{
+				 img {
+					width: 35px;
+					height: 35px;
+					border-radius: 50%;
+					box-shadow: 0 0 105px var.$grey;
+	
+					&:hover {
+						cursor: pointer;
+						transform: scale(1.05);
+					}
+				 }
+				}
+			}
 		}
 	}
-}
+	}
+
+
+@media screen and (max-width: 1460px){
+	.navbar_navigate {
+    
+	}
 }

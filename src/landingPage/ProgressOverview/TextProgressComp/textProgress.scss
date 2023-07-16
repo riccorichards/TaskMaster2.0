@@ -29,3 +29,20 @@
 		padding-left: 15px;
 	}
 	}
+
+	@media screen and (max-width: 450px) {
+		.textProgress_part{
+			.text_progress_header {
+				span {
+					font-size: 180px;
+				}
+				h1 {
+				 font-size: 35px;
+				}	
+			}
+			p {
+			 font-size: 18px;
+			}	
+			
+		}
+	}

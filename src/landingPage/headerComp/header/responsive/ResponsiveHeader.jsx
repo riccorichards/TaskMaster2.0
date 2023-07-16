@@ -24,10 +24,10 @@ const ResponsiveHeader = () => {
 				}
 			</div>
 			{isContentOfTable ? <div className='responsive_main'>
-				<Link to="#" onClick={() => scrollToComponents("journey")}>Managing Your Learning Journey</Link>
+				<Link to="#" onClick={() => scrollToComponents("journey")}>Learning Journey</Link>
 				<Link to="#" onClick={() => scrollToComponents("progress")}>Progress Overview</Link>
 				<Link to="#" onClick={() => scrollToComponents("visualization")}>Data VisualiSation</Link>
-				<Link to="#" onClick={() => scrollToComponents("learningTime")}>Managing Your Learning Time</Link>
+				<Link to="#" onClick={() => scrollToComponents("learningTime")}>Mastering Your Time</Link>
 			</div>
 				: null}
 		</div>

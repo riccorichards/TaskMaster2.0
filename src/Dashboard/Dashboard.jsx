@@ -27,7 +27,6 @@ const Dashboard = () => {
 							<Timer />
 							<RoadMap />
 						</>
-
 					}
 				</div>
 			</main>

@@ -82,7 +82,7 @@ const ProgressOverview = () => {
 	return (
 		<div className="ProgressOverview">
 			<div className="during_progress">
-				<ProgressEchart option={option} style={{ height: "350px", width: "100%" }} />
+				<ProgressEchart option={option} style={{ height: "100%" }} />
 				<BsQuestionLg onClick={() => setShowMeLineChartDetails(prev => !prev)} />
 				{showMeLineChartDetails ? <div className="lineChartDetails">
 					<p>Here, we calculate the daily task quality by taking the completed tasks for the day and dividing it by the total tasks assigned. We then multiply this result by 100 to obtain a percentage, giving you insights into the quality of your daily progress.</p>

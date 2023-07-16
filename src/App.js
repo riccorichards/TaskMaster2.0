@@ -14,7 +14,7 @@ function App() {
   const values = { user, setUser }
   const graphValues = { FrontEndData, BackEnd }
   const size = new Blob(Object.values(localStorage)).size;
-  console.log(size);
+  console.log("5MB or 5 000 000/", size);
   return (
     <HashRouter>
       <UserContext.Provider value={values}>

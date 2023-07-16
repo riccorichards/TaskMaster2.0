@@ -1,1 +1,26 @@
 @use "../sass/var.scss";
+
+.landingPage {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 160px;
+}
+
+@media screen and (max-width: 1050px) {
+	main {
+		display: flex;
+		flex-direction: column;
+		gap: 260px;
+	}
+	.footer_wrapper {
+		margin-top: 260px;
+	}
+}
+@media screen and (max-width: 425px) {
+	main {
+		display: flex;
+		flex-direction: column;
+		gap: 60px;
+	}
+}

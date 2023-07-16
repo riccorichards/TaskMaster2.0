@@ -47,6 +47,13 @@ header {
 					background-color: var.$aqua;
 					color: var.$black;
 				}
+
+			}
+			@media screen and (max-width: 1150px){
+				.joinwithus{
+					padding: 6px 16px;
+					font-size: 14px;
+				}
 			}
 		}
 		.tableOfContent_wrapper {
@@ -75,6 +82,10 @@ header {
 			h1{
 				color: var.$white;
         text-shadow: 0.5px 2px 1.55px var.$aqua;
+
+				@media screen and (max-width: 425px) {
+					font-size: 35px;
+				}
 			}
 
 			span {
@@ -82,6 +93,16 @@ header {
         text-shadow: 0.5px 0.5px 1.55px var.$aqua;
 			}
 
+			@media screen and (max-width: 710px) {
+				span {
+					font-size: 24px;
+				} 
+			}
+			@media screen and (max-width: 460px) {
+				span {
+					font-size: 18px;
+				} 
+			}
 		}
 	}
 
@@ -107,6 +128,12 @@ header {
 		&:hover {
 			background-color: var.$aqua;
 			color: var.$dark_blue;
+		}
+
+		@media screen and (max-width: 425px) {
+			font-size: 24px;
+			width: 120px;
+			height: 45px;
 		}
 	}
 }

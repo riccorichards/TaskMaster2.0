@@ -45,15 +45,11 @@ const StopWatch = () => {
 		}
 	})
 
-
 	useEffect(() => {
 		for (let i = 0; i < getStatusFromDailyTasks.length; i++) {
 			if (getStatusFromDailyTasks[i].title === detectedWorkSpace) {
 				const status = getStatusFromDailyTasks[i].complete
-				console.log(status)
 				setDefinedStatusOfTask(status)
-			} else {
-				console.log("no")
 			}
 		}
 	}, [definedStatusOfTask, detectedWorkSpace, getStatusFromDailyTasks])
@@ -72,6 +68,7 @@ const StopWatch = () => {
 		setRunStopWatch(false)
 		setTimeValue(maxWorkingTime)
 	}
+	let checkDifference = maxWorkingTime - timeValue
 	useEffect(() => {
 		let timeOut;
 		if (runStopWatch) {
@@ -79,6 +76,8 @@ const StopWatch = () => {
 			timeOut = setTimeout(() => {
 				setTimeValue(prev => prev - 1000)
 			}, 1000)
+			setDisable(true)
+		} else if (checkDifference !== 0) {
 			setDisable(true)
 		} else {
 			setDisable(false)
@@ -92,7 +91,7 @@ const StopWatch = () => {
 		return () => {
 			clearTimeout(timeOut)
 		}
-	}, [timeValue, runStopWatch, maxWorkingTime])
+	}, [timeValue, runStopWatch, maxWorkingTime, checkDifference])
 
 	const timeSaver = () => {
 		setRunStopWatch(false)

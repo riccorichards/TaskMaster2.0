@@ -76,7 +76,7 @@ const OverviewDataQuality = () => {
 		<div className="OverviewDataQuality">
 			<div className="quality_data">
 				<h2>Quality</h2>
-				<span>{parseInt(quality)} %</span>
+				<span>{parseInt(quality) || 0} %</span>
 			</div>
 			<QualityEchart option={option} style={{ height: "150px", width: "100%" }} />
 			<BsQuestionLg onClick={() => setShowQualityDetails(prev => !prev)} />
