@@ -48,8 +48,10 @@ const BackEnd = {
 				{
 					"name": "npm",
 					"children": [
-						{ "name": "i global & local" },
+						{ "name": "npx" },
+						{ "name": "installing Packages" },
 						{ "name": "Updating Packages" },
+						{ "name": "Using Installed Packages" },
 						{ "name": "Running Scripts" },
 					]
 				},
@@ -301,60 +303,60 @@ const BackEnd = {
 						{ "name": "Process management" },
 					]
 				},
+			]
+		},
+		{
+			"name": "Relational Databases",
+			"children": [
+				{ "name": "PostgresSQL" },
+				{ "name": "MySQL" },
+				{ "name": "MariaDB" },
+				{ "name": "MS SQL" },
+				{ "name": "Oracle" },
+			]
+		},
+		{
+			"name": "NoSQL Databases",
+			"children": [
 				{
-					"name": "Relational Databases",
+					"name": "Document DBs",
 					"children": [
-						{ "name": "PostgresSQL" },
-						{ "name": "MySQL" },
-						{ "name": "MariaDB" },
-						{ "name": "MS SQL" },
-						{ "name": "Oracle" },
+						{ "name": "MongoDB" },
+						{ "name": "CouchDB" },
 					]
 				},
 				{
-					"name": "NoSQL Databases",
+					"name": "Time Series",
 					"children": [
-						{
-							"name": "Document DBs",
-							"children": [
-								{ "name": "MongoDB" },
-								{ "name": "CouchDB" },
-							]
-						},
-						{
-							"name": "Time Series",
-							"children": [
-								{ "name": "InfluxDB" },
-								{ "name": "TimeScale" },
-							]
-						},
-						{
-							"name": "Realtime",
-							"children": [
-								{ "name": "Firebase" },
-								{ "name": "RethinkDB" },
-							]
-						},
-						{
-							"name": "Column DBs",
-							"children": [
-								{ "name": "Cassandra" },
-								{ "name": "HBase" },
-							]
-						},
-						{
-							"name": "Key-Value",
-							"children": [
-								{ "name": "Redis" },
-								{ "name": "DynamoDB" },
-							]
-						},
-						{
-							"name": "Graph DBs",
-							"children": [
-								{ "name": "Neo4j" },
-							]
-						},
+						{ "name": "InfluxDB" },
+						{ "name": "TimeScale" },
+					]
+				},
+				{
+					"name": "Realtime",
+					"children": [
+						{ "name": "Firebase" },
+						{ "name": "RethinkDB" },
+					]
+				},
+				{
+					"name": "Column DBs",
+					"children": [
+						{ "name": "Cassandra" },
+						{ "name": "HBase" },
+					]
+				},
+				{
+					"name": "Key-Value",
+					"children": [
+						{ "name": "Redis" },
+						{ "name": "DynamoDB" },
+					]
+				},
+				{
+					"name": "Graph DBs",
+					"children": [
+						{ "name": "Neo4j" },
 					]
 				},
 			]
@@ -534,6 +536,20 @@ const BackEnd = {
 						},
 					]
 				},
+			]
+		},
+		{
+			"name": "My Own",
+			"children": [
+				{ "name": "Асинхронность в JS" },
+				{ "name": "Event Loop" },
+				{ "name": "Next JS" },
+				{ "name": "Redux toolkit" },
+				{ "name": "React query" },
+				{ "name": "Ajax в деталях" },
+				{ "name": "Regular Expressions" },
+				{ "name": "axios-mock-adapter" },
+				{ "name": "Компьютерные сети" },
 			]
 		},
 	],

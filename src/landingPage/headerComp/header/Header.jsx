@@ -7,36 +7,24 @@ import data_visualisation_bg from "../../../assets/data_visualisation_bg.png";
 import { Link, useNavigate } from "react-router-dom";
 import { BsArrowRight } from "react-icons/bs";
 import { useState } from "react";
-import { useEffect } from "react";
 import ResponsiveHeader from "./responsive/ResponsiveHeader";
 const Header = () => {
 	const navigate = useNavigate()
 	const goToAuth = () => {
 		navigate("/auth");
 	}
-	const [responsiveHeader, setResponsiveHeader] = useState(false)
+	const [screenSize, setScreenSize] = useState(window.innerWidth)
 
-	useEffect(() => {
-		const handlerResize = () => {
-			if (window.innerWidth <= 790) {
-				setResponsiveHeader(true)
-			} else {
-				setResponsiveHeader(false)
-			}
-		}
+	window.addEventListener("resize", () => {
+		setScreenSize(window.innerWidth)
+	}) 
 
-		window.addEventListener("resize", handlerResize)
-
-		return () => {
-			window.removeEventListener("resize", handlerResize)
-		}
-	}, [responsiveHeader])
 	return (
 		<>
 
 			<header>
-				{!responsiveHeader ?
-					<div className="carrent_data">
+				{screenSize > 790 ?
+					(<div className="carrent_data">
 						<div className="header_logo_wrapper">
 							<Logo />
 						</div>
@@ -50,7 +38,7 @@ const Header = () => {
 						<div className="tableOfContent_wrapper">
 							<TableOfContent />
 						</div>
-					</div> : <ResponsiveHeader />
+					</div>) : <ResponsiveHeader />
 				}
 				<div className="bg_style">
 					<img src={data_visualisation_bg} alt="data visualisation background" />

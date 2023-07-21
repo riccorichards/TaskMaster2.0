@@ -4,9 +4,7 @@ import RoadMapEchart from "echarts-for-react";
 import GraphContext from "../../../contexts/graphContext";
 const RoadMap = () => {
 	const getGraph = useContext(GraphContext)
-	//const frontEnd = getGraph.frondEndData;
 	const backtEnd = getGraph.BackEnd;
-
 	const option = {
 		tooltip: {
 			trigger: 'item',

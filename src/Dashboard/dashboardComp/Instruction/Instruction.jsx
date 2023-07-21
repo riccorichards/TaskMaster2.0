@@ -5,17 +5,15 @@ import ScrollToTop from './../../../ScrollToTop';
 const Instruction = () => {
 
 	const scrollAfterClick = (id) => {
-		const el = document.getElementById(id)
-		if (el) {
-			el.scrollIntoView({ behavior: "smooth" })
+		const element = document.getElementById(id);
+		if (element) {
+			const paddingTop = 110;
+			const elementTop = element.getBoundingClientRect().top;
+			const offsetTop = elementTop + window.scrollY - paddingTop;
+			window.scrollTo({ top: offsetTop, behavior: "smooth" });
 		}
-	}
-	//const scrollToComponents = (id) => {
-	//	const element = document.getElementById(id)
-	//	if (element) {
-	//		element.scrollIntoView({ behavior: "smooth" })
-	//	}
-	//}
+	};
+
 	return (
 		<div className="instruction_wrapper">
 			<ScrollToTop />

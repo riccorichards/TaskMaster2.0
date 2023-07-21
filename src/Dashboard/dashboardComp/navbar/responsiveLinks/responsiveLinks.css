@@ -1,0 +1,38 @@
+.ResponsiveLinks_wrapper {
+  position: relative;
+  font-family: "M PLUS 1 Code", sans-serif;
+  transition: all 0.25s ease-in;
+}
+.ResponsiveLinks_wrapper button {
+  width: 200px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 10px;
+  font-family: "M PLUS 1 Code", sans-serif;
+  letter-spacing: 1px;
+  font-size: 16px;
+}
+.ResponsiveLinks_wrapper button:hover {
+  cursor: pointer;
+}
+.ResponsiveLinks_wrapper .selectLinks {
+  padding-top: 10px;
+  position: absolute;
+  padding-left: 10px;
+  background-color: #191e29;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.ResponsiveLinks_wrapper .selectLinks .selectLinks_item {
+  color: #fff;
+  transition: all 0.25s ease-in;
+}
+.ResponsiveLinks_wrapper .selectLinks .selectLinks_item:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  color: #01c380;
+}

@@ -1,10 +1,7 @@
 .dashboard_main {
-  padding-top: 100px;
+  padding-top: 60px;
   display: flex;
   flex-direction: column;
-}
-.dashboard_main .navBar_wrapper {
-  width: 100%;
 }
 .dashboard_main .components_wrapper {
   display: flex;

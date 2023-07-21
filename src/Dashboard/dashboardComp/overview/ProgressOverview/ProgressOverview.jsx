@@ -93,7 +93,7 @@ const ProgressOverview = () => {
 				<ProgressSkills />
 				<BsQuestionLg onClick={() => setShowMeSkillsPieDetails(prev => !prev)} />
 				{showMeSkillsPieDetails ? <div className="skillsPieDetails">
-					<p>Discover the Top Seven Learning Topics Derived from Recent Activity</p>
+					<p>Discover the Top Seven Learning Topics Derived from Recent Activity. formula: (topic's duration / topic's amount)</p>
 				</div>
 					: null}
 			</div>

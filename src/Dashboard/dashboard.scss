@@ -1,13 +1,9 @@
 @use "../sass/var.scss";
 
 .dashboard_main {
-	padding-top: 100px;
+	padding-top: 60px;
 	display: flex;
 	flex-direction: column;
-  
-	.navBar_wrapper{
-		width: 100%;
-	}
 
 	.components_wrapper {
 	display: flex;

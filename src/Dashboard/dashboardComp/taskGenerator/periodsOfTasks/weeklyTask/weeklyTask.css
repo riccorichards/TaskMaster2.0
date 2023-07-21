@@ -1,6 +1,7 @@
 .weeklyTask {
   display: flex;
   flex-direction: column;
+  height: calc(100vh - 75px);
   gap: 15px;
 }
 .weeklyTask h2 {
@@ -43,7 +44,7 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
-  height: 50px;
+  height: 100%;
 }
 .weeklyTask .task_area .each_Task {
   display: flex;
@@ -52,6 +53,7 @@
   border-bottom: #696e79 1px solid;
   color: #fff;
   font-size: 16px;
+  position: relative;
 }
 .weeklyTask .task_area .each_Task .Weekly_svgBTNs {
   display: flex;
@@ -70,6 +72,12 @@
 }
 .weeklyTask .task_area .each_Task svg:nth-child(2):hover {
   color: red;
+}
+.weeklyTask .task_area .each_Task span {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  font-size: 12px;
 }
 .weeklyTask .active {
   text-decoration: line-through;

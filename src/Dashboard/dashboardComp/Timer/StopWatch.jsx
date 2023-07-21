@@ -1,40 +1,35 @@
 import PomodoraPieEchart from "echarts-for-react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { BsFillPauseCircleFill, BsFillSave2Fill } from "react-icons/bs";
 import { AiFillPlayCircle } from "react-icons/ai";
 import { GoStop } from "react-icons/go";
 import moment from "moment/moment";
-import DetectWorkSpace from "./DetectWorkSpace";
 
 const readyForRecentlyInfo = new Event("storage")
 
 const StopWatch = () => {
-	const maxWorkingTime = ((8 * 60 * 60 * 1000) - (4 * 60 * 60 * 1000));
+	const maxWorkingTime = (8 * 60 * 60 * 1000);
 	const [timeValue, setTimeValue] = useState(maxWorkingTime)
 	const [runStopWatch, setRunStopWatch] = useState(false)
-	const stopWatchMin = moment(timeValue).format("hh:mm:ss")
 	const [validTime, setValidTime] = useState(false)
-	const [saveStopWatchTime, setSaveStopWatchTime] = useState(0);
 	const [showWorkSpaceInput, setShowWorkSpaceInput] = useState(false)
 	const [disable, setDisable] = useState(false)
-	const [detectedWorkSpace, setDetectedWorkSpace] = useState("")
-	const [definedStatusOfTask, setDefinedStatusOfTask] = useState(null)
 	const [recentlyArr, setRecentlyArr] = useState([])
-	const [getStatusFromDailyTasks, setGetStatusFromDailyTasks] = useState([])
-
-
+	const [getDailyTasks, setGetDailyTasks] = useState([])
+	const animationFrameId = useRef(null)
+	const fromTheSamePlace = useRef(null)
 	useEffect(() => {
 		const getTaskStatus = JSON.parse(localStorage.getItem("dailyTasks"))
 		if (getTaskStatus && getTaskStatus.length > 0) {
-			setGetStatusFromDailyTasks(getTaskStatus)
+			setGetDailyTasks(getTaskStatus)
 		}
 	}, [])
 
 	useEffect(() => {
 		const handlerStorageChanges = () => {
-			const updageDailyTasks = JSON.parse(localStorage.getItem("dailyTasks"))
-			if (updageDailyTasks) {
-				setGetStatusFromDailyTasks(updageDailyTasks)
+			const getDailyTasks = JSON.parse(localStorage.getItem("dailyTasks"))
+			if (getDailyTasks && getDailyTasks.length > 0) {
+				setGetDailyTasks(getDailyTasks)
 			}
 		}
 
@@ -43,16 +38,7 @@ const StopWatch = () => {
 		return () => {
 			window.removeEventListener("storage", handlerStorageChanges)
 		}
-	})
-
-	useEffect(() => {
-		for (let i = 0; i < getStatusFromDailyTasks.length; i++) {
-			if (getStatusFromDailyTasks[i].title === detectedWorkSpace) {
-				const status = getStatusFromDailyTasks[i].complete
-				setDefinedStatusOfTask(status)
-			}
-		}
-	}, [definedStatusOfTask, detectedWorkSpace, getStatusFromDailyTasks])
+	}, [getDailyTasks])
 
 	useEffect(() => {
 		const getDataForRecently = JSON.parse(localStorage.getItem("dataForRecently"))
@@ -61,70 +47,90 @@ const StopWatch = () => {
 		}
 	}, [])
 
-	const launchStopWatch = () => {
-		setRunStopWatch(prev => !prev)
-	}
 	const resetTimer = () => {
 		setRunStopWatch(false)
 		setTimeValue(maxWorkingTime)
+		fromTheSamePlace.current = null
 	}
-	let checkDifference = maxWorkingTime - timeValue
-	useEffect(() => {
-		let timeOut;
-		if (runStopWatch) {
-			setShowWorkSpaceInput(false)
-			timeOut = setTimeout(() => {
-				setTimeValue(prev => prev - 1000)
-			}, 1000)
-			setDisable(true)
-		} else if (checkDifference !== 0) {
-			setDisable(true)
-		} else {
-			setDisable(false)
-		}
 
-		if (timeValue === 0) {
-			setRunStopWatch(false)
-			setTimeValue(maxWorkingTime)
+	useEffect(() => {
+		const timeStart = Date.now()
+		animationFrameId.current = requestAnimationFrame(updateTimer);
+		function updateTimer() {
+			const curretTime = Date.now()
+			const elapsedTime = Math.floor((curretTime - timeStart) / 1000)
+
+			if (runStopWatch && !fromTheSamePlace.current) {
+				setShowWorkSpaceInput(false)
+				if (maxWorkingTime <= elapsedTime) {
+					setRunStopWatch(false)
+					setTimeValue(maxWorkingTime)
+				} else {
+					setTimeValue(maxWorkingTime - elapsedTime)
+					animationFrameId.current = requestAnimationFrame(updateTimer);
+				}
+				setDisable(true)
+			} else {
+				setDisable(false)
+			}
+
+			if (runStopWatch && fromTheSamePlace.current) {
+				setShowWorkSpaceInput(false)
+				if (fromTheSamePlace.current <= elapsedTime) {
+					setRunStopWatch(false)
+					setTimeValue(maxWorkingTime)
+				} else {
+					setTimeValue(fromTheSamePlace.current - elapsedTime)
+					animationFrameId.current = requestAnimationFrame(updateTimer);
+				}
+				setDisable(true)
+			} else {
+				setDisable(false)
+			}
 		}
 
 		return () => {
-			clearTimeout(timeOut)
+			cancelAnimationFrame(animationFrameId.current)
 		}
-	}, [timeValue, runStopWatch, maxWorkingTime, checkDifference])
-
+	}, [runStopWatch, maxWorkingTime])
+	const matchingTask = getDailyTasks.filter(task => task.readyToWork)
 	const timeSaver = () => {
 		setRunStopWatch(false)
 		const saveOrNot = window.confirm("Are you sure to save this time")
 		if (saveOrNot) {
 			setValidTime(saveOrNot)
 			const usingTime = maxWorkingTime - timeValue
-			setSaveStopWatchTime(prev => prev += usingTime)
-			if (detectedWorkSpace !== "") {
-				setRecentlyArr(prev => {
-					const id = prev.length > 0 ? prev[0].id + 1 : 1
-					const latestActivity = {
-						id: id,
-						workSpace: detectedWorkSpace,
-						duration: usingTime,
-						status: definedStatusOfTask,
-						update: moment().format("MMMM Do, hh:mm"),
-					}
-					return [latestActivity, ...prev]
-				})
+			for (let i = 0; i < getDailyTasks.length; i++) {
+				const task = getDailyTasks[i]
+				if (task.readyToWork) {
+					setRecentlyArr(prev => {
+						const id = prev.length > 0 ? prev[0].id + 1 : 1
+						const latestActivity = {
+							id: id,
+							workSpace: task.title,
+							task: task.text,
+							duration: usingTime * 1000,
+							status: task.complete,
+							update: moment().format("MMMM Do, hh:mm"),
+						}
+						return [latestActivity, ...prev]
+					})
+				}
 			}
 		}
 	}
 	useEffect(() => {
 		if (validTime) {
-			localStorage.setItem("saveStopWatchTime", JSON.stringify(saveStopWatchTime))
 			localStorage.setItem("dataForRecently", JSON.stringify(recentlyArr))
 			setTimeValue(maxWorkingTime)
 			window.dispatchEvent(readyForRecentlyInfo)
 		}
-	}, [saveStopWatchTime, validTime, maxWorkingTime, detectedWorkSpace, recentlyArr, definedStatusOfTask])
+	}, [validTime, maxWorkingTime, recentlyArr])
 
-
+	const pauseStopWatch = () => {
+		setRunStopWatch(false)
+		fromTheSamePlace.current = timeValue
+	}
 	const option = {
 		tooltip: {
 			trigger: 'item'
@@ -162,16 +168,23 @@ const StopWatch = () => {
 		]
 	};
 
-
+	const stopWatchMin = moment.utc(timeValue * 1000).format("hh:mm:ss");
 	return (
 		<div className="stopWatch_wrapper">
 			<h2>StopWatch</h2>
 			<PomodoraPieEchart option={option} style={{ width: "100%" }} />
 			<span>{stopWatchMin}</span>
 			<button disabled={disable} className="showWorkSpaceInput" onClick={() => setShowWorkSpaceInput(prev => !prev)}>Time For</button>
-			{showWorkSpaceInput ? <DetectWorkSpace setDetectedWorkSpace={setDetectedWorkSpace} /> : null}
+			{showWorkSpaceInput ? <>
+				{matchingTask && matchingTask.map(task => (
+					<div className="taskDetailsForTimer" key={task.id}>
+						<h3>{task.title}</h3>
+						<p>{task.text}</p>
+					</div>
+				))}
+			</> : null}
 			<div className="stopWatch_controler">
-				{!runStopWatch ? (<AiFillPlayCircle onClick={() => launchStopWatch()} />) : (<BsFillPauseCircleFill onClick={() => launchStopWatch()} />)}
+				{!runStopWatch ? (<AiFillPlayCircle onClick={() => setRunStopWatch(true)} />) : (<BsFillPauseCircleFill onClick={() => pauseStopWatch()} />)}
 				<GoStop onClick={() => resetTimer()} />
 				<BsFillSave2Fill onClick={() => timeSaver()} />
 			</div>

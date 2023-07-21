@@ -1,0 +1,140 @@
+.responsive_768 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.responsive_768 img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  box-shadow: 0 0 105px #696e79;
+  position: relative;
+}
+.responsive_768 img:hover {
+  cursor: pointer;
+}
+.responsive_768 .profileMaker768 {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background-color: #fff;
+  border-radius: 5px;
+  width: 200px;
+}
+.responsive_768 .profileMaker768 h1 {
+  font-size: 18px;
+}
+.responsive_768 .profileMaker768 span {
+  font-size: 14px;
+}
+.responsive_768 .profileMaker768 .profileMaker768_line {
+  width: 80%;
+  height: 1px;
+  margin: 0 auto;
+  background-color: #191e29;
+}
+.responsive_768 .profileMaker768 button {
+  font-family: "M PLUS 1 Code", sans-serif;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: transparent;
+  border: none;
+  padding: 5px;
+  font-size: 14px;
+  color: #191e29;
+  transition: all 0.25s ease-in;
+  font-weight: 900;
+}
+.responsive_768 .profileMaker768 button:hover {
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+.responsive_768 .editProfile_wrapper {
+  position: absolute;
+  width: 200px;
+  background-color: #fff;
+  top: 400%;
+  right: 0;
+  border-radius: 5px;
+  height: 200px;
+  font-family: "M PLUS 1 Code", sans-serif;
+}
+.responsive_768 .editProfile_wrapper .profileEditor {
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.responsive_768 .editProfile_wrapper .profileEditor h3 {
+  color: #191e29;
+}
+.responsive_768 .editProfile_wrapper .profileEditor input {
+  margin-top: 10px;
+  padding: 5px 5px;
+  font-family: "M PLUS 1 Code", sans-serif;
+  letter-spacing: 1px;
+}
+.responsive_768 .editProfile_wrapper .profileEditor input::-moz-placeholder {
+  color: #132d46;
+}
+.responsive_768 .editProfile_wrapper .profileEditor input::placeholder {
+  color: #132d46;
+}
+.responsive_768 .editProfile_wrapper .profileEditor input:focus {
+  outline: none;
+}
+.responsive_768 .editProfile_wrapper .profileEditor button {
+  padding: 2.5px 5px;
+  font-family: "M PLUS 1 Code", sans-serif;
+  letter-spacing: 1px;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: #191e29;
+  border: none;
+  color: #fff;
+}
+.responsive_768 .editProfile_wrapper .profileEditor button:hover {
+  cursor: pointer;
+}
+.responsive_768 .uploadFile {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+.responsive_768 .uploadFile button {
+  padding: 5px 5px;
+  font-family: "M PLUS 1 Code", sans-serif;
+  letter-spacing: 1px;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: transparent;
+  color: #191e29;
+  border: none;
+  text-decoration: underline;
+  font-size: 14px;
+}
+.responsive_768 .uploadFile button:hover {
+  cursor: pointer;
+}
+.responsive_768 .uploadFile .profileIMGs_wrapper {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.responsive_768 .uploadFile .profileIMGs_wrapper .profileIMGs img {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  box-shadow: 0 0 105px #696e79;
+}
+.responsive_768 .uploadFile .profileIMGs_wrapper .profileIMGs img:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}

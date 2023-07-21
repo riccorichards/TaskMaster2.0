@@ -6,6 +6,7 @@ import Timer from './dashboardComp/Timer/Timer';
 import RoadMap from './dashboardComp/RoadMap/RoadMap';
 import { useState } from "react";
 import Instruction from "./dashboardComp/Instruction/Instruction";
+import ScrollToTop from './../ScrollToTop';
 
 const Dashboard = () => {
 	const [isInstuction, setIsInstuction] = useState(false)
@@ -22,6 +23,7 @@ const Dashboard = () => {
 					{isInstuction ? <Instruction />
 						:
 						<>
+							<ScrollToTop />
 							<Overview />
 							<TaskGenerator />
 							<Timer />

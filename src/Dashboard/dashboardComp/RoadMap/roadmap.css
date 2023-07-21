@@ -1,8 +1,15 @@
 .road_map {
-  height: calc(100vh - 100px);
+  height: calc(100vh - 60px);
   padding: 20px;
   box-shadow: 0 0 55px rgba(19, 45, 70, 0.2196078431);
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+.road_map button {
+  width: 80px;
+  height: 30px;
+  letter-spacing: 1px;
+  font-family: "M PLUS 1 Code", sans-serif;
+  cursor: pointer;
 }

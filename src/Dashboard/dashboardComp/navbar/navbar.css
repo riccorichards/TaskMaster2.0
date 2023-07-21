@@ -2,18 +2,17 @@
   top: 0;
   width: 85%;
   margin: 0 auto;
-  height: 100px;
+  height: 60px;
   display: flex;
   gap: 15px;
   padding: 20px;
   background-color: #191e29;
   z-index: 999;
-  border-radius: 25px;
+  border-radius: 5px;
   box-shadow: 0 0 55px rgba(105, 110, 121, 0.2352941176);
   position: fixed;
 }
 .navbar .navbar_header {
-  flex: 1.5;
   display: flex;
   gap: 15px;
   justify-content: center;
@@ -21,10 +20,16 @@
   order: 1;
 }
 .navbar .navbar_header img {
-  width: 75px;
-  height: 75px;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
   box-shadow: 0 0 105px #696e79;
+}
+.navbar .navbar_header h1 {
+  font-size: 24px;
+}
+.navbar .navbar_header span {
+  font-size: 18px;
 }
 .navbar .navbar_navigate {
   flex: 3;
@@ -96,13 +101,14 @@
 }
 .navbar .navbar_footer .settingPages {
   position: absolute;
-  bottom: 100%;
+  top: 200%;
+  left: 10%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   gap: 10px;
-  width: 100%;
+  width: 200px;
   padding: 10px;
   background-color: #fff;
   border-radius: 5px;
@@ -123,7 +129,9 @@
   position: absolute;
   width: 100%;
   background-color: #fff;
-  bottom: 250%;
+  top: 650%;
+  left: 10%;
+  width: 200px;
   border-radius: 5px;
   height: 250px;
   font-family: "M PLUS 1 Code", sans-serif;

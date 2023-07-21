@@ -1,7 +1,7 @@
 import { HashRouter, Routes, Route } from "react-router-dom";
 import LandigPage from './landingPage/LandingPage';
 import AuthorizationUser from "./signup&in/AuthorizationUser/AuthorizationUser";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import UserContext from './contexts/userContext';
 import ScrollToTop from './ScrollToTop';
 import Dashboard from "./Dashboard/Dashboard";
@@ -10,6 +10,10 @@ import GraphContext from './contexts/graphContext';
 import BackEnd from './DataSection/BackEnd';
 
 function App() {
+
+  useEffect(() => {
+    document.title = "TaskMaster2.0"
+  }, [])
   const [user, setUser] = useState(null)
   const values = { user, setUser }
   const graphValues = { FrontEndData, BackEnd }

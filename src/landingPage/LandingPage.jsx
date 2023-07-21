@@ -11,7 +11,7 @@ const LandigPage = () => {
 	return (
 		<div className='landingPage'>
 				<Header />
-			<main>
+			<main className='landingMain'>
 				<Journey />
 				<Progress />
 				<Visualization />

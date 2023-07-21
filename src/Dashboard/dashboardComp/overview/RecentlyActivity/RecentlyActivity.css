@@ -6,6 +6,7 @@
   padding: 5px;
   border-radius: 15px;
   box-shadow: 0 0 15px rgba(1, 195, 127, 0.2078431373);
+  position: relative;
 }
 .RecentlyActivity h3 {
   font-size: 24px;

@@ -6,7 +6,7 @@
 }
 
 @media screen and (max-width: 1050px) {
-  main {
+  .landingMain {
     display: flex;
     flex-direction: column;
     gap: 260px;
@@ -16,7 +16,7 @@
   }
 }
 @media screen and (max-width: 425px) {
-  main {
+  .landingMain {
     display: flex;
     flex-direction: column;
     gap: 60px;

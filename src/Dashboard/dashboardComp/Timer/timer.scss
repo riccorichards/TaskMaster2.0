@@ -2,7 +2,7 @@
 
 
 .timer {
-	height: calc(100vh - 100px);
+	height: calc(100vh - 60px);
 	padding: 20px;
 	box-shadow: 0 0 55px var.$dark_blue_shadow;
 	display: flex;
@@ -222,36 +222,20 @@
 				}
 			}
 
-			.workSpaceInput {
+			.taskDetailsForTimer {
 				position: absolute;
-				top: -15%;
-				display: flex;
-				gap: 5px;
-				align-items: center;
-
-				button {
-					padding: 5px 10px;
-					font-family: var.$font;
-					border: none;
-					transition: all .25s ease-in;
-					&:hover {
-						cursor: pointer;
-						background-color: var.$dark_blue;
-						color: var.$aqua;
-					}
+				background-color: var.$white;
+				color: var.$black;
+				width: 150px;
+				padding: 5px;
+				border-radius: 5px;
+        top: -25%;
+				h3 {
+					text-decoration: underline;
 				}
 
-				input {
-					padding: 5px 10px;
-					font-family: var.$font;
-					letter-spacing: 1px;
-
-					&::placeholder{
-						color: var.$dark_blue;  
-					}
-					&:focus{
-						outline: none;
-					}
+				p{
+					margin-top: 15px;
 				}
 			}
 

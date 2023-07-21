@@ -29,7 +29,12 @@ const ProgressSkills = () => {
 	}, [])
 
 	const countByWorkSpace = _.countBy(workSpace, 'workSpace');
-	const topLearnedTopics = _.map(countByWorkSpace, (count, name) => ({ value: count, name: name })).slice(0, 7);
+
+	const groupByWorkSpace = _.groupBy(workSpace, 'workSpace')
+	const sumByGroupsWorkSpace = _.mapValues(groupByWorkSpace, (group) => _.sumBy(group, "duration"))
+
+	const topLearnedTopics = _.map(countByWorkSpace, (value, key) => ({ value: value / sumByGroupsWorkSpace[key], name: key })).slice(0, 7);
+
 	const option = {
 		title: {
 			text: 'Top Learned Topics',
@@ -44,8 +49,8 @@ const ProgressSkills = () => {
 		},
 		visualMap: {
 			show: false,
-			min: 1.8,
-			max: 8.5,
+			min: 5,
+			max: 85,
 			inRange: {
 				colorLightness: [1, 0]
 			}

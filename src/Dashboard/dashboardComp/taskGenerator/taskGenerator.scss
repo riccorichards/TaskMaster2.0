@@ -1,12 +1,11 @@
 @use "../../../sass/var.scss";
 
 .taskGenerator_wrapper {
-	height: calc(100vh - 100px);
+	height: calc(100vh - 60px);
 	padding: 20px;
 	box-shadow: 0 0 55px var.$dark_blue_shadow;
 	display: flex;
-	flex-direction: column;
-	gap: 10px;
+	gap: 25px;
 	font-family: var.$font;
 
 

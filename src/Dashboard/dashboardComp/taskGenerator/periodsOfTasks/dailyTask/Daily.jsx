@@ -1,6 +1,7 @@
 import { useEffect, useState, useCallback } from "react";
 import { LuDelete } from "react-icons/lu";
 import { MdCloudDone } from "react-icons/md";
+import { RxLapTimer } from "react-icons/rx";
 import "./dailyTask.css";
 import moment from "moment/moment";
 
@@ -63,7 +64,8 @@ const Daily = () => {
 				id: Date.now(),
 				title: dailyTaskInput[0],
 				text: dailyTaskInput[1],
-				complete: false
+				complete: false,
+				readyToWork: false
 			}
 			setDailyTasks(prev => [newTask, ...prev])
 			setDailyTaskInput("")
@@ -83,26 +85,31 @@ const Daily = () => {
 		setDailyTasks(prev => prev.map(task => task.id === matchID.id ? { ...task, complete: !task.complete } : task)
 		)
 	}
+	const readyToWork = (workID) => {
+		setDailyTasks(prev => prev.map(task => task.id === workID.id ? { ...task, readyToWork: !task.readyToWork } : task))
+	}
+
 	return (
 		<div className="daily_tasks">
 			<h2>Daily Tasks</h2>
 			<div className="dailyInput">
-			<input type="text"
-				placeholder="Work Space, Add Task"
-				value={dailyTaskInput}
-				onChange={handlerDailyTask}
-			/>
-      <span>It is recommented to separate title of task by ","</span>
+				<input type="text"
+					placeholder="Work Space, Add Task"
+					value={dailyTaskInput}
+					onChange={handlerDailyTask}
+				/>
+				<span>It is recommented to separate title of task by ","</span>
 			</div>
 			<button onClick={() => addDailyTask()}>Add Tasks</button>
 			<div className="task_area">
 				{dailyTasks.map(task => (
-					<div className={`each_Task ${task.complete ? "active" : ""}`} key={task.id} >
+					<div className={`each_Task ${task.complete ? "active" : ""} ${task.readyToWork ? "readyToWork" : ""}`} key={task.id} >
 						<div className="each_tasks_header">
 							<h4>{task.title}</h4>
 							<p>{task.text}</p>
 						</div>
 						<div className="daily_svgBTNs">
+							<RxLapTimer onClick={() => readyToWork(task)} />
 							<MdCloudDone onClick={() => doneTask(task)} />
 							<LuDelete onClick={() => removeDailyTask(task.id)} />
 						</div>

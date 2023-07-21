@@ -29,7 +29,7 @@ const OverviewDataTime = () => {
 	})
 
 	const hoursInMilliseconds = usingTime.map(obj => obj.duration).reduce((acc, curr) => acc + curr, 0)
-	const hours = hoursInMilliseconds / (60 * 1000)
+	const hours = hoursInMilliseconds / (60 * 60 * 1000)
 	const option = {
 		tooltip: {
 			trigger: 'item'

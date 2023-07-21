@@ -55,7 +55,16 @@ const FrontEndData = {
 		{ "name": "GitHub" },
 		{
 			"name": "TypeScript",
-		"children": ["Static Typing", "Type Annotations", "Type Inference", "Interfaces", "Classes", "Generics", "Enums", "Modules and Namespaces"]
+			"children": [
+				{"name": "Static Typing"},
+				{"name": "Type Annotations"},
+				{"name": "Type Inference"},
+				{"name": "Interfaces"},
+				{"name": "Classes"},
+				{"name": "Generics"},
+				{"name": "Enums"},
+				{"name": "Modules and Namespaces"}
+			]
 		},
 		{
 			"name": "Package Managers",
@@ -83,23 +92,48 @@ const FrontEndData = {
 		},
 		{
 			"name": "Authentication",
-			"children": ["Basic Auth", "JWT", "OAth, SSO", "Session Auth"]
+			"children": [
+				{ "name": "Basic Auth" },
+				{ "name": "JWT" },
+				{ "name": "OAth" },
+				{ "name": "SSO" },
+				{ "name": "Session Auth" }
+			]
 		},
 		{
 			"name": "progressive",
-			"children": ["Storage", "Web Sockets", "Server Sent Events", "Service Workers", "Location", "Notifications", "Device Orientation", "Payments", "Credentials"]
+			"children": [
+				{"name": "Storage"},
+				{"name": "Web Sockets"},
+				{"name": "Server Sent Events"},
+				{"name": "Service Workers"},
+				{"name": "Location"},
+				{"name": "Notifications"},
+				{"name": "Device Orientation"},
+				{"name": "Payments"},
+				{"name": "Credentials"}
+			]
 		},
 		{
 			"name": "SSR(Server Side Rendering)",
-			"children": ["Remix", "Next.js"]
+			"children": [
+				{"name": "Remix"},
+				{"name": "Next.js"}
+			]
 		},
 		{
 			"name": "Static Site Generators",
-		"children": ["Eleventy", "Astro"]
+			"children": [
+				{"name": "Eleventy"},
+				{"name": "Astro"}
+			]
 		},
 		{
 			"name": "GraphQL",
-		"children": ["Apollo", "Relay Modern"]
+			"children": [
+				{"name": "Apollo"},
+				{"name": "Relay Modern"}
+			]
 		},
 	]
 }
