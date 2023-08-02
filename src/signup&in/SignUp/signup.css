@@ -140,3 +140,19 @@
 .sign_up_form .cheking_account a {
   color: #fff;
 }
+
+@media screen and (max-width: 445px) {
+  .sign_up_form .login_with_social {
+    display: flex;
+    flex-direction: column;
+  }
+  .sign_up_form h1 {
+    font-size: 9vw;
+  }
+  .sign_up_form #form_wrapper .form_BTN {
+    font-size: 3.5vw;
+  }
+  .sign_up_form .cheking_account {
+    font-size: 3.5vw;
+  }
+}

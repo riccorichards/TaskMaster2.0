@@ -138,3 +138,18 @@
   cursor: pointer;
   background-color: rgba(19, 45, 70, 0.2196078431);
 }
+
+@media screen and (max-width: 605px) {
+  .sign_in_wrapper {
+    padding: 15vw 0;
+  }
+}
+@media screen and (max-width: 425px) {
+  .login_with_social {
+    display: flex;
+    flex-direction: column;
+  }
+  #signIn_form svg {
+    padding-left: 5px;
+  }
+}

@@ -29,11 +29,20 @@ const ProgressSkills = () => {
 	}, [])
 
 	const countByWorkSpace = _.countBy(workSpace, 'workSpace');
-
 	const groupByWorkSpace = _.groupBy(workSpace, 'workSpace')
 	const sumByGroupsWorkSpace = _.mapValues(groupByWorkSpace, (group) => _.sumBy(group, "duration"))
 
-	const topLearnedTopics = _.map(countByWorkSpace, (value, key) => ({ value: value / sumByGroupsWorkSpace[key], name: key })).slice(0, 7);
+
+	const calculate = (completeTask, timeDuration) => {
+
+		const efficientTask = 0.7 * (completeTask / timeDuration)
+		const efficientDuration = 0.3 * (timeDuration)
+		return (efficientDuration + efficientTask) / 400000
+	}
+
+	const topLearnedTopics = _.map(countByWorkSpace, (value, key) => ({
+		value: calculate(value, sumByGroupsWorkSpace[key]).toFixed(2), name: key
+	})).slice(0, 7);
 
 	const option = {
 		title: {
@@ -49,8 +58,8 @@ const ProgressSkills = () => {
 		},
 		visualMap: {
 			show: false,
-			min: 5,
-			max: 85,
+			min: 20,
+			max: 300,
 			inRange: {
 				colorLightness: [1, 0]
 			}

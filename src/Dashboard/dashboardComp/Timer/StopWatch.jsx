@@ -13,7 +13,6 @@ const StopWatch = () => {
 	const [runStopWatch, setRunStopWatch] = useState(false)
 	const [validTime, setValidTime] = useState(false)
 	const [showWorkSpaceInput, setShowWorkSpaceInput] = useState(false)
-	const [disable, setDisable] = useState(false)
 	const [recentlyArr, setRecentlyArr] = useState([])
 	const [getDailyTasks, setGetDailyTasks] = useState([])
 	const animationFrameId = useRef(null)
@@ -61,7 +60,7 @@ const StopWatch = () => {
 			const elapsedTime = Math.floor((curretTime - timeStart) / 1000)
 
 			if (runStopWatch && !fromTheSamePlace.current) {
-				setShowWorkSpaceInput(false)
+
 				if (maxWorkingTime <= elapsedTime) {
 					setRunStopWatch(false)
 					setTimeValue(maxWorkingTime)
@@ -69,31 +68,30 @@ const StopWatch = () => {
 					setTimeValue(maxWorkingTime - elapsedTime)
 					animationFrameId.current = requestAnimationFrame(updateTimer);
 				}
-				setDisable(true)
-			} else {
-				setDisable(false)
 			}
 
 			if (runStopWatch && fromTheSamePlace.current) {
-				setShowWorkSpaceInput(false)
-				if (fromTheSamePlace.current <= elapsedTime) {
-					setRunStopWatch(false)
+				if (validTime) {
 					setTimeValue(maxWorkingTime)
 				} else {
-					setTimeValue(fromTheSamePlace.current - elapsedTime)
-					animationFrameId.current = requestAnimationFrame(updateTimer);
+					setShowWorkSpaceInput(false)
+					if (fromTheSamePlace.current <= elapsedTime) {
+						setRunStopWatch(false)
+						setTimeValue(maxWorkingTime)
+					} else {
+						setTimeValue(fromTheSamePlace.current - elapsedTime)
+						animationFrameId.current = requestAnimationFrame(updateTimer);
+					}
 				}
-				setDisable(true)
-			} else {
-				setDisable(false)
 			}
 		}
 
 		return () => {
 			cancelAnimationFrame(animationFrameId.current)
 		}
-	}, [runStopWatch, maxWorkingTime])
+	}, [runStopWatch, maxWorkingTime, validTime])
 	const matchingTask = getDailyTasks.filter(task => task.readyToWork)
+
 	const timeSaver = () => {
 		setRunStopWatch(false)
 		const saveOrNot = window.confirm("Are you sure to save this time")
@@ -124,6 +122,8 @@ const StopWatch = () => {
 			localStorage.setItem("dataForRecently", JSON.stringify(recentlyArr))
 			setTimeValue(maxWorkingTime)
 			window.dispatchEvent(readyForRecentlyInfo)
+			setValidTime(false)
+			fromTheSamePlace.current = null
 		}
 	}, [validTime, maxWorkingTime, recentlyArr])
 
@@ -167,14 +167,14 @@ const StopWatch = () => {
 			}
 		]
 	};
-
+	console.log(timeValue)
 	const stopWatchMin = moment.utc(timeValue * 1000).format("hh:mm:ss");
 	return (
 		<div className="stopWatch_wrapper">
 			<h2>StopWatch</h2>
 			<PomodoraPieEchart option={option} style={{ width: "100%" }} />
 			<span>{stopWatchMin}</span>
-			<button disabled={disable} className="showWorkSpaceInput" onClick={() => setShowWorkSpaceInput(prev => !prev)}>Time For</button>
+			<button className="showWorkSpaceInput" onClick={() => setShowWorkSpaceInput(prev => !prev)}>Time For</button>
 			{showWorkSpaceInput ? <>
 				{matchingTask && matchingTask.map(task => (
 					<div className="taskDetailsForTimer" key={task.id}>

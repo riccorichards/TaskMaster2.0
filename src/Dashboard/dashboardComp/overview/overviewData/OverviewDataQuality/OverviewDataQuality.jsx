@@ -42,7 +42,7 @@ const OverviewDataQuality = () => {
 		},
 		legend: {
 			top: '0%',
-			left: "left"
+			left: "letf"
 		},
 		series: [
 			{
@@ -65,8 +65,8 @@ const OverviewDataQuality = () => {
 					show: false
 				},
 				data: [
-					{ value: quality, "name": "your quality" },
-					{ value: 100 - quality, "name": "distance" },
+					{ value: quality, "name": "avg%" },
+					{ value: 100 - quality, "name": "diff" },
 				],
 				color: ['#01c380', '#696e793c']
 			}
@@ -75,8 +75,8 @@ const OverviewDataQuality = () => {
 	return (
 		<div className="OverviewDataQuality">
 			<div className="quality_data">
-				<h2>Quality</h2>
-				<span>{parseInt(quality) || 0} %</span>
+				<h2>Qual</h2>
+				<span>{parseInt(quality) || 0}%</span>
 			</div>
 			<QualityEchart option={option} style={{ height: "150px", width: "100%" }} />
 			<BsQuestionLg onClick={() => setShowQualityDetails(prev => !prev)} />

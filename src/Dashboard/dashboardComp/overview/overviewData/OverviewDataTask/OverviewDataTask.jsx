@@ -95,8 +95,8 @@ const OverviewDataTask = () => {
 					show: true
 				},
 				data: [
-					{ value: totalCompleteTask, "name": "Complete Tasks" },
-					{ value: (totalTask - totalCompleteTask), "name": "Failed Tasks" },
+					{ value: totalCompleteTask, "name": "Done" },
+					{ value: (totalTask - totalCompleteTask), "name": "Failed" },
 				],
 				color: ['#01c380', '#696e793c']
 			}
@@ -106,7 +106,7 @@ const OverviewDataTask = () => {
 		<div className="OverviewDataTask">
 			<div className="task_data">
 				<h2>Task</h2>
-				<span>{parseInt(totalCompleteTask / totalTask * 100) || 0} %</span>
+				<span>{parseInt(totalCompleteTask / totalTask * 100) || 0}%</span>
 			</div>
 			<TaskEchart option={option} style={{ height: "150px", width: "100%" }} />
 			<BsQuestionLg onClick={() => setShowMeTaskDetails(prev => !prev)} />

@@ -1,0 +1,33 @@
+.screenSizeOfAuth_wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  font-family: "M PLUS 1 Code", sans-serif;
+}
+.screenSizeOfAuth_wrapper:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../../assets/bg_for_sign.png");
+  background-size: cover;
+  background-attachment: fixed;
+  filter: blur(5px);
+  z-index: -1;
+}
+.screenSizeOfAuth_wrapper .screenSizeOfAuth {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.screenSizeOfAuth_wrapper .screenSizeOfAuth .headerOfAuth {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.screenSizeOfAuth_wrapper .screenSizeOfAuth .headerOfAuth h1 {
+  color: #fff;
+  width: 50%;
+}

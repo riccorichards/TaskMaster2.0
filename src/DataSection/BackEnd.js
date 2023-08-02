@@ -399,6 +399,11 @@ const BackEnd = {
 						{ "name": "SAML" },
 					]
 				},
+				{ "name": "REST" },
+				{ "name": "JSON APIs" },
+				{ "name": "SOAP" },
+				{ "name": "gRPC" },
+				{ "name": "GraphQL" },
 			]
 		},
 		{
@@ -546,12 +551,21 @@ const BackEnd = {
 				{ "name": "Next JS" },
 				{ "name": "Redux toolkit" },
 				{ "name": "React query" },
+				{ "name": "Promise" },
 				{ "name": "Ajax в деталях" },
 				{ "name": "Regular Expressions" },
 				{ "name": "axios-mock-adapter" },
 				{ "name": "Компьютерные сети" },
+				{ "name": "Back-end - Путь Самурая" },
 			]
 		},
+		{
+			"name": "Technologies",
+			"children": [
+				{ "name": "Koa.js" },
+				{ "name": "Socket.io" },
+			]
+		}
 	],
 }
 
