@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/TaskMaster2.0/static/css/main.7518b43a.css",
-    "main.js": "/TaskMaster2.0/static/js/main.e2122daa.js",
+    "main.css": "/TaskMaster2.0/static/css/main.2f0eba93.css",
+    "main.js": "/TaskMaster2.0/static/js/main.4847268a.js",
     "static/media/tree.mp4": "/TaskMaster2.0/static/media/tree.d6bd7b7210da42d251db.mp4",
     "static/media/bg_for_sign.png": "/TaskMaster2.0/static/media/bg_for_sign.5b709282559c1f833203.png",
     "static/media/data_visualisation_bg.png": "/TaskMaster2.0/static/media/data_visualisation_bg.0f2b62bbdb4fdf152bc9.png",
@@ -12,11 +12,11 @@
     "static/media/profile6.jpg": "/TaskMaster2.0/static/media/profile6.83e55e80720d1fc11aaf.jpg",
     "static/media/profile5.jpg": "/TaskMaster2.0/static/media/profile5.dbc6ad63eb6d2c9104de.jpg",
     "index.html": "/TaskMaster2.0/index.html",
-    "main.7518b43a.css.map": "/TaskMaster2.0/static/css/main.7518b43a.css.map",
-    "main.e2122daa.js.map": "/TaskMaster2.0/static/js/main.e2122daa.js.map"
+    "main.2f0eba93.css.map": "/TaskMaster2.0/static/css/main.2f0eba93.css.map",
+    "main.4847268a.js.map": "/TaskMaster2.0/static/js/main.4847268a.js.map"
   },
   "entrypoints": [
-    "static/css/main.7518b43a.css",
-    "static/js/main.e2122daa.js"
+    "static/css/main.2f0eba93.css",
+    "static/js/main.4847268a.js"
   ]
 }
