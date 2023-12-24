@@ -1,7 +1,7 @@
 import moment from "moment";
 
 const LearningTimeBreakDown = ({ hours, perHours }) => {
-  const specificDate = moment("2023-12-31");
+  const specificDate = moment("2024-01-01");
   const currentDate = moment();
 
   const duration = moment.duration(specificDate.diff(currentDate));
