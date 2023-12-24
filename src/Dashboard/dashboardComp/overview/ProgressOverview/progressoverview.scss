@@ -1,67 +1,66 @@
 @use "../../../../sass/var.scss";
 
 .ProgressOverview {
-	flex: 3;
-	width: 100%;
-	display: flex;
-	gap: 10px;
+  flex: 3;
+  width: 100%;
+  display: flex;
+  gap: 10px;
 
-	.during_progress {
-		flex: 2;
-		width: 100%;
-		border-radius: 15px;
-		box-shadow: 0 0 15px var.$aqua_shadow;
-	  position: relative;
+  .during_progress {
+    flex: 2;
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 0 15px var.$aqua_shadow;
+    position: relative;
 
-		svg {
-			font-size: 16px;
-			color: var.$white;
-			position: absolute;
-			right: 2%;
-			bottom: 5%;
-			cursor: pointer;
-		}
-	
-		.lineChartDetails {
-			position: absolute;
-			color: var.$dark_blue;
-			font-size: 12px;
-			top: 100%;
-			background-color: var.$white;
-			z-index: 1;
-			padding: 2px;
-			font-family: var.$font;
-			border-radius: 3.5px;
-		}
-	}
+    .questionSVG {
+      font-size: 16px;
+      color: var.$white;
+      position: absolute;
+      right: 2%;
+      bottom: 5%;
+      cursor: pointer;
+    }
 
-	.progress_skills {
-		flex: 1;
-		width: 100%;
-		border-radius: 15px;
-		box-shadow: 0 0 15px var.$aqua_shadow;
-		position: relative;
+    .lineChartDetails {
+      position: absolute;
+      color: var.$dark_blue;
+      font-size: 12px;
+      top: 100%;
+      background-color: var.$white;
+      z-index: 1;
+      padding: 2px;
+      font-family: var.$font;
+      border-radius: 3.5px;
+    }
+  }
 
-		svg {
-			font-size: 16px;
-			color: var.$white;
-			position: absolute;
-			right: 2%;
-			bottom: 5%;
-			cursor: pointer;
-		}
-	
-		.skillsPieDetails {
-			position: absolute;
-			color: var.$dark_blue;
-			font-size: 12px;
-			top: 100%;
-			background-color: var.$white;
-			z-index: 1;
-			padding: 2px;
-			font-family: var.$font;
-			border-radius: 3.5px;
-		}
-	}
+  .progress_skills {
+    flex: 1;
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 0 15px var.$aqua_shadow;
+    position: relative;
 
+    svg {
+      font-size: 16px;
+      color: var.$white;
+      position: absolute;
+      right: 2%;
+      bottom: 5%;
+      cursor: pointer;
+    }
+
+    .skillsPieDetails {
+      position: absolute;
+      color: var.$dark_blue;
+      font-size: 12px;
+      top: 100%;
+      background-color: var.$white;
+      z-index: 1;
+      padding: 2px;
+      font-family: var.$font;
+      border-radius: 3.5px;
+    }
+  }
 }

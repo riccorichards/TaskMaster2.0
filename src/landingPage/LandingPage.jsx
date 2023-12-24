@@ -8,6 +8,9 @@ import "./landingPage.css";
 
 
 const LandigPage = () => {
+
+	
+
 	return (
 		<div className='landingPage'>
 				<Header />

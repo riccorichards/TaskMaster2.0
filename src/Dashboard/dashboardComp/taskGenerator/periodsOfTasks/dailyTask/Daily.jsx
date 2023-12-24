@@ -11,6 +11,7 @@ const Daily = () => {
 	const [dailyTaskInput, setDailyTaskInput] = useState("")
 	const [dailyTasks, setDailyTasks] = useState([])
 	const [everydayTask, setEverydayTask] = useState([])
+	const [startDays, setStartDays] = useState(1)
 
 	const handlerDailyTask = e => {
 		setDailyTaskInput(e.target.value.split(","))
@@ -40,10 +41,12 @@ const Daily = () => {
 	}, [])
 
 	const storeForDashboard = () => {
+		setStartDays(prev => prev + 1)
 		const discussEachDayTasks = {
 			id: Date.now(),
 			tasksInDay: dailyTasks,
-			update: moment().format("MMM Do")
+			update: moment().format("MMM Do"),
+			days: startDays
 		}
 		setEverydayTask(prev => [...prev, discussEachDayTasks])
 		setDailyTasks([])

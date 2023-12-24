@@ -36,6 +36,8 @@ const OverviewDataQuality = () => {
 	})
 	const length = everyDayValue.length
 	const quality = everyDayValue.reduce((acc, curr) => acc + curr, 0) / length
+
+	
 	const option = {
 		tooltip: {
 			trigger: 'item'

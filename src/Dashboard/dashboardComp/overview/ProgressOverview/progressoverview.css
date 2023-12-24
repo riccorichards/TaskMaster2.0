@@ -11,7 +11,7 @@
   box-shadow: 0 0 15px rgba(1, 195, 127, 0.2078431373);
   position: relative;
 }
-.ProgressOverview .during_progress svg {
+.ProgressOverview .during_progress .questionSVG {
   font-size: 16px;
   color: #fff;
   position: absolute;

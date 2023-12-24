@@ -1,26 +1,24 @@
-const LearningTimeBreakDown = () => {
-	return (
-		<div className="timeDetails">
-			<h4>Learning Time Breakdown</h4>
-			<ul>
-				<li>Internet: ≈ 10-15 hours</li>
-				<li>Version Control Systems: ≈ 5-10 hours</li>
-				<li>Repo Hosting Services: ≈ 3-5 hours</li>
-				<li>Node.js: ≈ 40-50 hours</li>
-				<li>OS and General Knowledge: ≈ 15-20 hours</li>
-				<li>Databases: ≈ 40-50 hours</li>
-				<li>Scaling Databases: ≈ 10-15 hours</li>
-				<li>APIs: ≈ 15-20 hours</li>
-				<li>Caching: ≈ 10-15 hours</li>
-				<li>Web Security Knowledge: ≈ 20-25 hours</li>
-				<li>Testing: ≈ 20-25 hours</li>
-				<li>CI/CD: ≈ 5-10 hours</li>
-				<li>Software Design and Architecture: ≈ 30-40 hours</li>
-			</ul>
-			<pre>Full Hours 300</pre>
-		</div>
-	)
-}
+import moment from "moment";
 
+const LearningTimeBreakDown = ({ hours, perHours }) => {
+  const specificDate = moment("2023-12-31");
+  const currentDate = moment();
+
+  const duration = moment.duration(specificDate.diff(currentDate));
+  const theEnd = parseFloat(duration.asDays()).toFixed(2);
+
+  const inDay = perHours / (60 * 60 * 1000);
+  return (
+    <div className="timeDetails">
+      <h2>Time stats</h2>
+      <ul>
+        <li>End will be: {theEnd > 0 ? theEnd : 0} days</li>
+        <li>Per day: {hours / theEnd} hours</li>
+        <li>Sum hours in day: {inDay}</li>
+        <li>Expect/real: {hours / theEnd / inDay}</li>
+      </ul>
+    </div>
+  );
+};
 
 export default LearningTimeBreakDown;

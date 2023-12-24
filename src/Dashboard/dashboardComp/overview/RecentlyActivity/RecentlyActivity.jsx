@@ -1,11 +1,9 @@
 import { useEffect, useState } from "react";
 import "./RecentlyActivity.css";
 import moment from "moment/moment";
-import { FaFolderOpen } from "react-icons/fa";
 
 const RecentlyActivity = () => {
 	const [recentlyData, setRecentlyData] = useState([]);
-	const [isShowTask, setIsShowTask] = useState(false)
 	useEffect(() => {
 		const getDataForRecentlyFromStorage = JSON.parse(localStorage.getItem("dataForRecently"))
 		if (getDataForRecentlyFromStorage && getDataForRecentlyFromStorage.length > 0) {

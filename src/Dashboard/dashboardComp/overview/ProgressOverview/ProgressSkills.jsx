@@ -2,7 +2,6 @@ import SkillsEchart from "echarts-for-react";
 import { useEffect, useState } from "react";
 import _ from "lodash";
 
-
 const ProgressSkills = () => {
 	const [workSpace, setWorkSpace] = useState([])
 
@@ -28,9 +27,11 @@ const ProgressSkills = () => {
 		}
 	}, [])
 
+
 	const countByWorkSpace = _.countBy(workSpace, 'workSpace');
 	const groupByWorkSpace = _.groupBy(workSpace, 'workSpace')
 	const sumByGroupsWorkSpace = _.mapValues(groupByWorkSpace, (group) => _.sumBy(group, "duration"))
+
 
 
 	const calculate = (completeTask, timeDuration) => {
@@ -42,7 +43,8 @@ const ProgressSkills = () => {
 
 	const topLearnedTopics = _.map(countByWorkSpace, (value, key) => ({
 		value: calculate(value, sumByGroupsWorkSpace[key]).toFixed(2), name: key
-	})).slice(0, 7);
+	})).sort((a, b) => b.value - a.value).slice(0, 7);
+
 
 	const option = {
 		title: {
@@ -59,7 +61,7 @@ const ProgressSkills = () => {
 		visualMap: {
 			show: false,
 			min: 20,
-			max: 300,
+			max: 950,
 			inRange: {
 				colorLightness: [1, 0]
 			}
@@ -70,9 +72,7 @@ const ProgressSkills = () => {
 				type: 'pie',
 				radius: '55%',
 				center: ['50%', '50%'],
-				data: topLearnedTopics.sort(function (a, b) {
-					return b.value - a.value;
-				}),
+				data: topLearnedTopics,
 				roseType: 'radius',
 				label: {
 					color: '#fff'
