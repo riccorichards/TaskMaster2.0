@@ -1,380 +1,179 @@
 const BackEnd = {
-  name: "Advanve_Backend",
+  name: "Online Food Delivery",
   children: [
     {
-      name: "Step 1",
+      name: "Feedback service",
       children: [
         {
-          name: "Specific needs",
-        },
-        {
-          name: "Web Security",
+          name: "Fronend",
           children: [
-            {
-              name: "theory",
-              children: [
-                { name: "MD5 and why not to use it" },
-                { name: "SHA Family" },
-                { name: "scrypt" },
-                { name: "bcrypt" },
-                { name: "HTTPS" },
-                { name: "OWASP Risks" },
-                { name: "CORS" },
-                { name: "SSL/TLS" },
-                { name: "CSP" },
-                { name: "Server Security" },
-              ],
-            },
+            { name: "Custom Feedback page" },
+            { name: "Feed Component on the Food Card" },
           ],
         },
         {
-          name: "APIs best practice",
+          name: "Backend",
+        },
+      ],
+    },
+    {
+      name: "Sub Categories",
+      children: [
+        {
+          name: "Fronend",
+        },
+        {
+          name: "Backend",
+        },
+      ],
+    },
+    {
+      name: "Create Vendor",
+      children: [
+        {
+          name: "Fronend",
           children: [
-            {
-              name: "theory",
-              children: [
-                { name: "Authentication" },
-                { name: "JWT" },
-                { name: "Access Control" },
-                { name: "OAuth" },
-                { name: "Input" },
-                { name: "Processing" },
-                { name: "outPut" },
-                { name: "CI & CD" },
-                { name: "Monitoring" },
-              ],
-            },
+            { name: "Home" },
+            { name: "Dashboard" },
+            { name: "Menu" },
+            { name: "Orders" },
+            { name: "Settings" },
+            { name: "Cookies && details" },
           ],
         },
         {
-          name: "Unit Testing",
+          name: "Backend",
           children: [
-            {
-              name: "theory",
-            },
-            {
-              name: "practice",
-            },
-          ],
-        },
-        {
-          name: "Authentication",
-          children: [
-            {
-              name: "OAuth",
-            },
-            {
-              name: "practice",
-            },
-          ],
-        },
-        {
-          name: "scaling DBs",
-          children: [
-            {
-              name: "DB Indexes",
-            },
-            {
-              name: "practice",
-            },
-          ],
-        },
-        {
-          name: "Docker",
-          children: [
-            {
-              name: "theory",
-            },
-            {
-              name: "practice",
-            },
-          ],
-        },
-        {
-          name: "advance DBs",
-          children: [
-            {
-              name: "theory",
-              children: [
-                { name: "ORMs" },
-                { name: "ACID" },
-                { name: "Transactions" },
-                { name: "N+1 Problem" },
-                { name: "Normalization" },
-                { name: "Failure Modes" },
-                { name: "Profiling Prefor." },
-              ],
-            },
-            {
-              name: "practice",
-            },
-          ],
-        },
-        {
-          name: "Redis",
-          children: [
-            {
-              name: "theory",
-            },
-            {
-              name: "practice",
-            },
-          ],
-        },
-        {
-          name: "MySQL",
-          children: [
-            {
-              name: "practice",
-              children: [
-                { name: "Social" },
-                { name: "Movies" },
-                { name: "Dashboard" },
-                { name: "E-commerce" },
-                { name: "Booking" },
-              ],
-            },
-          ],
-        },
-        {
-          name: "MongoDB",
-          children: [
-            {
-              name: "practice",
-              children: [
-                { name: "Social" },
-                { name: "Movies" },
-                { name: "Dashboard" },
-                { name: "E-commerce" },
-                { name: "Booking" },
-              ],
-            },
-          ],
-        },
-        {
-          name: "PostgreSQL",
-          children: [
-            {
-              name: "theory",
-            },
-            {
-              name: "practice",
-              children: [
-                { name: "Social" },
-                { name: "Movies" },
-                { name: "Dashboard" },
-                { name: "E-commerce" },
-                { name: "Booking" },
-              ],
-            },
-          ],
-        },
-        {
-          name: "CI/CD",
-          children: [
-            {
-              name: "theory",
-            },
-            {
-              name: "practice",
-            },
+            { name: "handle 15m refresh token" },
+            { name: "Gain data for Dashboard" },
+            { name: "Overview the vendor service" },
           ],
         },
       ],
     },
     {
-      name: "Step 2",
+      name: "Create Deliveryman",
       children: [
         {
-          name: "Algorithms",
-          children: [{ name: "Theory" }, { name: "Practice" }],
-        },
-        {
-          name: "OS",
-          children: [{ name: "Theory" }, { name: "Practice" }],
-        },
-        {
-          name: "Computer Architecture",
-          children: [{ name: "Theory" }, { name: "Practice" }],
-        },
-        {
-          name: "Networking",
-          children: [{ name: "Theory" }, { name: "Practice" }],
-        },
-        {
-          name: "Cybersecurity",
-          children: [{ name: "Theory" }, { name: "Practice" }],
-        },
-        {
-          name: "Cloud computing",
-          children: [{ name: "Theory" }, { name: "Practice" }],
-        },
-      ],
-    },
-    {
-      name: "Step 3",
-      children: [
-        {
-          name: "Design & Dev Principles",
+          name: "Fronend",
           children: [
-            { name: "GOF Design Patterns" },
-            { name: "Domain Driven Design" },
-            { name: "Test Driven Dev" },
-            { name: "CQRS" },
-            { name: "Event Sourcing" },
+            {
+              name: "Dashboard",
+              children: [
+                { name: "Overview" },
+                { name: "Performance" },
+                { name: "Orders" },
+                { name: "Feedbacks" },
+              ],
+            },
           ],
         },
         {
-          name: "Architectural Patterns",
+          name: "Backend",
           children: [
-            { name: "Monolithic Apps" },
-            { name: "Microservices" },
-            { name: "SOA" },
-            { name: "Serverless" },
-            { name: "Service Mesh" },
-            { name: "Twelve Factor Apps" },
-          ],
-        },
-        { name: "Elasticsearch" },
-        {
-          name: "Message Brokers",
-          children: [{ name: "RabbitMQ" }],
-        },
-        {
-          name: "Containerization vs Virtualization",
-          children: [{ name: "Docker" }, { name: "Kubernetes" }],
-        },
-        {
-          name: "GraphQL",
-          children: [{ name: "Apollo" }],
-        },
-        { name: "WEbSockets" },
-        { name: "Server Sent Events" },
-        {
-          name: "Web Servers",
-          children: [{ name: "Nginx" }, { name: "Apache" }],
-        },
-        {
-          name: "Building for Scale",
-          children: [
-            { name: "Instrumentation" },
-            { name: "Monitoring" },
-            { name: "Telemetry" },
-            { name: "Graceful Degradation" },
-            { name: "Throttling" },
-            { name: "Backpressure" },
-            { name: "Loadshifting" },
-            { name: "Circuit Breaker" },
-            { name: "Migration Strategies" },
-            { name: "Types of Scaling" },
-            { name: "Observability" },
+            { name: "Gain data for Overview" },
+            { name: "Handle Cookie" },
           ],
         },
       ],
     },
     {
-      name: "Dream Company",
+      name: "Admin Functions",
       children: [
         {
-          name: "Financial Assistants",
+          name: "Fronend",
           children: [
-            {
-              name: "NLP",
-              children: [{ name: "NLTK" }, { name: "spaCy" }],
-            },
-            {
-              name: "Sentiment Analysis",
-              children: [{ name: "TensorFlow" }, { name: "PyTorch" }],
-            },
-            {
-              name: "Web Scraping",
-              children: [{ name: "Beautiful Soup" }, { name: "Scrapy" }],
-            },
+            { name: "Last Order ==> see more" },
+            { name: "Order (page) ==> see more" },
+            { name: "Employees ==> modal" },
           ],
         },
         {
-          name: "Trading Algorithms",
+          name: "Backend",
+          children: [{ name: "Gain data for Overview" }],
+        },
+      ],
+    },
+    {
+      name: "Create Cart",
+      children: [
+        {
+          name: "Fronend",
           children: [
-            {
-              name: "Time Series Analysis",
-              children: [{ name: "statsmodels" }],
-            },
-            {
-              name: "Machine Learning Models",
-              children: [
-                { name: "Scikit-learn (basic)" },
-                { name: "TensorFlow" },
-                { name: "PyTorch" },
-              ],
-            },
-            {
-              name: "Financial Data APIs",
-              children: [{ name: "Alpha Vantage" }, { name: "Yahoo Finance" }],
-            },
+            { name: "Shipping info page" },
+            { name: "Define the place of Cart Component" },
+            { name: "Withdraw & Deposit" },
           ],
         },
         {
-          name: "Asset Management",
+          name: "Backend",
+          children: [{ name: "Handle the Shopping service" }],
+        },
+      ],
+    },
+    {
+      name: "Order Service",
+      children: [
+        {
+          name: "Fronend",
           children: [
-            {
-              name: "Optimization Algorithms",
-              children: [{ name: "linear programming " }, { name: "Scipy" }],
-            },
-            {
-              name: "Machine Learning for Finance",
-              children: [{ name: "Specialized ML" }],
-            },
-            {
-              name: "Quantitative Finance Libraries",
-              children: [{ name: "QuantLib" }],
-            },
+            { name: "Order History" },
+            { name: "Order Component" },
+            { name: "Custom Order" },
           ],
         },
         {
-          name: "Risk Analysis",
+          name: "Backend",
+          children: [{ name: "Communicate between services" }],
+        },
+      ],
+    },
+    {
+      name: "Before Nginx",
+      children: [
+        {
+          name: "Fronend",
           children: [
-            {
-              name: "Statistical Analysis",
-              children: [{ name: "statsmodels " }, { name: "R" }],
-            },
-            {
-              name: "Data Visualization",
-              children: [
-                { name: "Matplotlib" },
-                { name: "Seaborn" },
-                { name: "Plotly" },
-              ],
-            },
+            { name: "Responsive" },
+            { name: "The whole functionalities" },
+            { name: "Refactoring" },
           ],
         },
         {
-          name: "Price Prediction",
+          name: "Backend",
           children: [
-            {
-              name: "Deep Learning Models",
-              children: [{ name: "TensorFlow" }, { name: "PyTorch" }],
-            },
+            { name: "Error handler" },
+            { name: "Overview the whole backend" },
           ],
         },
+      ],
+    },
+    {
+      name: "Nginx",
+      children: [
         {
-          name: "AI Communication",
+          name: "Fronend",
+          children: [{ name: "Modify all URLs based on Nginx" }],
+        },
+        {
+          name: "Backend",
           children: [
-            {
-              name: "Advanced NLP and Speech Recognition",
-              children: [
-                { name: "Google's BERT" },
-                { name: "SpeechRecognition" },
-              ],
-            },
-            {
-              name: "Text-to-Speech",
-              children: [{ name: "gTTS" }],
-            },
-            {
-              name: "Chatbot Frameworks",
-              children: [{ name: "Rasa" }, { name: "Dialogflow" }],
-            },
+            { name: "Handle Nginx" },
+            { name: "Handle Docker" },
+            { name: "Handle K8s" },
+            { name: "Handle Test app" },
           ],
+        },
+      ],
+    },
+    {
+      name: "Deploy",
+      children: [
+        {
+          name: "Deploy",
+        },
+        {
+          name: "Piar it Partly",
         },
       ],
     },
