@@ -1,7 +1,7 @@
 import moment from "moment";
 
 const LearningTimeBreakDown = ({ hours, perHours }) => {
-  const specificDate = moment("2024-01-11");
+  const specificDate = moment("2024-01-19");
   const currentDate = moment();
 
   const duration = moment.duration(specificDate.diff(currentDate));
@@ -12,7 +12,7 @@ const LearningTimeBreakDown = ({ hours, perHours }) => {
     <div className="timeDetails">
       <h2>Time stats</h2>
       <ul>
-        <li>End will be: {theEnd > 0 ? theEnd : 0} days</li>
+        <li>End will be: {theEnd > 0 ? theEnd : "Finished!!!"} days</li>
         <li>Per day: {hours / theEnd} hours</li>
         <li>Sum hours in day: {inDay}</li>
         <li>Expect/real: {hours / theEnd / inDay}</li>
