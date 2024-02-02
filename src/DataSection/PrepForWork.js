@@ -206,7 +206,11 @@ const PrepForWork = {
         },
         {
           name: "PrepForInterview",
-          children: [{ name: "How to Land Job Interviews" }],
+          children: [
+            { name: "How to Land Job Interviews" },
+            { name: "Interviews (Watch and analyze)" },
+            { name: "Interviews (Practice)" },
+          ],
         },
         { name: "ATS Resume" },
         { name: "Video sharing" },
@@ -226,8 +230,117 @@ const PrepForWork = {
           ],
         },
         { name: "AI && Tools", children: [] },
+        { name: "Platforms", children: [] },
       ],
     },
+    {
+      name: "English",
+      children: [
+        {
+          name: "20 Words From podcasts",
+          children: [{ name: "10 sentence for each one" }],
+        },
+        {
+          name: "Grammar",
+          children: [
+            {
+              name: "Parts of Speech",
+              children: [
+                { name: "nouns" },
+                { name: "pronouns" },
+                { name: "verbs" },
+                { name: "adjectives" },
+                { name: "adverbs" },
+                { name: "prepositions" },
+                { name: "conjunctions" },
+                { name: "interjections" },
+              ],
+            },
+            {
+              name: "Tenses",
+              children: [
+                { name: "past" },
+                { name: "present" },
+                { name: "future" },
+                { name: "simple" },
+                { name: "continuous" },
+                { name: "perfect" },
+                { name: "perfect continuous" },
+              ],
+            },
+            {
+              name: "Sentence Structure",
+              children: [
+                { name: "simple" },
+                { name: "compound" },
+                { name: "complex" },
+                { name: "compound-complex" },
+              ],
+            },
+            { name: "Subject-Verb Agreement" },
+            { name: "Direct and Indirect Speech" },
+            { name: "Active and Passive Voice" },
+            { name: "Conditional Sentences" },
+            {
+              name: "Modal Verbs",
+              children: [
+                { name: "can" },
+                { name: "could" },
+                { name: "may" },
+                { name: "might" },
+                { name: "must" },
+                { name: "shall" },
+                { name: "should" },
+                { name: "will" },
+                { name: "would" },
+              ],
+            },
+            {
+              name: "Question Formation",
+              children: [
+                { name: "yes/no questions" },
+                { name: "wh-questions" },
+                { name: "tag questions" },
+              ],
+            },
+            { name: "Pronoun Antecedent Agreement" },
+            { name: "Articles" },
+            {
+              name: "Adjectives and Adverbs",
+              children: [{ name: "comparative " }, { name: "superlative " }],
+            },
+            { name: "Prepositions" },
+            { name: "Conjunctions" },
+            { name: "Infinitives, Gerunds, and Participles" },
+            { name: "Noun Clauses, Adjective Clauses, and Adverb Clauses" },
+            { name: "Phrasal Verbs" },
+            { name: "Idiomatic Expressions" },
+            { name: "Word Order" },
+          ],
+        },
+      ],
+    },
+    {
+      name: "React",
+      children: [
+        { name: "Custom Hooks" },
+        { name: "Error Boundaries" },
+        { name: "Refs" },
+        { name: "Higher-Order Components (HOCs)" },
+        { name: "Fiber Architecture" },
+        {
+          name: "Performance Optimization",
+          children: [
+            { name: "React.memo" },
+            { name: "useMemo" },
+            { name: "useCallback" },
+            { name: "Lazy Loading" },
+            { name: "Virtualization" },
+          ],
+        },
+      ],
+    },
+    { name: "Code review" },
   ],
 };
 
