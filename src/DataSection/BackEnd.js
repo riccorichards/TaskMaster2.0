@@ -1,183 +1,233 @@
 const BackEnd = {
-  name: "Online Food Delivery",
+  name: "PrepForWork",
   children: [
     {
-      name: "Feedback service",
+      name: "Complex JS",
       children: [
         {
-          name: "Fronend",
+          name: "Asynchronous Operations",
           children: [
-            { name: "Custom Feedback page" },
-            { name: "Feed Component on the Food Card" },
+            { name: "Callbacks" },
+            { name: "Promises" },
+            { name: "Async/Await" },
+            { name: "Error Handling in Asynchronous Code" },
+            { name: "Event Loop and Concurrency Model" },
+            { name: "Working with Asynchronous APIs" },
+            { name: "Advanced Patterns and Techniques" },
+            { name: "Debugging Asynchronous Code" },
           ],
         },
         {
-          name: "Backend",
+          name: "Prototypes",
+          children: [
+            { name: "Understanding the Prototype Chain" },
+            { name: "Prototype Property" },
+            { name: "Object Prototypes" },
+            { name: "Constructor Functions" },
+            { name: "Prototypal Inheritance" },
+            { name: "this Keyword in Prototypes" },
+            { name: "Object.create()" },
+            { name: "ES6 Classes and Prototypes" },
+            { name: "Checking Object's Prototype" },
+            { name: "Performance Considerations" },
+          ],
+        },
+        {
+          name: "Object-Oriented Programming",
+          children: [
+            { name: "Understanding the Basics of OOP" },
+            { name: "Objects and Properties" },
+            { name: "Constructor Functions" },
+            { name: "Classes in ES6" },
+            { name: "Inheritance and the Prototype Chain" },
+            { name: "Encapsulation and Information Hiding" },
+            { name: "Polymorphism" },
+            { name: "Composition Over Inheritance" },
+            { name: "Mixins and Higher-Order Functions" },
+            { name: "Best Practices and Design Patterns" },
+            { name: "Understanding this Keyword" },
+            { name: "Debugging and Testing OOP Code" },
+          ],
+        },
+        {
+          name: "Recursion",
+          children: [
+            { name: "Basic Concept of Recursion" },
+            { name: "Base Case and Recursive Case" },
+            { name: "Writing Recursive Functions" },
+            { name: "Understanding Call Stack and Stack Overflow" },
+            { name: "Tail Recursion Optimization" },
+            { name: "Recursion vs Iteration" },
+            { name: "Debugging Recursive Functions" },
+            { name: "Higher-Order Functions and Recursion" },
+            { name: "Advanced Recursive Patterns" },
+            { name: "Problem-Solving with Recursion" },
+            { name: "Best Practices" },
+          ],
+        },
+        {
+          name: "Error Handling",
+          children: [
+            { name: "Understanding Errors" },
+            { name: "Throwing Errors" },
+            { name: "Try-Catch-Finally Blocks" },
+            { name: "Error Propagation and Bubbling" },
+            { name: "Asynchronous Error Handling" },
+            { name: "Global Error Handling" },
+            { name: "Validation and Assertion" },
+            { name: "Best Practices and Patterns" },
+            { name: "Debugging and Diagnostics" },
+            { name: "Unit Testing and Error Handling" },
+            { name: "Handling Third-Party Errors" },
+          ],
+        },
+        {
+          name: "Observables",
+          children: [
+            { name: "Understanding the Observable Pattern" },
+            { name: "Creating Observables" },
+            { name: "Subscribing to Observables" },
+            { name: "Operators in RxJS" },
+            { name: "Handling Completion and Errors" },
+            { name: "Unsubscribing and Memory Leaks" },
+            { name: "Subjects and Multicasting" },
+            { name: "Advanced Reactive Concepts" },
+            { name: "Combining Observables" },
+            { name: "Use Cases and Best Practices" },
+            { name: "Debugging Observables" },
+          ],
+        },
+        {
+          name: "Memory Management and Garbage Collection",
+          children: [
+            { name: "Understanding Memory Allocation" },
+            { name: "Garbage Collection Basics" },
+            { name: "Reference and Reachability" },
+            { name: "Memory Leaks" },
+            { name: "Performance Implications" },
+            { name: "Tools for Monitoring Memory Usage" },
+            { name: "Managing Memory in Large Applications" },
+            { name: "Best Practices" },
+            { name: "Optimization Techniques" },
+            { name: "Understanding Browser and Node.js Specifics" },
+          ],
+        },
+        {
+          name: "Closures and Scoping",
+          children: [
+            { name: "Understanding Scope" },
+            { name: "Function Scope and Block Scope" },
+            { name: "Lexical Scoping" },
+            { name: "Closures" },
+            { name: "The this Keyword" },
+            { name: "Hoisting" },
+            { name: "Immediate Invoked Function Expressions (IIFE)" },
+            { name: "Module Pattern and Private Variables" },
+            { name: "Best Practices and Common Pitfalls" },
+            { name: "Debugging Scoping Issues" },
+          ],
+        },
+        {
+          name: "Functional Programming",
+          children: [
+            { name: "First-Class and Higher-Order Functions" },
+            { name: "Pure Functions" },
+            { name: "Immutability" },
+            { name: "Function Composition" },
+            { name: "Currying and Partial Application" },
+            { name: "Recursive Functions" },
+            { name: "Declarative Programming" },
+            { name: "Functional Libraries" },
+            { name: "Avoiding Side Effects" },
+            { name: "State Management" },
+            { name: "Functional Design Patterns" },
+            { name: "Refactoring to a Functional Style" },
+          ],
+        },
+        {
+          name: "Event Bubbling and Capturing",
+          children: [
+            { name: "Event Propagation Model" },
+            { name: "Event Bubbling" },
+            { name: "Event Capturing (Event Trickling)" },
+            { name: "Using addEventListener" },
+            { name: "stopPropagation and stopImmediatePropagation" },
+            { name: "Event Delegation" },
+            { name: "Default Action and preventDefault" },
+            { name: "Practical Applications and Use Cases" },
+            { name: "Cross-Browser Compatibility" },
+            { name: "Best Practices" },
+          ],
+        },
+        {
+          name: "Modules and Namespaces",
+          children: [
+            { name: "Understanding Modules" },
+            { name: "ES6 Modules (ESM)" },
+            { name: "CommonJS Modules" },
+            { name: "Namespaces" },
+            { name: "Module Loaders and Bundlers" },
+            { name: "Module Patterns" },
+            { name: "Asynchronous Module Definition (AMD)" },
+            { name: "Namespace and Module Management in Large Applications" },
+            { name: "Interop Between Module Systems" },
+            { name: "TypeScript Modules and Namespaces" },
+            { name: "Best Practices and Patterns" },
+          ],
+        },
+        {
+          name: "Web APIs and the DOM",
+          children: [
+            { name: "Understanding the DOM" },
+            { name: "DOM Manipulation" },
+            { name: "Event Handling" },
+            { name: "CSS Manipulation" },
+            { name: "Web APIs" },
+            { name: "Browser Compatibility and Feature Detection" },
+            { name: "Advanced Techniques and Patterns" },
+            { name: "Security Considerations => Cross-Site Scripting (XSS)" },
+          ],
         },
       ],
     },
     {
-      name: "Sub Categories",
+      name: "Introduction yourself",
       children: [
         {
-          name: "Fronend",
-        },
-        {
-          name: "Backend",
-        },
-      ],
-    },
-    {
-      name: "Create Vendor",
-      children: [
-        {
-          name: "Fronend",
-          children: [
-            { name: "Home" },
-            { name: "Dashboard" },
-            { name: "Menu" },
-            { name: "Orders" },
-            { name: "Settings" },
-            { name: "Cookies && details" },
-          ],
-        },
-        {
-          name: "Backend",
-          children: [
-            { name: "handle 15m refresh token" },
-            { name: "Gain data for Dashboard" },
-            { name: "Overview the vendor service" },
-          ],
-        },
-      ],
-    },
-    {
-      name: "Create Deliveryman",
-      children: [
-        {
-          name: "Fronend",
+          name: "Linkedin",
           children: [
             {
-              name: "Dashboard",
-              children: [
-                { name: "Overview" },
-                { name: "Performance" },
-                { name: "Orders" },
-                { name: "Feedbacks" },
-              ],
+              name: "Building A Powerful LinkedIn Presence: Tips from a LinkedIn Expert",
+            },
+            {
+              name: "linkedin tips and tricks",
             },
           ],
         },
         {
-          name: "Backend",
+          name: "PrepForInterview",
+          children: [{ name: "How to Land Job Interviews" }],
+        },
+        { name: "ATS Resume" },
+        { name: "Video sharing" },
+        {
+          name: "Tik tok",
           children: [
-            { name: "Gain data for Overview" },
-            { name: "Handle Cookie" },
+            { name: "salomezhorzhikashvili" },
+            { name: "jerryjhlee" },
+            { name: "aliceincareerland" },
+            { name: "farahsharghi" },
+            { name: "teal_hq" },
+            { name: "wonsulting" },
+            { name: "greglangstaff" },
+            { name: "joinsimplify" },
+            { name: "workhap" },
+            { name: "nishantwho" },
           ],
         },
-      ],
-    },
-    {
-      name: "Admin Functions",
-      children: [
-        {
-          name: "Fronend",
-          children: [
-            { name: "Last Order ==> see more" },
-            { name: "Order (page) ==> see more" },
-            { name: "Employees ==> modal" },
-          ],
-        },
-        {
-          name: "Backend",
-          children: [{ name: "Gain data for Overview" }],
-        },
-      ],
-    },
-    {
-      name: "Create Cart",
-      children: [
-        {
-          name: "Fronend",
-          children: [
-            { name: "Shipping info page" },
-            { name: "Define the place of Cart Component" },
-            { name: "Withdraw & Deposit" },
-          ],
-        },
-        {
-          name: "Backend",
-          children: [{ name: "Handle the Shopping service" }],
-        },
-      ],
-    },
-    {
-      name: "Order Service",
-      children: [
-        {
-          name: "Fronend",
-          children: [
-            { name: "Order History" },
-            { name: "Order Component" },
-            { name: "Custom Order" },
-          ],
-        },
-        {
-          name: "Backend",
-          children: [{ name: "Communicate between services" }],
-        },
-      ],
-    },
-    {
-      name: "Before Nginx",
-      children: [
-        {
-          name: "Fronend",
-          children: [
-            { name: "Responsive" },
-            { name: "The whole functionalities" },
-            { name: "Refactoring" },
-          ],
-        },
-        {
-          name: "Backend",
-          children: [
-            { name: "Error handler" },
-            { name: "Overview the whole backend" },
-          ],
-        },
-      ],
-    },
-    {
-      name: "Nginx",
-      children: [
-        {
-          name: "Fronend",
-          children: [{ name: "Modify all URLs based on Nginx" }],
-        },
-        {
-          name: "Backend",
-          children: [
-            { name: "Handle Nginx" },
-            { name: "Handle Docker" },
-            { name: "Handle K8s" },
-            { name: "Handle Test app" },
-          ],
-        },
-      ],
-    },
-    {
-      name: "Deploy",
-      children: [
-        {
-          name: "Deploy",
-        },
-        {
-          name: "Piar it Partly",
-        },
+        { name: "AI && Tools", children: [] },
       ],
     },
   ],
 };
-
 export default BackEnd;
