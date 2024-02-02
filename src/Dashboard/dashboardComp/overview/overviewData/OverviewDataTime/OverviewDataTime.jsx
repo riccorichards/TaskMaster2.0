@@ -7,7 +7,7 @@ import moment from "moment";
 const OverviewDataTime = () => {
   const [usingTime, setUsingTime] = useState([]);
   const [showMeTimeDetail, setShowMeTimeDetail] = useState(false);
-  const staticValue = 200;
+  const staticValue = 400;
   useEffect(() => {
     const getStopWatch = JSON.parse(localStorage.getItem("dataForRecently"));
     if (getStopWatch) {
